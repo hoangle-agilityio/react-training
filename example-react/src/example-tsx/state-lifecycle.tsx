@@ -1,5 +1,9 @@
 import React from "react";
 
+function FormattedDate(props: { date: Date }) {
+  return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
+}
+
 /**
  * When <Clock /> is passed to ReactDOM.render(), React calls the constructor of the Clock component.
  * React then calls the Clock component’s render() method. This is how React learns what should be displayed on the screen.
@@ -41,7 +45,7 @@ export default class Clock extends React.Component {
     return (
       <div>
         <h1>State And Lifecycle</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <h2><FormattedDate date={this.state.date} /></h2>
       </div>
     );
   }

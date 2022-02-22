@@ -4,6 +4,7 @@ import ClassComponents from "./example-tsx/class-components"
 import ComposingComponents from "./example-tsx/composing-components"
 import Expressions from "./example-tsx/expressions"
 import Comment from "./example-tsx/extracting-components"
+import Toggle from "./example-tsx/handling-event"
 import RenderingComponent from "./example-tsx/rendering-components"
 import Clock from "./example-tsx/state-lifecycle"
 
@@ -15,6 +16,7 @@ ReactDOM.render(
     <ComposingComponents />
     <Comment />
     <Clock />
+    <Toggle />
   </React.StrictMode>,
   document.getElementById("root")
 )

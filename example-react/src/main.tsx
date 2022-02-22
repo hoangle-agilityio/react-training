@@ -5,6 +5,7 @@ import ComposingComponents from "./example-tsx/composing-components"
 import Expressions from "./example-tsx/expressions"
 import Comment from "./example-tsx/extracting-components"
 import RenderingComponent from "./example-tsx/rendering-components"
+import Clock from "./example-tsx/state-lifecycle"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.render(
     <RenderingComponent name="Minh Hoang" />
     <ComposingComponents />
     <Comment />
+    <Clock />
   </React.StrictMode>,
   document.getElementById("root")
 )

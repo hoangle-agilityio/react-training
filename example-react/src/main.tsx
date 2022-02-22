@@ -2,6 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import ClassComponents from "./example-tsx/class-components"
 import ComposingComponents from "./example-tsx/composing-components"
+import LoginControl from "./example-tsx/conditional-rendering"
 import Expressions from "./example-tsx/expressions"
 import Comment from "./example-tsx/extracting-components"
 import Toggle from "./example-tsx/handling-event"
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Comment />
     <Clock />
     <Toggle />
+    <LoginControl />
   </React.StrictMode>,
   document.getElementById("root")
 )

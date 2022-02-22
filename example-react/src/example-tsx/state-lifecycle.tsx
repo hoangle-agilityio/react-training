@@ -14,13 +14,11 @@ function FormattedDate(props: { date: Date }) {
  * If the Clock component is ever removed from the DOM, React calls the componentWillUnmount() lifecycle method so the timer is stopped.
  */
 export default class Clock extends React.Component {
-  props: Object;
   state: { date: Date };
   timerId!: number;
 
   constructor(props: Object) {
     super(props);
-    this.props = props;
     this.state = { date: new Date() };
   }
 

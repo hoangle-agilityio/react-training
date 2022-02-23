@@ -7,6 +7,7 @@ import Expressions from "./example-tsx/expressions"
 import Comment from "./example-tsx/extracting-components"
 import { EssayForm, FileInput, FlavorForm, NameForm } from "./example-tsx/forms"
 import Toggle from "./example-tsx/handling-event"
+import Calculator from "./example-tsx/lifting-state-up"
 import RenderingComponent from "./example-tsx/rendering-components"
 import Clock from "./example-tsx/state-lifecycle"
 
@@ -24,6 +25,7 @@ ReactDOM.render(
     <EssayForm />
     <FlavorForm />
     <FileInput />
+    <Calculator />
   </React.StrictMode>,
   document.getElementById("root")
 )

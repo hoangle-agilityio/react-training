@@ -1,0 +1,32 @@
+body {
+  background: #26c6da;
+  padding: 50px 100px;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+.list-item {
+  background: #ffffff;
+  display: flex;
+  padding: 10px;
+}
+
+.title {
+  width: 100%;
+}
+
+.title input {
+  border: none;
+  width: 100%;
+}
+
+.icon-star::before {
+  content: "\2605";
+  color: #eeeeee;
+}
+
+.pinned .icon-star::before {
+  color: #26c6da;
+}

@@ -1,0 +1,37 @@
+$set-font-size: (
+  "xxl": 46px,
+  "xl": 22px,
+  "lg": 18px,
+  "md": 16px,
+  "sm": 15px,
+  "xs": 14px,
+);
+
+$set-line-height: (
+  "xxl": 69px,
+  "xl": 33px,
+  "lg": 27px,
+  "md": 24px,
+  "sm": 22.5px,
+  "xs": 21px,
+);
+
+$set-breakpoints: (
+  "tablet": 768px,
+  "desktop": 1200px,
+);
+
+$colors-primary: (
+  100: #374754,
+  200: #252b42,
+  300: #18171d,
+);
+
+$colors-secondary: (
+  100: #e8e8e8,
+  200: #ffffff,
+);
+
+$color-info: #38a3f1;
+
+$color-danger: #ef2779;

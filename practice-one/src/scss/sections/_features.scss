@@ -1,0 +1,80 @@
+@use "sass:map";
+@use "../abstract/variable" as *;
+@use "../abstract/function" as *;
+
+/*-----------------------*\
+  FEATURES SECTION
+\*-----------------------*/
+
+.features {
+  margin: 90px 0;
+  text-align: center;
+  padding: 0 60px;
+
+  &__sub-heading {
+    color: map.get($colors-primary, 200);
+  }
+
+  &__heading {
+    color: map.get($colors-primary, 200);
+    margin: 15px 0 25px 0;
+  }
+
+  &__desc {
+    color: map.get($colors-primary, 100);
+    margin: 0 auto 80px;
+  }
+
+  &__wrapper {
+    padding: 0 22px;
+  }
+
+  &__inner {
+    margin-bottom: 90px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    color: map.get($colors-primary, 200);
+    text-align: left;
+    flex: 1;
+    margin-left: 10px;
+  }
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    background: url("http://localhost:3000/src/assets/icons/restaurant-icon.svg") no-repeat;
+  }
+
+  &__content {
+    color: map.get($colors-primary, 100);
+    text-align: left;
+  }
+
+  @include breakpoint("desktop") {
+    &__wrapper {
+      display: flex;
+      width: 870px;
+      margin: 0 auto;
+    }
+  
+    &__inner {
+      &:not(:last-child) {
+        margin-right: 55px;
+      }
+  
+      flex: 1;
+    }
+  
+    &__header {
+      height: 100%;
+      margin-bottom: 0;
+    }
+  }
+}

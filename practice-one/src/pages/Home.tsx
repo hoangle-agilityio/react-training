@@ -1,7 +1,13 @@
+import FeatureList from "../components/FeatureList";
 import TopNav from "../components/TopNav";
 
 export default function Home() {
   return (
-    <TopNav />
+    <>
+      <TopNav />
+      <main>
+        <FeatureList />
+      </main>
+    </>
   );
 }

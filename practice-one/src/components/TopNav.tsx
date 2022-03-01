@@ -1,4 +1,4 @@
-import React from "react";
+import Banner from "./Banner";
 import NavBar from "./NavBar";
 import SiteLogo from "./SiteLogo";
 
@@ -29,6 +29,8 @@ export default function TopNav({ logo, menuItems }: TopNavProps): JSX.Element {
 
         <NavBar menuItems={menuItems} />
       </div>
+
+      <Banner />
     </header>
   );
 }

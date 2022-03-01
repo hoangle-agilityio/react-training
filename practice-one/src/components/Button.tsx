@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ButtonProps {
   typeButton: "button" | "submit" | "reset";
   size: "sm" | "md"| "lg";

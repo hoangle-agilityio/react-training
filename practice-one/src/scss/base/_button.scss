@@ -1,0 +1,101 @@
+@use "sass:map";
+@use "../abstract/variable" as *;
+@use "../abstract/function" as *;
+
+@-webkit-keyframes zoominout {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@-moz-keyframes zoominout {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes zoominout {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.btn {
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+
+  &:hover {
+    -webkit-transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    transition: 0.5s linear;
+    -webkit-animation: zoominout 1.5s infinite;
+    -moz-animation: zoominout 1.5s infinite;
+    animation: zoominout 1.5s infinite;
+  }
+
+  &-light {
+    background: map.get($colors-secondary, 200);
+    color: $color-danger;
+    @include font-styles(
+      map.get($set-font-size, "md"),
+      map.get($set-line-height, "md"),
+      500
+    );
+
+    &:hover {
+      background: $color-danger;
+      color: map.get($colors-secondary, 200);
+    }
+  }
+
+  &-info {
+    background: $color-info;
+    color: map.get($colors-secondary, 200);
+    @include font-styles(
+      map.get($set-font-size, "xl"),
+      map.get($set-line-height, "xl"),
+      700
+    );
+  }
+
+  &-danger {
+    background: $color-danger;
+    color: map.get($colors-secondary, 200);
+    @include font-styles(
+      map.get($set-font-size, "md"),
+      map.get($set-line-height, "md"),
+      500
+    );
+  }
+
+  &--sm {
+    padding: 20px 40px;
+  }
+
+  &--md {
+    padding: 16px 58px;
+  }
+
+  &--lg {
+    padding: 18px 88px;
+  }
+}

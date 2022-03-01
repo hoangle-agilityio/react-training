@@ -1,7 +1,7 @@
 import React from "react";
 import TopNav from "./components/TopNav";
 
-export default function App() {
+export default function App(): JSX.Element {
   return (
     <TopNav />
   );

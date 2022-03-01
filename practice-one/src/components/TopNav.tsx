@@ -1,9 +1,25 @@
 import React from "react";
-import "../../scss/sections/nav.scss";
 import NavBar from "./NavBar";
 import SiteLogo from "./SiteLogo";
 
-export default function TopNav({ logo, menuItems }) {
+export type Logo = {
+  srcImg: string;
+  altImg: string;
+  link: string;
+}
+
+export type MenuItem = {
+  id: number;
+  name: string;
+  link: string;
+}
+
+interface TopNavProps {
+  logo: Logo;
+  menuItems: Array<MenuItem>;
+}
+
+export default function TopNav({ logo, menuItems }: TopNavProps): JSX.Element {
   return (
     <header className="header">
       <div className="header__wrapper">

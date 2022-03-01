@@ -1,6 +1,11 @@
 import React from "react";
+import { MenuItem } from "./TopNav";
 
-export default function NavBar({ menuItems }) {
+interface NavBarProps {
+  menuItems: Array<MenuItem>;
+}
+
+export default function NavBar({ menuItems }: NavBarProps): JSX.Element {
   return (
     <>
       <input type="checkbox" className="toggle-checkbox" />

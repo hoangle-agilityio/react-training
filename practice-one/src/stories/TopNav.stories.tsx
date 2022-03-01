@@ -1,4 +1,3 @@
-import React from "react";
 import TopNav from "../components/TopNav";
 import { ComponentStory } from '@storybook/react';
 import "../scss/sections/_nav.scss";

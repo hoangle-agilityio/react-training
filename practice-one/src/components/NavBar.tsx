@@ -1,5 +1,6 @@
 import React from "react";
 import { MenuItem } from "./TopNav";
+import Button from "./Button";
 
 interface NavBarProps {
   menuItems: Array<MenuItem>;
@@ -30,7 +31,7 @@ export default function NavBar({ menuItems }: NavBarProps): JSX.Element {
         </ul>
         <form className="menu__form">
           <input type="email" placeholder="Your Email" name="your-email" className="form__email" />
-          <button type="submit" className="btn btn-light btn--sm">Subscribe</button>
+          <Button typeButton="submit" size="sm" buttonColor="light" label="Subscribe" />
         </form>
       </nav>
     </>

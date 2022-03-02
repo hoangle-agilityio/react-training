@@ -6,95 +6,97 @@
   NAVBAR SECTION
 \*-----------------------*/
 
-.header {
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.toggle {
+  &-icon {
+    content: "";
+    display: inline-block;
+    background: url("/src/assets/icons/navbar-toggle.svg") no-repeat;
+    width: 40px;
+    height: 16px;
   }
 
-  .toggle {
-    &-icon {
-      content: "";
-      display: inline-block;
-      background: url("/src/assets/icons/navbar-toggle.svg") no-repeat;
-      width: 40px;
-      height: 16px;
-    }
+  &-checkbox {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+  }
 
-    &-checkbox {
-      display: block;
-      width: 40px;
-      height: 32px;
-      position: absolute;
-      top: 20px;
-      right: 5px;
-      cursor: pointer;
-      opacity: 0;
-      z-index: 2;
-      -webkit-touch-callout: none;
+  &-checkbox:checked {
+    & ~ .navbar__mobile-menu {
+      -webkit-transform: none;
+      -moz-transform: none;
+      transform: none;
     }
+  }
+}
 
-    &-checkbox:checked {
-      & ~ .navbar__mobile-menu {
-        -webkit-transform: none;
-        -moz-transform: none;
-        transform: none;
-      }
-    }
+.navbar {
+  &__menu {
+    display: none;
+  }
+
+  &__mobile-menu {
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    background: map.get($colors-secondary, 200);
+    border-top: 1px solid map.get($colors-primary, 300);
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+    -webkit-transition: transform 0.5s linear;
+    -moz-transition: transform 0.5s linear;
+    transition: transform 0.5s linear;
+  }
+}
+
+.mobile-menu {
+  &-item {
+    border-bottom: 1px solid map.get($colors-secondary, 100);
+    padding: 10px;
+  }
+
+  &-link {
+    color: map.get($colors-primary, 300);
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .header {
+    padding: 0 40px;
+  }
+
+  .toggle-checkbox,
+  .toggle-icon {
+    display: none;
   }
 
   .navbar {
-    &__menu {
-      display: none;
-    }
-
     &__mobile-menu {
-      width: 100%;
-      position: absolute;
-      top: 70px;
-      background: map.get($colors-secondary, 200);
-      border-top: 1px solid map.get($colors-primary, 300);
-      -webkit-transform: translate(-100%, 0);
-      -moz-transform: translate(-100%, 0);
-      transform: translate(-100%, 0);
-      -webkit-transition: transform 0.5s linear;
-      -moz-transition: transform 0.5s linear;
-      transition: transform 0.5s linear;
-    }
-  }
-
-  .mobile-menu {
-    &-item {
-      border-bottom: 1px solid map.get($colors-secondary, 100);
-      padding: 10px;
-    }
-
-    &-link {
-      color: map.get($colors-primary, 300);
-    }
-  }
-
-  @media only screen and (min-width: 1300px) {
-    padding: 0 40px;
-
-    .toggle-checkbox,
-    .toggle-icon {
       display: none;
     }
 
-    .navbar {
-      &__mobile-menu {
-        display: none;
-      }
-
-      &__menu {
-        display: flex;
-        align-items: center;
-      }
+    &__menu {
+      display: flex;
+      align-items: center;
     }
+  }
 
+  .navbar__menu {
     .menu {
       &-item {
         display: inline-block;
@@ -105,19 +107,19 @@
         color: map.get($colors-secondary, 200);
       }
     }
+  }
 
-    .form__email {
-      margin: 0 10px;
-      padding: 20px 165px 20px 40px;
-      border: none;
-      border-radius: 39px;
-      background: map.get($colors-secondary, 100);
-      color: map.get($colors-primary, 300);
-      @include font-styles(
-        map.get($set-font-size, "xs"),
-        map.get($set-line-height, "xs"),
-        400
-      );
-    }
+  .form__email {
+    margin: 0 10px;
+    padding: 20px 165px 20px 40px;
+    border: none;
+    border-radius: 39px;
+    background: map.get($colors-secondary, 100);
+    color: map.get($colors-primary, 300);
+    @include font-styles(
+      map.get($set-font-size, "xs"),
+      map.get($set-line-height, "xs"),
+      400
+    );
   }
 }

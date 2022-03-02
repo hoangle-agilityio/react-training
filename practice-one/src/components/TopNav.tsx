@@ -57,7 +57,7 @@ export default function TopNav({ logo, menuItems }: TopNavProps): JSX.Element {
 
 TopNav.defaultProps = {
   logo: {
-    srcImg: "http://localhost:3000/src/assets/images/figma-logo.svg",
+    srcImg: "/src/assets/images/figma-logo.svg",
     altImg: "Figma Land",
     link: "#!"
   },

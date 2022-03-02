@@ -20,9 +20,17 @@ type Partner = {
 interface HomeProps {
   featureList: Array<Feature>;
   partnerList: Array<Partner>;
+  testimonial: {
+    customer: {
+      avatarUrl: string;
+      title: string;
+      subTitle: string;
+    }
+    content: string;
+  }
 }
 
-export default function Home({ featureList, partnerList }: HomeProps) {
+export default function Home({ featureList, partnerList, testimonial }: HomeProps) {
   return (
     <>
       <header className="header">
@@ -82,7 +90,7 @@ export default function Home({ featureList, partnerList }: HomeProps) {
           <h2 className="newsletter__heading heading">Newsletter </h2>
           <h3 className="newsletter__title font--xl">Subscribe to our Newsletter</h3>
           <p className="newsletter__content font--lg">Available exclusivery on Figmaland</p>
-          <form action="javascript:void(0)" className="newsletter__form">
+          <form className="newsletter__form">
             <input type="email" placeholder="Your Email" name="your-email" className="newsletter__email" />
 
             <Button
@@ -114,6 +122,29 @@ export default function Home({ featureList, partnerList }: HomeProps) {
             buttonColor="info"
             label="Try For Free"
             customize="partners__btn"
+          />
+        </div>
+
+        <div className="testimonials">
+          <h2 className="testimonials__heading heading">Testimonials</h2>
+          <div className="testimonials__wrapper">
+            <div className="testimonials__icon" />
+            <p className="testimonials__content">{testimonial.content}</p>
+            <div className="testimonials__customers">
+              <img src={testimonial.customer.avatarUrl} alt="customer" className="customers__img" />
+              <div className="customers__info">
+                <p className="customers__title">{testimonial.customer.title}</p>
+                <p className="customers__sub-title">{testimonial.customer.subTitle}</p>
+              </div>
+            </div>
+          </div>
+
+          <Button
+            typeButton="button"
+            size="md"
+            buttonColor="info"
+            label="More Testimonials"
+            customize="testimonials__btn"
           />
         </div>
       </main>
@@ -194,5 +225,13 @@ Home.defaultProps = {
         altImg: "appstore icon",
       }
     }
-  ]
+  ],
+  testimonial: {
+    customer: {
+      avatarUrl: "/src/assets/images/customer.png",
+      title: "Organize across",
+      subTitle: "Ui designer",
+    },
+    content: "Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.",
+  },
 }

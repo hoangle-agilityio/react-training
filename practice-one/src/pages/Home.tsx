@@ -1,6 +1,11 @@
-import Feature from "../components/Feature";
 import TopNav from "../components/TopNav";
 import Button from "../components/Button";
+
+type Feature = {
+  id: number;
+  title: string;
+  content: string;
+}
 
 type Partner = {
   id: number;
@@ -13,10 +18,11 @@ type Partner = {
 }
 
 interface HomeProps {
+  featureList: Array<Feature>;
   partnerList: Array<Partner>;
 }
 
-export default function Home({ partnerList }: HomeProps): JSX.Element {
+export default function Home({ featureList, partnerList }: HomeProps) {
   return (
     <>
       <header className="header">
@@ -44,8 +50,17 @@ export default function Home({ partnerList }: HomeProps): JSX.Element {
           <h3 className="features__sub-heading font--xl">At your fingertips</h3>
           <h2 className="features__heading heading">Features</h2>
           <p className="features__desc desc">Most calendars are designed for teams. Slate is designed for freelancers</p>
-
-          <Feature />
+          <div className="features__wrapper">
+            {featureList.map(feature => (
+              <div key={feature.id} className="features__inner">
+                <div className="features__header">
+                  <div className="features__icon"></div>
+                  <h3 className="features__title font--xl">{feature.title}</h3>
+                </div>
+                <p className="features__content font--lg">{feature.content}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="prototyping">
@@ -107,6 +122,23 @@ export default function Home({ partnerList }: HomeProps): JSX.Element {
 }
 
 Home.defaultProps = {
+  featureList: [
+    {
+      id: 1,
+      title: "The best products start with Sketch",
+      content: "Slate helps you see how many more days you need to work to reach your financial goal.",
+    },
+    {
+      id: 2,
+      title: "Fastest way to organize",
+      content: "Slate helps you see how many more days you need to work to reach your financial goal.",
+    },
+    {
+      id: 3,
+      title: "Work better together",
+      content: "Slate helps you see how many more days you need to work to reach your financial goal.",
+    },
+  ],
   partnerList: [
     {
       id: 1,

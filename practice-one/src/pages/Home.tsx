@@ -2,7 +2,21 @@ import Feature from "../components/Feature";
 import TopNav from "../components/TopNav";
 import Button from "../components/Button";
 
-export default function Home(): JSX.Element {
+type Partner = {
+  id: number;
+  name: string;
+  content: string;
+  imageInfo: {
+    srcImg: string;
+    altImg: string;
+  };
+}
+
+interface HomeProps {
+  partnerList: Array<Partner>;
+}
+
+export default function Home({ partnerList }: HomeProps): JSX.Element {
   return (
     <>
       <header className="header">
@@ -64,7 +78,89 @@ export default function Home(): JSX.Element {
             />
           </form>
         </div>
+
+        <div className="partners">
+          <h2 className="partners__heading heading">Partners</h2>
+          <p className="partners__desc desc">Most calendars are designed for teams. Slate is designed for freelancers</p>
+
+          <div className="partners__wrapper">
+            {partnerList.map(partner => (
+              <div key={partner.id} className="partners__item">
+                <p className="partners-item__name">{partner.name}</p>
+                <img src={partner.imageInfo.srcImg} alt={partner.imageInfo.altImg} className="partners-item__icon" />
+                <p className="partners-item__content font--lg">{partner.content}</p>
+              </div>
+            ))}
+          </div>
+
+          <Button
+            typeButton="button"
+            size="md"
+            buttonColor="info"
+            label="Try For Free"
+            customize="partners__btn"
+          />
+        </div>
       </main>
     </>
   );
+}
+
+Home.defaultProps = {
+  partnerList: [
+    {
+      id: 1,
+      name: "Client Name",
+      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+      imageInfo: {
+        srcImg: "/src/assets/icons/apiary-icon.svg",
+        altImg: "apiary icon",
+      }
+    },
+    {
+      id: 2,
+      name: "Client Name",
+      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+      imageInfo: {
+        srcImg: "/src/assets/icons/android-icon.svg",
+        altImg: "android icon",
+      }
+    },
+    {
+      id: 3,
+      name: "Client Name",
+      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+      imageInfo: {
+        srcImg: "/src/assets/icons/basecamp-icon.svg",
+        altImg: "basecamp icon",
+      }
+    },
+    {
+      id: 4,
+      name: "Client Name",
+      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+      imageInfo: {
+        srcImg: "/src/assets/icons/basecamp-icon.svg",
+        altImg: "basecamp icon",
+      }
+    },
+    {
+      id: 5,
+      name: "Client Name",
+      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+      imageInfo: {
+        srcImg: "/src/assets/icons/airbnb-icon.svg",
+        altImg: "airbnb icon",
+      }
+    },
+    {
+      id: 6,
+      name: "Client Name",
+      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+      imageInfo: {
+        srcImg: "/src/assets/icons/appstore-icon.svg",
+        altImg: "appstore icon",
+      }
+    }
+  ]
 }

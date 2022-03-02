@@ -1,5 +1,7 @@
 import TopNav from "../components/TopNav";
 import Button from "../components/Button";
+import SocialIcon from "../components/SocialIcon";
+import ContactInfo from "../components/ContactInfo";
 
 type Feature = {
   id: number;
@@ -182,6 +184,31 @@ export default function Home({ featureList, partnerList, testimonial, priceList 
                 />
               </div>
             ))}
+          </div>
+        </div>
+
+        <div className="contact">
+          <h2 className="contact__heading heading">Contact Us</h2>
+          <p className="contact__desc desc">Most calendars are designed for teams. Slate is designed for freelancers</p>
+          <div className="contact__wrapper">
+            <div className="contact-info">
+              <div className="contact__social-icon">
+                <SocialIcon />
+              </div>
+              <ContactInfo />
+            </div>
+            <form className="contact__form">
+              <input type="text" name="your-name" placeholder="Your Name" className="contact-form__name font--sm" />
+              <input type="email" name="your-email" placeholder="Your Email" className="contact-form__email font--sm" />
+              <textarea className="contact-form__message font--sm" name="your-message" placeholder="Your Message" />
+              
+              <Button
+                typeButton="submit"
+                size="md"
+                buttonColor="danger"
+                label="Send"
+              />
+            </form>
           </div>
         </div>
       </main>

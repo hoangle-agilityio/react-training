@@ -2,6 +2,7 @@ import TopNav from "../components/TopNav";
 import Button from "../components/Button";
 import SocialIcon from "../components/SocialIcon";
 import ContactInfo from "../components/ContactInfo";
+import Footer from "../components/Footer";
 
 type Feature = {
   id: number;
@@ -201,7 +202,7 @@ export default function Home({ featureList, partnerList, testimonial, priceList 
               <input type="text" name="your-name" placeholder="Your Name" className="contact-form__name font--sm" />
               <input type="email" name="your-email" placeholder="Your Email" className="contact-form__email font--sm" />
               <textarea className="contact-form__message font--sm" name="your-message" placeholder="Your Message" />
-              
+
               <Button
                 typeButton="submit"
                 size="md"
@@ -212,6 +213,8 @@ export default function Home({ featureList, partnerList, testimonial, priceList 
           </div>
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }

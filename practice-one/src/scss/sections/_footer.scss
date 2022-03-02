@@ -1,0 +1,81 @@
+@use "sass:map";
+@use "../abstract/variable" as *;
+@use "../abstract/function" as *;
+
+/*-----------------------*\
+  FOOTER SECTION
+\*-----------------------*/
+
+.footer {
+  padding: 130px 30px;
+  text-align: center;
+
+  &__menu-title {
+    margin-bottom: 25px;
+    color: map.get($colors-primary, 200);
+  }
+
+  &__menu-link {
+    margin-bottom: 55px;
+
+    .menu-item {
+      margin-bottom: 15px;
+    }
+
+    .item-link {
+      color: map.get($colors-primary, 200);
+    }
+  }
+
+  &__map {
+    max-width: 100%;
+    width: 360px;
+    height: 250px;
+    margin-bottom: 65px;
+  }
+
+  &__info {
+    max-width: 100%;
+    width: 250px;
+    margin: 0 auto;
+
+    .contact__item {
+      max-width: 100%;
+      width: 250px;
+      margin: 0 auto 50px;
+      color: map.get($colors-primary, 100);
+    }
+
+    .contact-item__link {
+      color: map.get($colors-primary, 100);
+    }
+  }
+
+  &__social-icon {
+    text-align: left;
+
+    svg {
+      margin-right: 15px;
+    }
+  }
+
+  @include breakpoint("desktop") {
+    display: flex;
+    text-align: left;
+    max-width: 100%;
+    width: 1020px;
+    margin: 0 auto;
+
+    &__map {
+      width: 470px;
+    }
+
+    &__menu {
+      margin-right: 125px;
+    }
+
+    &__location {
+      margin-right: 55px;
+    }
+  }
+}

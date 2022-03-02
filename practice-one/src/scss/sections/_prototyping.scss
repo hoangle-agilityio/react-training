@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "../abstract/variable" as *;
+@use "../abstract/function" as *;
+
+/*-----------------------*\
+  LIGHTNING FAST PROTOTYPING SECTION
+\*-----------------------*/
+
+.prototyping {
+  margin: 90px 20px;
+  text-align: center;
+
+  &__heading {
+    color: map.get($colors-primary, 200);
+    margin-bottom: 30px;
+  }
+
+  &__desc {
+    padding-bottom: 70px;
+    margin: 0 auto;
+  }
+
+  &__img {
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  @include breakpoint("desktop") {
+    margin: 110px 185px;
+  }
+}

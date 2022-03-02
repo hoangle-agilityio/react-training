@@ -17,6 +17,13 @@ type Partner = {
   };
 }
 
+type Price = {
+  id: number;
+  title: string;
+  subTitle: string;
+  price: number;
+}
+
 interface HomeProps {
   featureList: Array<Feature>;
   partnerList: Array<Partner>;
@@ -27,10 +34,11 @@ interface HomeProps {
       subTitle: string;
     }
     content: string;
-  }
+  };
+  priceList: Array<Price>;
 }
 
-export default function Home({ featureList, partnerList, testimonial }: HomeProps) {
+export default function Home({ featureList, partnerList, testimonial, priceList }: HomeProps) {
   return (
     <>
       <header className="header">
@@ -147,6 +155,35 @@ export default function Home({ featureList, partnerList, testimonial }: HomeProp
             customize="testimonials__btn"
           />
         </div>
+
+        <div className="pricing">
+          <h2 className="pricing__heading heading">Pricing</h2>
+          <p className="pricing__desc desc">Most calendars are designed for teams.
+            Slate is designed for freelancers</p>
+          <div className="pricing__wrapper">
+            {priceList.map(item => (
+              <div key={item.id} className="pricing__item">
+                <h3 className="pricing__title font--xl">{item.title}</h3>
+                <p className="pricing__sub-title">{item.subTitle}</p>
+                <div className="pricing__info">
+                  <p className="pricing__price">{item.price}</p>
+                  <div className="pricing__suffix">
+                    <p className="pricing__currency font--xl">$</p>
+                    <p className="pricing__per-month">Per Month</p>
+                  </div>
+                </div>
+
+                <Button
+                  typeButton="button"
+                  size="lg"
+                  buttonColor="info"
+                  label="Order Now"
+                  customize="pricing__btn"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </main>
     </>
   );
@@ -234,4 +271,24 @@ Home.defaultProps = {
     },
     content: "Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.",
   },
+  priceList: [
+    {
+      id: 1,
+      title: "Free",
+      subTitle: "Organize across all apps by hand",
+      price: 0,
+    },
+    {
+      id: 2,
+      title: "Standard",
+      subTitle: "Organize across all apps by hand",
+      price: 10,
+    },
+    {
+      id: 3,
+      title: "Business",
+      subTitle: "Organize across all apps by hand",
+      price: 99,
+    },
+  ]
 }

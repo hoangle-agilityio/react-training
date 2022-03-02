@@ -1,4 +1,3 @@
-import Banner from "./Banner";
 import NavBar from "./NavBar";
 import SiteLogo from "./SiteLogo";
 
@@ -21,17 +20,13 @@ interface TopNavProps {
 
 export default function TopNav({ logo, menuItems }: TopNavProps): JSX.Element {
   return (
-    <header className="header">
-      <div className="header__wrapper">
-        <div className="navbar__logo">
-          <SiteLogo logo={logo} />
-        </div>
-
-        <NavBar menuItems={menuItems} />
+    <div className="header__wrapper">
+      <div className="navbar__logo">
+        <SiteLogo logo={logo} />
       </div>
 
-      <Banner />
-    </header>
+      <NavBar menuItems={menuItems} />
+    </div>
   );
 }
 

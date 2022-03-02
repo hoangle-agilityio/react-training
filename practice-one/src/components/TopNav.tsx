@@ -1,6 +1,4 @@
-import Banner from "./Banner";
-import NavBar from "./NavBar";
-import SiteLogo from "./SiteLogo";
+import Button from "./Button";
 
 export type Logo = {
   srcImg: string;
@@ -21,23 +19,45 @@ interface TopNavProps {
 
 export default function TopNav({ logo, menuItems }: TopNavProps): JSX.Element {
   return (
-    <header className="header">
-      <div className="header__wrapper">
-        <div className="navbar__logo">
-          <SiteLogo logo={logo} />
-        </div>
-
-        <NavBar menuItems={menuItems} />
+    <div className="header__wrapper">
+      <div className="navbar__logo">
+        <a href={logo.link} onClick={e => e.preventDefault()}>
+          <img src={logo.srcImg} alt={logo.altImg} />
+        </a>
       </div>
 
-      <Banner />
-    </header>
+      <input type="checkbox" className="toggle-checkbox" />
+      <span className="toggle-icon" />
+      <nav className="navbar__mobile-menu">
+        <ul>
+          {menuItems.map(item => (
+            <li key={item.id} className="mobile-menu-item">
+              <a href={item.link} onClick={e => e.preventDefault()} className="mobile-menu-link font--sm">{item.name}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav className="navbar__menu">
+        <ul>
+          {menuItems.map(item => (
+            <li key={item.id} className="menu-item">
+              <a href={item.link} onClick={e => e.preventDefault()} className="menu-link font--sm">{item.name}</a>
+            </li>
+          ))}
+        </ul>
+        <form className="menu__form">
+          <input type="email" placeholder="Your Email" name="your-email" className="form__email" />
+          <Button typeButton="submit" size="sm" buttonColor="light" label="Subscribe" />
+        </form>
+      </nav>
+    </div>
   );
 }
 
 TopNav.defaultProps = {
   logo: {
-    srcImg: "http://localhost:3000/src/assets/images/figma-logo.svg",
+    srcImg: "/src/assets/images/figma-logo.svg",
     altImg: "Figma Land",
     link: "#!"
   },

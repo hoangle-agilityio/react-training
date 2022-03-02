@@ -15,9 +15,23 @@ Default.args = {
   headingText: "Heading text",
 }
 
-export const HeadingWithDescription = Template.bind({});
+export const WithDescription = Template.bind({});
 
-HeadingWithDescription.args = {
+WithDescription.args = {
   ...Default.args,
   descriptionText: "Description text",
+}
+
+export const WithSubHeading = Template.bind({});
+
+WithSubHeading.args = {
+  ...Default.args,
+  subHeadingText: "Sub Heading text",
+}
+
+export const All = Template.bind({});
+
+All.args = {
+  ...WithDescription.args,
+  subHeadingText: "Sub Heading text",
 }

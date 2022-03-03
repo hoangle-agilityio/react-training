@@ -1,6 +1,7 @@
 import TopNav from "../components/TopNav";
 import { ComponentStory } from '@storybook/react';
 import "../scss/sections/_nav.scss";
+import "../scss/sections/_banner.scss";
 
 export default {
   component: TopNav,
@@ -13,7 +14,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   logo: {
-    srcImg: "http://localhost:3000/src/assets/images/figma-logo.svg",
+    srcImg: "/src/assets/images/figma-logo.svg",
     altImg: "Figma Land",
     link: "#!"
   },

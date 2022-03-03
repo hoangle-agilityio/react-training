@@ -1,5 +1,4 @@
-import Button from "../button/Button";
-import "./nav.scss";
+import Button from "../Button/Button";
 
 export type Logo = {
   srcImg: string;

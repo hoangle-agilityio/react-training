@@ -1,6 +1,7 @@
 import Footer from "./Footer";
 import { ComponentStory } from "@storybook/react";
 import "../../scss/base/_index.scss";
+import "../../scss/sections/_footer.scss";
 
 export default {
   component: Footer,

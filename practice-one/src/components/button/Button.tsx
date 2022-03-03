@@ -1,5 +1,3 @@
-import "./button.scss";
-
 interface ButtonProps {
   typeButton: "button" | "submit" | "reset";
   size?: "sm" | "md"| "lg";

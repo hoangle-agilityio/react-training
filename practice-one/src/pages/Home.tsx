@@ -1,8 +1,8 @@
-import TopNav from "../components/top-navigation/TopNav";
-import Button from "../components/button/Button";
-import SocialIcon from "../components/symbol-icon/SocialIcon";
-import ContactInfo from "../components/symbol-icon/ContactInfo";
-import Footer from "../components/footer/Footer";
+import TopNav from "../components/TopNavigation/TopNav";
+import Button from "../components/Button/Button";
+import SocialIcon from "../components/SymbolIcon/SocialIcon";
+import ContactInfo from "../components/SymbolIcon/ContactInfo";
+import Footer from "../components/Footer/Footer";
 
 type Feature = {
   id: number;

@@ -1,6 +1,6 @@
-import Button from "../components/Button";
+import Button from "./Button";
 import { ComponentStory } from '@storybook/react';
-import "../scss/base/_button.scss";
+import "../../scss/base/_index.scss";
 
 export default {
   component: Button,

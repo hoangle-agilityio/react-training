@@ -1,5 +1,6 @@
-import ContactInfo from "./ContactInfo"
-import SocialIcon from "./SocialIcon";
+import ContactInfo from "../symbol-icon/ContactInfo"
+import SocialIcon from "../symbol-icon/SocialIcon";
+import "./footer.scss";
 
 type Page = {
   id: number;

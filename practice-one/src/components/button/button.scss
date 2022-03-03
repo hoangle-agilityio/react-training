@@ -1,6 +1,6 @@
 @use "sass:map";
-@use "../abstract/variable" as *;
-@use "../abstract/function" as *;
+@use "../../scss/abstract/variable" as *;
+@use "../../scss/abstract/function" as *;
 
 @-webkit-keyframes zoominout {
   0% {

@@ -1,7 +1,6 @@
-import TopNav from "../components/TopNav";
+import TopNav from "./TopNav";
 import { ComponentStory } from '@storybook/react';
-import "../scss/sections/_nav.scss";
-import "../scss/sections/_banner.scss";
+import "../../scss/base/_index.scss";
 
 export default {
   component: TopNav,

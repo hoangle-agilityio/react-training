@@ -1,5 +1,5 @@
-import ContactInfo from "./ContactInfo"
-import SocialIcon from "./SocialIcon";
+import ContactInfo from "../SymbolIcon/ContactInfo"
+import SocialIcon from "../SymbolIcon/SocialIcon";
 
 type Page = {
   id: number;

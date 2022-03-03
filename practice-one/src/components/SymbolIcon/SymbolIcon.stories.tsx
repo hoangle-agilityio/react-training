@@ -1,4 +1,4 @@
-import SymbolIcon from "../components/SymbolIcon";
+import SymbolIcon from "./SymbolIcon";
 import { ComponentStory } from "@storybook/react";
 
 export default {

@@ -1,8 +1,8 @@
-import TopNav from "../components/TopNav";
-import Button from "../components/Button";
-import SocialIcon from "../components/SocialIcon";
-import ContactInfo from "../components/ContactInfo";
-import Footer from "../components/Footer";
+import TopNav from "../components/TopNavigation/TopNav";
+import Button from "../components/Button/Button";
+import SocialIcon from "../components/SymbolIcon/SocialIcon";
+import ContactInfo from "../components/SymbolIcon/ContactInfo";
+import Footer from "../components/Footer/Footer";
 
 type Feature = {
   id: number;
@@ -28,20 +28,85 @@ type Price = {
 }
 
 interface HomeProps {
-  featureList: Array<Feature>;
-  partnerList: Array<Partner>;
-  testimonial: {
-    customer: {
-      avatarUrl: string;
-      title: string;
-      subTitle: string;
-    }
-    content: string;
-  };
   priceList: Array<Price>;
 }
 
-export default function Home({ featureList, partnerList, testimonial, priceList }: HomeProps) {
+const featureList: Array<Feature> = [
+  {
+    id: 1,
+    title: "The best products start with Sketch",
+    content: "Slate helps you see how many more days you need to work to reach your financial goal.",
+  },
+  {
+    id: 2,
+    title: "Fastest way to organize",
+    content: "Slate helps you see how many more days you need to work to reach your financial goal.",
+  },
+  {
+    id: 3,
+    title: "Work better together",
+    content: "Slate helps you see how many more days you need to work to reach your financial goal.",
+  },
+];
+
+const partnerList: Array<Partner> = [
+  {
+    id: 1,
+    name: "Client Name",
+    content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+    imageInfo: {
+      srcImg: "/src/assets/icons/apiary-icon.svg",
+      altImg: "apiary icon",
+    }
+  },
+  {
+    id: 2,
+    name: "Client Name",
+    content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+    imageInfo: {
+      srcImg: "/src/assets/icons/android-icon.svg",
+      altImg: "android icon",
+    }
+  },
+  {
+    id: 3,
+    name: "Client Name",
+    content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+    imageInfo: {
+      srcImg: "/src/assets/icons/basecamp-icon.svg",
+      altImg: "basecamp icon",
+    }
+  },
+  {
+    id: 4,
+    name: "Client Name",
+    content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+    imageInfo: {
+      srcImg: "/src/assets/icons/basecamp-icon.svg",
+      altImg: "basecamp icon",
+    }
+  },
+  {
+    id: 5,
+    name: "Client Name",
+    content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+    imageInfo: {
+      srcImg: "/src/assets/icons/airbnb-icon.svg",
+      altImg: "airbnb icon",
+    }
+  },
+  {
+    id: 6,
+    name: "Client Name",
+    content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+    imageInfo: {
+      srcImg: "/src/assets/icons/appstore-icon.svg",
+      altImg: "appstore icon",
+    }
+  }
+];
+
+export default function Home({ priceList }: HomeProps) {
   return (
     <>
       <header className="header">
@@ -140,12 +205,12 @@ export default function Home({ featureList, partnerList, testimonial, priceList 
           <h2 className="testimonials__heading heading">Testimonials</h2>
           <div className="testimonials__wrapper">
             <div className="testimonials__icon" />
-            <p className="testimonials__content">{testimonial.content}</p>
+            <p className="testimonials__content">Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.</p>
             <div className="testimonials__customers">
-              <img src={testimonial.customer.avatarUrl} alt="customer" className="customers__img" />
+              <img src="/src/assets/images/customer.png" alt="customer" className="customers__img" />
               <div className="customers__info">
-                <p className="customers__title">{testimonial.customer.title}</p>
-                <p className="customers__sub-title">{testimonial.customer.subTitle}</p>
+                <p className="customers__title">Organize across</p>
+                <p className="customers__sub-title">Ui designer</p>
               </div>
             </div>
           </div>
@@ -220,87 +285,6 @@ export default function Home({ featureList, partnerList, testimonial, priceList 
 }
 
 Home.defaultProps = {
-  featureList: [
-    {
-      id: 1,
-      title: "The best products start with Sketch",
-      content: "Slate helps you see how many more days you need to work to reach your financial goal.",
-    },
-    {
-      id: 2,
-      title: "Fastest way to organize",
-      content: "Slate helps you see how many more days you need to work to reach your financial goal.",
-    },
-    {
-      id: 3,
-      title: "Work better together",
-      content: "Slate helps you see how many more days you need to work to reach your financial goal.",
-    },
-  ],
-  partnerList: [
-    {
-      id: 1,
-      name: "Client Name",
-      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
-      imageInfo: {
-        srcImg: "/src/assets/icons/apiary-icon.svg",
-        altImg: "apiary icon",
-      }
-    },
-    {
-      id: 2,
-      name: "Client Name",
-      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
-      imageInfo: {
-        srcImg: "/src/assets/icons/android-icon.svg",
-        altImg: "android icon",
-      }
-    },
-    {
-      id: 3,
-      name: "Client Name",
-      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
-      imageInfo: {
-        srcImg: "/src/assets/icons/basecamp-icon.svg",
-        altImg: "basecamp icon",
-      }
-    },
-    {
-      id: 4,
-      name: "Client Name",
-      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
-      imageInfo: {
-        srcImg: "/src/assets/icons/basecamp-icon.svg",
-        altImg: "basecamp icon",
-      }
-    },
-    {
-      id: 5,
-      name: "Client Name",
-      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
-      imageInfo: {
-        srcImg: "/src/assets/icons/airbnb-icon.svg",
-        altImg: "airbnb icon",
-      }
-    },
-    {
-      id: 6,
-      name: "Client Name",
-      content: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
-      imageInfo: {
-        srcImg: "/src/assets/icons/appstore-icon.svg",
-        altImg: "appstore icon",
-      }
-    }
-  ],
-  testimonial: {
-    customer: {
-      avatarUrl: "/src/assets/images/customer.png",
-      title: "Organize across",
-      subTitle: "Ui designer",
-    },
-    content: "Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.",
-  },
   priceList: [
     {
       id: 1,

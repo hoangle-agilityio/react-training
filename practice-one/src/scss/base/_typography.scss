@@ -1,0 +1,61 @@
+@use "sass:map";
+@use "../abstract/variable" as *;
+@use "../abstract/function" as *;
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/assets/fonts/roboto.ttf");
+}
+
+body * {
+  font-family: "Roboto";
+}
+
+.container {
+  background: map.get($colors-secondary, 200);
+}
+
+.heading {
+  @include font-styles(
+    map.get($set-font-size, "xxl"),
+    map.get($set-line-height, "xxl"),
+    400
+  );
+}
+
+.desc {
+  @include font-styles(
+    map.get($set-font-size, "md"),
+    map.get($set-line-height, "md"),
+    700
+  );
+
+  width: 300px;
+  max-width: 100%;
+}
+
+.font {
+  &--sm {
+    @include font-styles(
+      map.get($set-font-size, "sm"),
+      map.get($set-line-height, "sm"),
+      400
+    );
+  }
+
+  &--lg {
+    @include font-styles(
+      map.get($set-font-size, "lg"),
+      map.get($set-line-height, "lg"),
+      400
+    );
+  }
+
+  &--xl {
+    @include font-styles(
+      map.get($set-font-size, "xl"),
+      map.get($set-line-height, "xl"),
+      700
+    );
+  }
+}

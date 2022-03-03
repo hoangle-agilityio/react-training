@@ -1,0 +1,16 @@
+@use "sass:map";
+@use "variable" as *;
+
+/* Set font styles */
+@mixin font-styles($font-size, $line-height, $font-weight) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+/* Set media query */
+@mixin breakpoint($device) {
+  @media only screen and (min-width: map.get($set-breakpoints, $device)) {
+    @content;
+  }
+}

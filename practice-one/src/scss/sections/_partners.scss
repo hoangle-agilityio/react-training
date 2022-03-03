@@ -1,0 +1,84 @@
+@use "sass:map";
+@use "../abstract/variable" as *;
+@use "../abstract/function" as *;
+
+/*-----------------------*\
+  PARTNERS SECTION
+\*-----------------------*/
+
+.partners {
+  text-align: center;
+
+  &__heading {
+    margin-top: 100px;
+    margin-bottom: 25px;
+    color: map.get($colors-primary, 200);
+  }
+
+  &__desc {
+    margin: 0 auto 115px;
+    color: map.get($colors-primary, 100);
+  }
+
+  &__item {
+    width: 218px;
+    max-width: 100%;
+    margin: 0 auto 50px;
+  }
+
+  &__item:nth-child(n + 4) {
+    display: none;
+  }
+
+  &-item {
+    &__name {
+      @include font-styles(
+        map.get($set-font-size, "xs"),
+        map.get($set-line-height, "xs"),
+        700
+      );
+
+      color: map.get($colors-primary, 100);
+    }
+
+    &__icon {
+      width: 122px;
+      height: 122px;
+      margin: 25px 0;
+    }
+
+    &__content {
+      color: map.get($colors-primary, 100);
+    }
+  }
+
+  &__btn {
+    margin: 50px 0;
+  }
+
+  @include breakpoint("tablet") {
+    &__item:nth-child(n + 4) {
+      display: block;
+    }
+
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @include breakpoint("desktop") {
+    &__wrapper {
+      width: 900px;
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 70px;
+      margin: 0 auto;
+    }
+
+    &__btn {
+      margin: 30px 0 50px;
+    }
+  }
+}

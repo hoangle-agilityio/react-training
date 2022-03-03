@@ -1,0 +1,68 @@
+@use "sass:map";
+@use "../abstract/variable" as *;
+@use "../abstract/function" as *;
+
+/*-----------------------*\
+  BANNER SECTION
+\*-----------------------*/
+
+.header {
+  background: url("/src/assets/images/banner-wave.svg") no-repeat;
+  background-size: cover;
+  background-position-y: 100%;
+
+  .banner {
+    text-align: center;
+    color: map.get($colors-secondary, 200);
+
+    &__heading {
+      margin-top: 100px;
+    }
+
+    &__desc {
+      padding-top: 25px;
+      margin: auto;
+    }
+
+    &__img {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint("desktop") {
+    height: 950px;
+
+    .banner {
+      width: 40%;
+      text-align: left;
+      float: right;
+
+      &__heading {
+        width: 320px;
+        margin-top: 300px;
+      }
+
+      &__desc {
+        margin: 0;
+      }
+
+      &__img {
+        position: absolute;
+        width: 1000px;
+        right: 50%;
+        top: 250px;
+      }
+
+      &__btn {
+        margin-top: 70px;
+        background: map.get($colors-secondary, 200);
+        color: $color-info;
+
+        &:hover {
+          background: $color-info;
+          color: map.get($colors-secondary, 200);
+        }
+      }
+    }
+  }
+}

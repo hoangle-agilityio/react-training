@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "../abstract/variable" as *;
+@use "../abstract/function" as *;
+
+/*-----------------------*\
+  NEWSLETTER SECTION
+\*-----------------------*/
+
+.newsletter {
+  background: linear-gradient(39.97deg, #ef2779 0.79%, #7834be 79.29%);
+  text-align: center;
+
+  &__sub-heading {
+    color: map.get($colors-secondary, 200);
+    padding-top: 80px;
+  }
+
+  &__heading {
+    color: map.get($colors-secondary, 200);
+    margin-top: 20px;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    color: map.get($colors-secondary, 200);
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    color: map.get($colors-secondary, 200);
+    margin-bottom: 35px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 355px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &__email {
+    border: none;
+    border-radius: 39px;
+    padding: 20px 0 20px 35px;
+    margin-bottom: 12px;
+  }
+
+  &__btn {
+    padding: 17px 140px;
+    margin-bottom: 115px;
+  }
+}

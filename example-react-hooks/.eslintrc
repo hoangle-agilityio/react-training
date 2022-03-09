@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "react-hooks"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error", // Check rules of hooks
+    "react-hooks/exhaustive-deps": "warn" // Check effect dependency
+  },
+  "extends": [
+    "plugin:react-hooks/recommended"
+  ]
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ExampleUseCallback from './components/UseCallback'
 import ExampleUseContext from './components/UseContext'
 import ExampleEffect from './components/UseEffect'
 import ExampleUseReducer from './components/UseReducer'
@@ -13,6 +14,7 @@ ReactDOM.render(
     <ExampleUseContext />
     <ExampleUseRef />
     <ExampleUseReducer />
+    <ExampleUseCallback />
   </React.StrictMode>,
   document.getElementById('root')
 )

@@ -5,14 +5,14 @@
   cursor: pointer;
 }
 
-.button-edit {
+.btn-edit {
   background-color: #037BFF;
   color: #FFFFFF;
   padding: 10px 20px;
   font-size: 14px;
 }
 
-.button-delete {
+.btn-delete {
   background-color: #DC3545;
   color: #FFFFFF;
   padding: 10px 20px;

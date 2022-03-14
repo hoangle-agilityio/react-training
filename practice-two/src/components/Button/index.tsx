@@ -3,13 +3,13 @@ import "./button.css";
 
 interface ButtonProps {
   buttonName: string;
-  className: string;
+  type: string;
   onClick?: () => void;
 }
 
-function Button({ buttonName, className, onClick }: ButtonProps): JSX.Element {
+function Button({ buttonName, type, onClick }: ButtonProps): JSX.Element {
   return (
-    <button className={`btn ${className}`} onClick={onClick}>
+    <button className={`btn btn-${type}`} onClick={onClick}>
       {buttonName}
     </button>
   );

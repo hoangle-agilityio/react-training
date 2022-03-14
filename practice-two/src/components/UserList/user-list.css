@@ -1,0 +1,17 @@
+.user-list {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.list-head,
+.list-item {
+  border: 1px solid #333333;
+  text-align: left;
+  padding: 8px;
+}
+
+.empty-item {
+  color: #FF0000;
+  font-style: italic;
+}

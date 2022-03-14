@@ -4,6 +4,11 @@
       "id": 1,
       "name": "Hoang Le",
       "email": "hoang.le@asnet.com.vn"
+    },
+    {
+      "id": 2,
+      "name": "Paul Bettany",
+      "email": "paul@gmail.com"
     }
   ]
 }

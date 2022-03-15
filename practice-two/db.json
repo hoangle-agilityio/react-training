@@ -9,6 +9,11 @@
       "id": 2,
       "name": "Paul Bettany",
       "email": "paul@gmail.com"
+    },
+    {
+      "name": "Emily",
+      "email": "emily@gmail.com",
+      "id": 3
     }
   ]
 }

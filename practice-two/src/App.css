@@ -24,7 +24,42 @@
   padding: 8px;
 }
 
-.empty-item {
+.empty-item,
+.error-msg {
   color: #ff0000;
   font-style: italic;
+}
+
+.create-user {
+  width: 90%;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.user-modal {
+  position: absolute;
+  inset: 25%;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  overflow: auto;
+  border-radius: 4px;
+  padding: 35px;
+}
+
+.modal-title {
+  font-size: 36px;
+  text-transform: uppercase;
+  color: #333333;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 5px;
+}
+
+.input-group input {
+  padding: 10px;
 }

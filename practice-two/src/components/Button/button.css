@@ -3,18 +3,26 @@
   border-radius: 5px;
   margin: 10px;
   cursor: pointer;
+  padding: 10px 20px;
+  font-size: 14px;
 }
 
-.btn-edit {
+.btn-primary {
   background-color: #037BFF;
   color: #FFFFFF;
-  padding: 10px 20px;
-  font-size: 14px;
 }
 
-.btn-delete {
+.btn-secondary {
+  background-color: #6C757D;
+  color: #FFFFFF;
+}
+
+.btn-danger {
   background-color: #DC3545;
   color: #FFFFFF;
-  padding: 10px 20px;
-  font-size: 14px;
+}
+
+.btn-success {
+  background-color: #28A745;
+  color: #FFFFFF;
 }

@@ -20,3 +20,15 @@ export async function addUser(data: Omit<User, "id">): Promise<User> {
 
   return response.json();
 }
+
+export async function updateUser(data: User): Promise<User> {
+  const response: Response = await fetch(`${API_URL}/${data.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  return response.json();
+}

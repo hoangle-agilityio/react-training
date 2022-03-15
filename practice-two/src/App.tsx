@@ -1,22 +1,26 @@
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Button from "./components/Button";
+import ModalUser from "./components/Modal";
 import User from "./core/interfaces/user";
-import { addUser, getAllUsers } from "./services";
-import Modal from "react-modal";
-import { MODAL_INFORMATION } from "./core/constants/modal-information";
-import { VALIDATE } from "./core/constants/validate";
+import { getAllUsers } from "./services";
 
 export default function App(): JSX.Element {
   const [userList, setUserList] = useState<User[]>([]);
+  const [currentUser, setCurrentUser] = useState<User>();
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [errors, setErrors] = useState<string[]>([]);
-
-  const userNameRef = useRef() as MutableRefObject<HTMLInputElement>;
-  const userEmailRef = useRef() as MutableRefObject<HTMLInputElement>;
 
   const handleOpenModal = (): void => setIsOpenModal(true);
-  const handleCloseModal = (): void => setIsOpenModal(false);
+
+  const handleCloseModal = (): void => {
+    setCurrentUser(undefined);
+    setIsOpenModal(false);
+  };
+
+  const openModalEditUser = (id: number) => {
+    setCurrentUser(userList.find(user => user.id === id));
+    handleOpenModal();
+  }
 
   // Get all users
   const handleGetUsers = async (): Promise<void> => {
@@ -26,52 +30,6 @@ export default function App(): JSX.Element {
       throw new Error(`Get data failed: ${error}`);
     }
   };
-
-  // Add user data to server
-  const handleAddUser = async (userData: Omit<User, "id">): Promise<void> => {
-    try {
-      await addUser(userData);
-      alert("Recipe added successfully!");
-
-      // Get all user after add data
-      handleGetUsers();
-    } catch (error) {
-      throw new Error(`Get data failed: ${error}`);
-    }
-  }
-
-  const handleSubmit = (): void => {
-    const userData: Omit<User, "id"> = {
-      name: userNameRef.current.value,
-      email: userEmailRef.current.value,
-    }
-    const errors = validate(userData);
-
-    if (errors.length > 0) {
-      setErrors(errors);
-      return;
-    }
-
-    handleAddUser(userData);
-
-    // Close modal after add data
-    handleCloseModal();
-  }
-
-  // Validate for user data
-  const validate = (user: Omit<User, "id">): string[] => {
-    const errors: string[] = [];
-
-    if (user.name === VALIDATE.EMPTY_VALUE || user.email === VALIDATE.EMPTY_VALUE) {
-      errors.push(VALIDATE.MESSAGE_FIELD_REQUIRED);
-    }
-
-    if (user.email && !VALIDATE.REGEX_EMAIL.test(user.email)) {
-      errors.push(VALIDATE.MESSAGE_EMAIL_FORMAT);
-    }
-
-    return errors;
-  }
 
   // Use useEffect avoid to call function repeatedly
   useEffect(() => {
@@ -114,6 +72,7 @@ export default function App(): JSX.Element {
                       <Button
                         buttonName="Edit"
                         type="primary"
+                        onClick={() => openModalEditUser(user.id)}
                       />
 
                       <Button
@@ -128,36 +87,12 @@ export default function App(): JSX.Element {
           </tbody>
         </table>
       </section>
-      <section>
-        <Modal isOpen={isOpenModal} className="user-modal" ariaHideApp={false}>
-          <section>
-            <h2 className="modal-title">{MODAL_INFORMATION.ADD}</h2>
-
-            {errors.map((error, index) => (
-              <p key={index} className="error-msg">{error}</p>
-            ))}
-
-            <div className="input-group">
-              <label htmlFor="userName">User Name</label>
-              <input ref={userNameRef} type="text" id="userName" />
-            </div>
-            <div className="input-group">
-              <label htmlFor="userEmail">User Email</label>
-              <input ref={userEmailRef} type="text" id="userEmail" />
-            </div>
-            <Button
-              buttonName={MODAL_INFORMATION.ADD}
-              type="success"
-              onClick={handleSubmit}
-            />
-            <Button
-              buttonName={MODAL_INFORMATION.CANCEL}
-              type="secondary"
-              onClick={handleCloseModal}
-            />
-          </section>
-        </Modal>
-      </section>
+      <ModalUser
+        isOpenModal={isOpenModal}
+        currentUser={currentUser}
+        handleGetUsers={handleGetUsers}
+        handleCloseModal={handleCloseModal}
+      />
     </div>
   );
 }

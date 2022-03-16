@@ -17,8 +17,8 @@ export default function App(): JSX.Element {
     setIsOpenModal(false);
   };
 
-  const openModalEditUser = (id: number) => {
-    setCurrentUser(userList.find(user => user.id === id));
+  const openModalEditUser = (user: User) => {
+    setCurrentUser(user);
     handleOpenModal();
   }
 
@@ -72,7 +72,7 @@ export default function App(): JSX.Element {
                       <Button
                         buttonName="Edit"
                         type="primary"
-                        onClick={() => openModalEditUser(user.id)}
+                        onClick={() => openModalEditUser(user)}
                       />
 
                       <Button
@@ -88,10 +88,10 @@ export default function App(): JSX.Element {
         </table>
       </section>
       <ModalUser
-        isOpenModal={isOpenModal}
+        open={isOpenModal}
         currentUser={currentUser}
-        handleGetUsers={handleGetUsers}
-        handleCloseModal={handleCloseModal}
+        onSuccess={handleGetUsers}
+        closeModal={handleCloseModal}
       />
     </div>
   );

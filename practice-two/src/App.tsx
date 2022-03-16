@@ -3,7 +3,7 @@ import "./App.css";
 import Button from "./components/Button";
 import ModalUser from "./components/Modal";
 import User from "./core/interfaces/user";
-import { getAllUsers } from "./services";
+import { deleteUser, getAllUsers } from "./services";
 
 export default function App(): JSX.Element {
   const [userList, setUserList] = useState<User[]>([]);
@@ -26,6 +26,30 @@ export default function App(): JSX.Element {
       throw new Error(`Get data failed: ${error}`);
     }
   };
+
+  // Delete user when click to button delete
+  const handleDeleteUser = async (user: User): Promise<void> => {
+    if (confirm("Are you sure to delete this user?")) {
+      try {
+        await deleteUser(user.id);
+
+        // Copy user list and find index of user
+        const users = [...userList];
+        const index = users.indexOf(user);
+
+        // If index exists, remove that index in array.
+        // After that, set state user list after remove index
+        if (index > -1) {
+          users.splice(index, 1);
+          setUserList(users);
+        }
+
+        alert("User deleted successfully!");
+      } catch (error) {
+        throw new Error(`Delete data failed: ${error}`);
+      }
+    }
+  }
 
   // Use useEffect avoid to call function repeatedly
   useEffect(() => {
@@ -74,6 +98,7 @@ export default function App(): JSX.Element {
                       <Button
                         buttonName="Delete"
                         type="danger"
+                        onClick={() => handleDeleteUser(user)}
                       />
                     </td>
                   </tr>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Button from "./components/Button";
 import ModalUser from "./components/Modal";
@@ -9,6 +9,7 @@ export default function App(): JSX.Element {
   const [userList, setUserList] = useState<User[]>([]);
   const [currentUser, setCurrentUser] = useState<User>();
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
 
   const handleOpenModal = (): void => setIsOpenModal(true);
   const handleCloseModal = (): void => setIsOpenModal(false);
@@ -51,6 +52,16 @@ export default function App(): JSX.Element {
     }
   }
 
+  // Set state search input when entering content
+  const handleSearchUser = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(event.target.value);
+  }
+
+  // Filter user list by searchInput
+  const searchResult = userList.filter(user => {
+    return user.name.toLowerCase().includes(searchInput.toLowerCase());
+  });
+
   // Use useEffect avoid to call function repeatedly
   useEffect(() => {
     handleGetUsers();
@@ -66,6 +77,10 @@ export default function App(): JSX.Element {
           onClick={() => openModalUser(undefined)}
         />
       </section>
+      <section className="search-user">
+        <label htmlFor="search">Search:</label>
+        <input type="text" id="search" onChange={handleSearchUser} />
+      </section>
       <section>
         <table className="user-list">
           <thead>
@@ -77,13 +92,13 @@ export default function App(): JSX.Element {
             </tr>
           </thead>
           <tbody>
-            {userList.length === 0 ? (
+            {searchResult.length === 0 ? (
               <tr>
                 <td className="empty-item">No data found!</td>
               </tr>
             ) : (
               <>
-                {userList.map(user => (
+                {searchResult.map(user => (
                   <tr key={user.id}>
                     <td className="list-item">{user.id}</td>
                     <td className="list-item">{user.name}</td>

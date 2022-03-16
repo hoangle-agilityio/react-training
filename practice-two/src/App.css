@@ -35,3 +35,15 @@
   margin: 0 auto;
   text-align: right;
 }
+
+.search-user {
+  width: 90%;
+  margin: 0 auto;
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.search-user input {
+  padding: 5px;
+  margin-left: 10px;
+}

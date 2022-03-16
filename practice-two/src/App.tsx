@@ -56,7 +56,7 @@ export default function App(): JSX.Element {
     handleGetUsers();
   }, []);
 
-  return (console.log("Rendwer"),
+  return (
     <div className="app">
       <h1 className="app__heading">User Management</h1>
       <section className="create-user">

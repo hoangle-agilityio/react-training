@@ -24,7 +24,14 @@
   padding: 8px;
 }
 
-.empty-item {
+.empty-item,
+.error-msg {
   color: #ff0000;
   font-style: italic;
+}
+
+.create-user {
+  width: 90%;
+  margin: 0 auto;
+  text-align: right;
 }

@@ -1,11 +1,22 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Button from "./components/Button";
+import ModalUser from "./components/Modal";
 import User from "./core/interfaces/user";
 import { getAllUsers } from "./services";
 
 export default function App(): JSX.Element {
   const [userList, setUserList] = useState<User[]>([]);
+  const [currentUser, setCurrentUser] = useState<User>();
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const handleOpenModal = (): void => setIsOpenModal(true);
+  const handleCloseModal = (): void => setIsOpenModal(false);
+
+  const openModalUser = (user: User | undefined) => {
+    setCurrentUser(user);
+    handleOpenModal();
+  }
 
   // Get all users
   const handleGetUsers = async (): Promise<void> => {
@@ -21,9 +32,16 @@ export default function App(): JSX.Element {
     handleGetUsers();
   }, []);
 
-  return (
+  return (console.log("Rendwer"),
     <div className="app">
       <h1 className="app__heading">User Management</h1>
+      <section className="create-user">
+        <Button
+          buttonName="Add User"
+          type="success"
+          onClick={() => openModalUser(undefined)}
+        />
+      </section>
       <section>
         <table className="user-list">
           <thead>
@@ -49,12 +67,13 @@ export default function App(): JSX.Element {
                     <td className="list-item">
                       <Button
                         buttonName="Edit"
-                        type="edit"
+                        type="primary"
+                        onClick={() => openModalUser(user)}
                       />
 
                       <Button
                         buttonName="Delete"
-                        type="delete"
+                        type="danger"
                       />
                     </td>
                   </tr>
@@ -64,6 +83,12 @@ export default function App(): JSX.Element {
           </tbody>
         </table>
       </section>
+      <ModalUser
+        open={isOpenModal}
+        currentUser={currentUser}
+        onSuccess={handleGetUsers}
+        closeModal={handleCloseModal}
+      />
     </div>
   );
 }

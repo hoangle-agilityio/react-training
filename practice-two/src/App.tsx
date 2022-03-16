@@ -11,13 +11,9 @@ export default function App(): JSX.Element {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const handleOpenModal = (): void => setIsOpenModal(true);
+  const handleCloseModal = (): void => setIsOpenModal(false);
 
-  const handleCloseModal = (): void => {
-    setCurrentUser(undefined);
-    setIsOpenModal(false);
-  };
-
-  const openModalEditUser = (user: User) => {
+  const openModalUser = (user: User | undefined) => {
     setCurrentUser(user);
     handleOpenModal();
   }
@@ -36,14 +32,14 @@ export default function App(): JSX.Element {
     handleGetUsers();
   }, []);
 
-  return (
+  return (console.log("Rendwer"),
     <div className="app">
       <h1 className="app__heading">User Management</h1>
       <section className="create-user">
         <Button
           buttonName="Add User"
           type="success"
-          onClick={handleOpenModal}
+          onClick={() => openModalUser(undefined)}
         />
       </section>
       <section>
@@ -72,7 +68,7 @@ export default function App(): JSX.Element {
                       <Button
                         buttonName="Edit"
                         type="primary"
-                        onClick={() => openModalEditUser(user)}
+                        onClick={() => openModalUser(user)}
                       />
 
                       <Button

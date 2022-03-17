@@ -12,18 +12,13 @@
     },
     {
       "name": "Emily",
-      "email": "emily.ngo@gmail.com",
+      "email": "emily@gmail.com",
       "id": 3
     },
     {
       "name": "Vanya",
       "email": "vanya@gmail.com",
       "id": 4
-    },
-    {
-      "name": "Roy Le",
-      "email": "royle@gmail.com",
-      "id": 5
     }
   ]
 }

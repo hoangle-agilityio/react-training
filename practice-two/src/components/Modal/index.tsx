@@ -10,14 +10,14 @@ import "./modal.css";
 interface ModalUserProps {
   open: boolean;
   currentUser?: User;
-  userList: User[];
-  typeView: boolean;
+  users: User[];
+  isViewUser: boolean;
   onEdit: React.Dispatch<React.SetStateAction<boolean>>;
   onSuccess: React.Dispatch<React.SetStateAction<User[]>>;
   closeModal: () => void;
 }
 
-function ModalUser({ open, currentUser, userList, typeView, onEdit, onSuccess, closeModal }: ModalUserProps) {
+function ModalUser({ open, currentUser, users, isViewUser, onEdit, onSuccess, closeModal }: ModalUserProps) {
   const [errors, setErrors] = useState<string[]>([]);
 
   const userNameRef = useRef() as MutableRefObject<HTMLInputElement>;
@@ -33,7 +33,7 @@ function ModalUser({ open, currentUser, userList, typeView, onEdit, onSuccess, c
 
       // Get all user after add data
       onSuccess([
-        ...userList,
+        ...users,
         result
       ]);
     } catch (error) {
@@ -47,15 +47,14 @@ function ModalUser({ open, currentUser, userList, typeView, onEdit, onSuccess, c
       const result: User = await updateUser(userData);
       alert("User updated successfully!");
 
-      // Copy user list and find index of user
-      const users: User[] = [...userList];
-      const index: number = userList.findIndex(data => {
+      // Find index of user
+      const index: number = users.findIndex(data => {
         return data.id === result.id;
       });
 
       // Update array after editing
       users[index] = result;
-      onSuccess(users);
+      onSuccess([...users]);
     } catch (error) {
       throw new Error(`Get data failed: ${error}`);
     }
@@ -100,7 +99,7 @@ function ModalUser({ open, currentUser, userList, typeView, onEdit, onSuccess, c
     return errors;
   }
 
-  if (typeView) {
+  if (isViewUser) {
     modalTitle = MODAL_INFORMATION.VIEW;
   } else if (currentUser) {
     modalTitle = MODAL_INFORMATION.EDIT;
@@ -120,13 +119,13 @@ function ModalUser({ open, currentUser, userList, typeView, onEdit, onSuccess, c
 
           <div className="input-group">
             <label htmlFor="userName">User Name</label>
-            <input ref={userNameRef} type="text" readOnly={typeView} id="userName" defaultValue={currentUser?.name} />
+            <input ref={userNameRef} type="text" readOnly={isViewUser} id="userName" defaultValue={currentUser?.name} />
           </div>
           <div className="input-group">
             <label htmlFor="userEmail">User Email</label>
-            <input ref={userEmailRef} type="text" readOnly={typeView} id="userEmail" defaultValue={currentUser?.email} />
+            <input ref={userEmailRef} type="text" readOnly={isViewUser} id="userEmail" defaultValue={currentUser?.email} />
           </div>
-          {typeView ?
+          {isViewUser ?
             <Button
               buttonName="Edit"
               type="primary"

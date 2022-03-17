@@ -9,17 +9,21 @@ import "./modal.css";
 
 interface ModalUserProps {
   open: boolean;
-  currentUser: User | undefined;
+  currentUser?: User;
   userList: User[];
+  typeView: boolean;
+  onEdit: React.Dispatch<React.SetStateAction<boolean>>;
   onSuccess: React.Dispatch<React.SetStateAction<User[]>>;
   closeModal: () => void;
 }
 
-function ModalUser({ open, currentUser, userList, onSuccess, closeModal }: ModalUserProps) {
+function ModalUser({ open, currentUser, userList, typeView, onEdit, onSuccess, closeModal }: ModalUserProps) {
   const [errors, setErrors] = useState<string[]>([]);
 
   const userNameRef = useRef() as MutableRefObject<HTMLInputElement>;
   const userEmailRef = useRef() as MutableRefObject<HTMLInputElement>;
+
+  let modalTitle: string;
 
   // Add user data to server
   const handleAddUser = async (userData: Partial<User>): Promise<void> => {
@@ -96,11 +100,19 @@ function ModalUser({ open, currentUser, userList, onSuccess, closeModal }: Modal
     return errors;
   }
 
+  if (typeView) {
+    modalTitle = MODAL_INFORMATION.VIEW;
+  } else if (currentUser) {
+    modalTitle = MODAL_INFORMATION.EDIT;
+  } else {
+    modalTitle = MODAL_INFORMATION.ADD;
+  }
+
   return (
     <section>
       <Modal isOpen={open} className="user-modal" ariaHideApp={false}>
         <section>
-          <h2 className="modal-title">{currentUser ? MODAL_INFORMATION.EDIT : MODAL_INFORMATION.ADD}</h2>
+          <h2 className="modal-title">{modalTitle}</h2>
 
           {errors.map((error, index) => (
             <p key={index} className="error-msg">{error}</p>
@@ -108,17 +120,25 @@ function ModalUser({ open, currentUser, userList, onSuccess, closeModal }: Modal
 
           <div className="input-group">
             <label htmlFor="userName">User Name</label>
-            <input ref={userNameRef} type="text" id="userName" defaultValue={currentUser?.name} />
+            <input ref={userNameRef} type="text" readOnly={typeView} id="userName" defaultValue={currentUser?.name} />
           </div>
           <div className="input-group">
             <label htmlFor="userEmail">User Email</label>
-            <input ref={userEmailRef} type="text" id="userEmail" defaultValue={currentUser?.email} />
+            <input ref={userEmailRef} type="text" readOnly={typeView} id="userEmail" defaultValue={currentUser?.email} />
           </div>
-          <Button
-            buttonName={currentUser ? MODAL_INFORMATION.EDIT : MODAL_INFORMATION.ADD}
-            type="success"
-            onClick={() => handleSubmitUser(currentUser)}
-          />
+          {typeView ?
+            <Button
+              buttonName="Edit"
+              type="primary"
+              onClick={() => onEdit(false)}
+            /> :
+            <Button
+              buttonName={currentUser ? MODAL_INFORMATION.EDIT : MODAL_INFORMATION.ADD}
+              type="success"
+              onClick={() => handleSubmitUser(currentUser)}
+            />
+          }
+
           <Button
             buttonName={MODAL_INFORMATION.CANCEL}
             type="secondary"

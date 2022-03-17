@@ -11,11 +11,13 @@ export default function App(): JSX.Element {
   const [currentUser, setCurrentUser] = useState<User>();
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [searchInput, setSearchInput] = useState("");
+  const [viewUser, setViewUser] = useState(false);
 
   const handleOpenModal = (): void => setIsOpenModal(true);
   const handleCloseModal = (): void => setIsOpenModal(false);
 
-  const openModalUser = (user: User | undefined) => {
+  const openModalUser = (user?: User, typeView: boolean = false) => {
+    setViewUser(typeView);
     setCurrentUser(user);
     handleOpenModal();
   }
@@ -101,6 +103,12 @@ export default function App(): JSX.Element {
                     <td className="list-item">{user.email}</td>
                     <td className="list-item">
                       <Button
+                        buttonName="View"
+                        type="info"
+                        onClick={() => openModalUser(user, true)}
+                      />
+
+                      <Button
                         buttonName="Edit"
                         type="primary"
                         onClick={() => openModalUser(user)}
@@ -123,6 +131,8 @@ export default function App(): JSX.Element {
         open={isOpenModal}
         currentUser={currentUser}
         userList={userList}
+        typeView={viewUser}
+        onEdit={setViewUser}
         onSuccess={setUserList}
         closeModal={handleCloseModal}
       />

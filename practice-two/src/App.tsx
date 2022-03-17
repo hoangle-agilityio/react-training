@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Button from "./components/Button";
 import ModalUser from "./components/Modal";
+import { searching } from "./core/helpers/search-helper";
 import User from "./core/interfaces/user";
 import { deleteUser, getAllUsers } from "./services";
 
@@ -52,14 +53,9 @@ export default function App(): JSX.Element {
     }
   }
 
-  // Set state search input when entering content
-  const handleSearchUser = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchInput(event.target.value);
-  }
-
   // Filter user list by searchInput
   const searchResult = userList.filter(user => {
-    return user.name.toLowerCase().includes(searchInput.toLowerCase());
+    return searching(user, searchInput);
   });
 
   // Use useEffect avoid to call function repeatedly
@@ -79,7 +75,7 @@ export default function App(): JSX.Element {
       </section>
       <section className="search-user">
         <label htmlFor="search">Search:</label>
-        <input type="text" id="search" onChange={handleSearchUser} />
+        <input type="text" id="search" onChange={event => setSearchInput(event.target.value)} />
       </section>
       <section>
         <table className="user-list">
@@ -126,7 +122,8 @@ export default function App(): JSX.Element {
       <ModalUser
         open={isOpenModal}
         currentUser={currentUser}
-        onSuccess={handleGetUsers}
+        userList={userList}
+        onSuccess={setUserList}
         closeModal={handleCloseModal}
       />
     </div>

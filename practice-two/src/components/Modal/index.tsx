@@ -10,11 +10,12 @@ import "./modal.css";
 interface ModalUserProps {
   open: boolean;
   currentUser: User | undefined;
-  onSuccess: () => Promise<void>;
+  userList: User[];
+  onSuccess: React.Dispatch<React.SetStateAction<User[]>>;
   closeModal: () => void;
 }
 
-function ModalUser({ open, currentUser, onSuccess, closeModal }: ModalUserProps) {
+function ModalUser({ open, currentUser, userList, onSuccess, closeModal }: ModalUserProps) {
   const [errors, setErrors] = useState<string[]>([]);
 
   const userNameRef = useRef() as MutableRefObject<HTMLInputElement>;
@@ -23,11 +24,14 @@ function ModalUser({ open, currentUser, onSuccess, closeModal }: ModalUserProps)
   // Add user data to server
   const handleAddUser = async (userData: Partial<User>): Promise<void> => {
     try {
-      await addUser(userData);
+      const result: User = await addUser(userData);
       alert("User added successfully!");
 
       // Get all user after add data
-      onSuccess();
+      onSuccess([
+        ...userList,
+        result
+      ]);
     } catch (error) {
       throw new Error(`Get data failed: ${error}`);
     }
@@ -36,11 +40,18 @@ function ModalUser({ open, currentUser, onSuccess, closeModal }: ModalUserProps)
   // Update user data to server
   const handleUpdateUser = async (userData: Partial<User>): Promise<void> => {
     try {
-      await updateUser(userData);
+      const result: User = await updateUser(userData);
       alert("User updated successfully!");
 
-      // Get all user after update data
-      onSuccess();
+      // Copy user list and find index of user
+      const users: User[] = [...userList];
+      const index: number = userList.findIndex(data => {
+        return data.id === result.id;
+      });
+
+      // Update array after editing
+      users[index] = result;
+      onSuccess(users);
     } catch (error) {
       throw new Error(`Get data failed: ${error}`);
     }

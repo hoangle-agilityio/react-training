@@ -9,25 +9,33 @@ import "./modal.css";
 
 interface ModalUserProps {
   open: boolean;
-  currentUser: User | undefined;
-  onSuccess: () => Promise<void>;
+  currentUser?: User;
+  users: User[];
+  isViewUser: boolean;
+  onEdit: React.Dispatch<React.SetStateAction<boolean>>;
+  onSuccess: React.Dispatch<React.SetStateAction<User[]>>;
   closeModal: () => void;
 }
 
-function ModalUser({ open, currentUser, onSuccess, closeModal }: ModalUserProps) {
+function ModalUser({ open, currentUser, users, isViewUser, onEdit, onSuccess, closeModal }: ModalUserProps) {
   const [errors, setErrors] = useState<string[]>([]);
 
   const userNameRef = useRef() as MutableRefObject<HTMLInputElement>;
   const userEmailRef = useRef() as MutableRefObject<HTMLInputElement>;
 
+  let modalTitle: string;
+
   // Add user data to server
   const handleAddUser = async (userData: Partial<User>): Promise<void> => {
     try {
-      await addUser(userData);
+      const result: User = await addUser(userData);
       alert("User added successfully!");
 
       // Get all user after add data
-      onSuccess();
+      onSuccess([
+        ...users,
+        result
+      ]);
     } catch (error) {
       throw new Error(`Get data failed: ${error}`);
     }
@@ -36,11 +44,17 @@ function ModalUser({ open, currentUser, onSuccess, closeModal }: ModalUserProps)
   // Update user data to server
   const handleUpdateUser = async (userData: Partial<User>): Promise<void> => {
     try {
-      await updateUser(userData);
+      const result: User = await updateUser(userData);
       alert("User updated successfully!");
 
-      // Get all user after update data
-      onSuccess();
+      // Find index of user
+      const index: number = users.findIndex(data => {
+        return data.id === result.id;
+      });
+
+      // Update array after editing
+      users[index] = result;
+      onSuccess([...users]);
     } catch (error) {
       throw new Error(`Get data failed: ${error}`);
     }
@@ -85,11 +99,19 @@ function ModalUser({ open, currentUser, onSuccess, closeModal }: ModalUserProps)
     return errors;
   }
 
+  if (isViewUser) {
+    modalTitle = MODAL_INFORMATION.VIEW;
+  } else if (currentUser) {
+    modalTitle = MODAL_INFORMATION.EDIT;
+  } else {
+    modalTitle = MODAL_INFORMATION.ADD;
+  }
+
   return (
     <section>
       <Modal isOpen={open} className="user-modal" ariaHideApp={false}>
         <section>
-          <h2 className="modal-title">{currentUser ? MODAL_INFORMATION.EDIT : MODAL_INFORMATION.ADD}</h2>
+          <h2 className="modal-title">{modalTitle}</h2>
 
           {errors.map((error, index) => (
             <p key={index} className="error-msg">{error}</p>
@@ -97,17 +119,25 @@ function ModalUser({ open, currentUser, onSuccess, closeModal }: ModalUserProps)
 
           <div className="input-group">
             <label htmlFor="userName">User Name</label>
-            <input ref={userNameRef} type="text" id="userName" defaultValue={currentUser?.name} />
+            <input ref={userNameRef} type="text" readOnly={isViewUser} id="userName" defaultValue={currentUser?.name} />
           </div>
           <div className="input-group">
             <label htmlFor="userEmail">User Email</label>
-            <input ref={userEmailRef} type="text" id="userEmail" defaultValue={currentUser?.email} />
+            <input ref={userEmailRef} type="text" readOnly={isViewUser} id="userEmail" defaultValue={currentUser?.email} />
           </div>
-          <Button
-            buttonName={currentUser ? MODAL_INFORMATION.EDIT : MODAL_INFORMATION.ADD}
-            type="success"
-            onClick={() => handleSubmitUser(currentUser)}
-          />
+          {isViewUser ?
+            <Button
+              buttonName="Edit"
+              type="primary"
+              onClick={() => onEdit(false)}
+            /> :
+            <Button
+              buttonName={currentUser ? MODAL_INFORMATION.EDIT : MODAL_INFORMATION.ADD}
+              type="success"
+              onClick={() => handleSubmitUser(currentUser)}
+            />
+          }
+
           <Button
             buttonName={MODAL_INFORMATION.CANCEL}
             type="secondary"

@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Hoang Le",
+      "email": "hoang.le@asnet.com.vn"
+    },
+    {
+      "id": 2,
+      "name": "Paul Bettany",
+      "email": "paul@gmail.com"
+    },
+    {
+      "name": "Emily",
+      "email": "emily@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Vanya",
+      "email": "vanya@gmail.com",
+      "id": 4
+    }
+  ]
+}

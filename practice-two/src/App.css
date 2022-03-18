@@ -1,0 +1,49 @@
+.app {
+  background-color: #eeeeee;
+  padding: 30px 0;
+}
+
+.app__heading {
+  font-size: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333333;
+  margin-bottom: 30px;
+}
+
+.user-list {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.list-head,
+.list-item {
+  border: 1px solid #333333;
+  text-align: left;
+  padding: 8px;
+}
+
+.empty-item,
+.error-msg {
+  color: #ff0000;
+  font-style: italic;
+}
+
+.create-user {
+  width: 90%;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.search-user {
+  width: 90%;
+  margin: 0 auto;
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.search-user input {
+  padding: 5px;
+  margin-left: 10px;
+}

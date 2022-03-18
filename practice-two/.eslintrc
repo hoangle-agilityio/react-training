@@ -1,0 +1,16 @@
+{
+  "plugins": ["react-hooks"],
+  "extends": ["prettier", "plugin:react-hooks/recommended"],
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "semi": false,
+        "singleQuote": true,
+        "printWidth": 120
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error", // Check rules of hooks
+    "react-hooks/exhaustive-deps": "warn" // Check effect dependency
+  }
+}

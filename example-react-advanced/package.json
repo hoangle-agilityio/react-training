@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "json:server": "json-server --watch db.json",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.33",

@@ -5,13 +5,15 @@ import ViewPostHook from './components/ViewPostHook'
 import ViewCategory from './hoc/ViewCategory'
 import ViewPost from './hoc/ViewPost'
 import './index.css'
+import App from './SWR'
 
 ReactDOM.render(
   <React.StrictMode>
-    <ViewPost/>
+    {/* <ViewPost/>
     <ViewCategory/>
     <ViewCategoryHook />
-    <ViewPostHook />
+    <ViewPostHook /> */}
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 )

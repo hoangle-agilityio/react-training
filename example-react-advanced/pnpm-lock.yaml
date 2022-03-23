@@ -6,12 +6,14 @@ specifiers:
   '@vitejs/plugin-react': ^1.0.7
   react: ^17.0.2
   react-dom: ^17.0.2
+  swr: ^1.2.2
   typescript: ^4.5.4
   vite: ^2.8.0
 
 dependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  swr: 1.2.2_react@17.0.2
 
 devDependencies:
   '@types/react': 17.0.41
@@ -829,6 +831,14 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /swr/1.2.2_react@17.0.2:
+    resolution: {integrity: sha512-ky0BskS/V47GpW8d6RU7CPsr6J8cr7mQD6+do5eky3bM0IyJaoi3vO8UhvrzJaObuTlGhPl2szodeB2dUd76Xw==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 17.0.2
+    dev: false
 
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=}

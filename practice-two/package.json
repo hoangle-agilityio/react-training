@@ -7,18 +7,25 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "prepare": "cd .. && husky install practice/.husky"
+    "prepare": "cd .. && husky install practice/.husky",
+    "test": "jest"
   },
   "dependencies": {
     "@types/react-modal": "^3.13.1",
     "json-server": "^0.17.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-modal": "^3.14.4"
+    "react-modal": "^3.14.4",
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
+    "@testing-library/dom": "^8.11.4",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.1",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@typescript-eslint/parser": "^5.14.0",
@@ -26,9 +33,14 @@
     "eslint": "^8.10.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "global-jsdom": "^8.4.0",
     "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "jest-environment-jsdom-fifteen": "^1.0.2",
+    "jsdom": "^19.0.0",
     "prettier": "^2.5.1",
-    "typescript": "^4.5.4",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.2",
     "vite": "^2.8.0"
   }
 }

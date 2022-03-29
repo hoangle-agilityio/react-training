@@ -1,23 +1,26 @@
 import { memo, MutableRefObject, useRef, useState } from "react";
 import Modal from "react-modal";
-import User from "../../core/interfaces/user";
-import { addUser, updateUser } from "../../services";
-import { MODAL_INFORMATION } from "../../core/constants/modal-information";
-import { VALIDATE } from "../../core/constants/validate";
-import Button from "../Button";
 import "./modal.css";
+import Button from "../Button";
+import { mutate } from "swr";
+import { addUser, updateUser } from "../../services";
+import { VALIDATE } from "../../core/constants/validate";
+import User from "../../core/interfaces/user";
+import { MODAL_INFORMATION } from "../../core/constants/modal-information";
+import { API_BASE_URL } from "../../core/constants/api-url";
 
 interface ModalUserProps {
   open: boolean;
   currentUser?: User;
-  users: User[];
+  users?: User[];
   isViewUser: boolean;
   onEdit: React.Dispatch<React.SetStateAction<boolean>>;
-  onSuccess: React.Dispatch<React.SetStateAction<User[]>>;
   closeModal: () => void;
 }
 
-function ModalUser({ open, currentUser, users, isViewUser, onEdit, onSuccess, closeModal }: ModalUserProps) {
+const apiUrl: string = `${API_BASE_URL}/users`;
+
+function ModalUser({ open, currentUser, users, isViewUser, onEdit, closeModal }: ModalUserProps) {
   const [errors, setErrors] = useState<string[]>([]);
 
   const userNameRef = useRef() as MutableRefObject<HTMLInputElement>;
@@ -28,14 +31,10 @@ function ModalUser({ open, currentUser, users, isViewUser, onEdit, onSuccess, cl
   // Add user data to server
   const handleAddUser = async (userData: Partial<User>): Promise<void> => {
     try {
-      const result: User = await addUser(userData);
-      alert("User added successfully!");
+      await addUser(userData);
+      mutate(apiUrl);
 
-      // Get all user after add data
-      onSuccess([
-        ...users,
-        result
-      ]);
+      alert("User added successfully!");
     } catch (error) {
       throw new Error(`Get data failed: ${error}`);
     }
@@ -44,17 +43,10 @@ function ModalUser({ open, currentUser, users, isViewUser, onEdit, onSuccess, cl
   // Update user data to server
   const handleUpdateUser = async (userData: Partial<User>): Promise<void> => {
     try {
-      const result: User = await updateUser(userData);
+      await updateUser(userData);
+      mutate(apiUrl);
+
       alert("User updated successfully!");
-
-      // Find index of user
-      const index: number = users.findIndex(data => {
-        return data.id === result.id;
-      });
-
-      // Update array after editing
-      users[index] = result;
-      onSuccess([...users]);
     } catch (error) {
       throw new Error(`Get data failed: ${error}`);
     }

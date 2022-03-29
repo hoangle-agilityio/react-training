@@ -48,6 +48,8 @@ export default function App(): JSX.Element {
 
   if (error) throw new Error(`Get data failed: ${error}`);
 
+  if (!users) return <div className="loader"></div>
+
   return (
     <div className="app">
       <h1 className="app__heading">User Management</h1>

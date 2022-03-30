@@ -12,7 +12,6 @@ import { API_BASE_URL } from "../../core/constants/api-url";
 interface ModalUserProps {
   open: boolean;
   currentUser?: User;
-  users?: User[];
   isViewUser: boolean;
   onEdit: React.Dispatch<React.SetStateAction<boolean>>;
   closeModal: () => void;
@@ -20,7 +19,7 @@ interface ModalUserProps {
 
 const apiUrl: string = `${API_BASE_URL}/users`;
 
-function ModalUser({ open, currentUser, users, isViewUser, onEdit, closeModal }: ModalUserProps) {
+function ModalUser({ open, currentUser, isViewUser, onEdit, closeModal }: ModalUserProps) {
   const [errors, setErrors] = useState<string[]>([]);
 
   const userNameRef = useRef() as MutableRefObject<HTMLInputElement>;
@@ -52,28 +51,32 @@ function ModalUser({ open, currentUser, users, isViewUser, onEdit, closeModal }:
     }
   }
 
-  const handleSubmitUser = (currentUser: User | undefined): void => {
-    const userData: Partial<User> = {
-      name: userNameRef.current.value,
-      email: userEmailRef.current.value,
-    };
+  const handleSubmitUser = async (currentUser: User | undefined): Promise<void> => {
+    try {
+      const userData: Partial<User> = {
+        name: userNameRef.current.value,
+        email: userEmailRef.current.value,
+      };
 
-    const errors = validate(userData);
+      const errors = validate(userData);
 
-    if (errors.length > 0) {
-      setErrors(errors);
-      return;
+      if (errors.length > 0) {
+        setErrors(errors);
+        return;
+      }
+
+      if (currentUser) {
+        userData.id = currentUser.id;
+        await handleUpdateUser(userData);
+      } else {
+        await handleAddUser(userData);
+      }
+
+      // Close modal after add data
+      closeModal();
+    } catch (error) {
+      console.log(error);
     }
-
-    if (currentUser) {
-      userData.id = currentUser.id;
-      handleUpdateUser(userData);
-    } else {
-      handleAddUser(userData);
-    }
-
-    // Close modal after add data
-    closeModal();
   }
 
   // Validate for user data

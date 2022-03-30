@@ -115,7 +115,6 @@ export default function App(): JSX.Element {
       <ModalUser
         open={isOpenModal}
         currentUser={currentUser}
-        users={users}
         isViewUser={isViewUser}
         onEdit={setIsViewUser}
         closeModal={handleCloseModal}

@@ -1,17 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useSWR, { mutate } from "swr";
 import "./App.css";
+import { deleteUser, getAllUsers } from "./services";
 import Button from "./components/Button";
 import ModalUser from "./components/Modal";
-import { searching } from "./core/helpers/search-helper";
 import User from "./core/interfaces/user";
-import { deleteUser, getAllUsers } from "./services";
+import { API_BASE_URL } from "./core/constants/api-url";
+import { searching } from "./core/helpers/search-helper";
+
+const apiUrl: string = `${API_BASE_URL}/users`;
 
 export default function App(): JSX.Element {
-  const [users, setUsers] = useState<User[]>([]);
   const [currentUser, setCurrentUser] = useState<User>();
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [isViewUser, setIsViewUser] = useState(false);
+
+  const { data: users, error } = useSWR<User[], Promise<User[]>>(apiUrl, async () => await getAllUsers());
 
   const handleOpenModal = (): void => setIsOpenModal(true);
   const handleCloseModal = (): void => setIsOpenModal(false);
@@ -22,30 +27,12 @@ export default function App(): JSX.Element {
     handleOpenModal();
   }
 
-  // Get all users
-  const handleGetUsers = async (): Promise<void> => {
-    try {
-      setUsers(await getAllUsers());
-    } catch (error) {
-      throw new Error(`Get data failed: ${error}`);
-    }
-  };
-
   // Delete user when click to button delete
   const handleDeleteUser = async (user: User): Promise<void> => {
     if (confirm("Are you sure to delete this user?")) {
       try {
         await deleteUser(user.id);
-
-        // Find index of user
-        const index = users.indexOf(user);
-
-        // If index exists, remove that index in array.
-        // After that, set state user list after remove index
-        if (index > -1) {
-          users.splice(index, 1);
-          setUsers([...users]);
-        }
+        mutate(apiUrl, users?.filter(result => result.id !== user.id));
 
         alert("User deleted successfully!");
       } catch (error) {
@@ -55,14 +42,13 @@ export default function App(): JSX.Element {
   }
 
   // Filter user list by searchTerm
-  const searchResult = users.filter(user => {
+  const searchResult = users?.filter(user => {
     return searching(user, searchTerm);
   });
 
-  // Use useEffect avoid to call function repeatedly
-  useEffect(() => {
-    handleGetUsers();
-  }, []);
+  if (error) throw new Error(`Get data failed: ${error}`);
+
+  if (!users) return <div className="loader"></div>
 
   return (
     <div className="app">
@@ -89,13 +75,13 @@ export default function App(): JSX.Element {
             </tr>
           </thead>
           <tbody>
-            {searchResult.length === 0 ? (
+            {searchResult?.length === 0 ? (
               <tr>
                 <td className="empty-item">No data found!</td>
               </tr>
             ) : (
               <>
-                {searchResult.map(user => (
+                {searchResult?.map(user => (
                   <tr key={user.id}>
                     <td className="list-item">{user.id}</td>
                     <td className="list-item">{user.name}</td>
@@ -132,7 +118,6 @@ export default function App(): JSX.Element {
         users={users}
         isViewUser={isViewUser}
         onEdit={setIsViewUser}
-        onSuccess={setUsers}
         closeModal={handleCloseModal}
       />
     </div>

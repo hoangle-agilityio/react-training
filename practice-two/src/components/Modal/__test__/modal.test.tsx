@@ -1,6 +1,14 @@
-import { cleanup, fireEvent, render } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import ModalUser from "..";
-import fetchMock from "jest-fetch-mock";
+
+// Create mock for modal
+jest.mock("../index");
+
+// Create mock for api
+jest.mock("../../../services/index");
+
+window.alert = jest.fn();
 
 const modalProps = {
   open: true,
@@ -9,9 +17,11 @@ const modalProps = {
   closeModal: jest.fn(),
 }
 
-jest.mock("../index");
-
-window.alert = jest.fn();
+const currentUser = {
+  id: 1,
+  name: "Hoang",
+  email: "hoang.le@asnet.com.vn"
+}
 
 describe('Modal Component', () => {
   afterEach(cleanup);
@@ -23,52 +33,44 @@ describe('Modal Component', () => {
   });
 
   it('should be render modal title as Update User', () => {
-    const currentUser = {
-      id: 1,
-      name: "Hoang",
-      email: "hoang.le@asnet.com.vn"
-    }
-
     const { container } = render(<ModalUser {...modalProps} currentUser={currentUser} />);
 
     expect(container.querySelector(".modal-title")?.textContent).toBe("Update User");
   });
 
   it('should be render modal title as View User', () => {
-    const currentUser = {
-      id: 1,
-      name: "Hoang",
-      email: "hoang.le@asnet.com.vn"
-    }
-
     const { container } = render(<ModalUser {...modalProps} isViewUser={true} currentUser={currentUser} />);
 
     expect(container.querySelector(".modal-title")?.textContent).toBe("View User");
   });
 
-  it('should be click event to go to edit modal', async () => {
-    const currentUser = {
-      id: 1,
-      name: "Hoang",
-      email: "hoang.le@asnet.com.vn"
-    }
+  it('should be button click event to move to edit modal', () => {
+    const { getByRole } = render(<ModalUser {...modalProps} isViewUser={true} currentUser={currentUser} />);
+    const button = getByRole("button", { name: /Edit/i });
+    const onClick = fireEvent.click(button);
 
-    const { container, getByRole } = render(<ModalUser {...modalProps} isViewUser={true} currentUser={currentUser} />);
-    await fireEvent.click(getByRole("button", { name: /Edit/i }));
-
-    console.log(await container.outerHTML);
+    expect(onClick).toBe(true);
   });
 
-  it('should be click event to update user', () => {
-    const currentUser = {
-      id: 1,
-      name: "Hoang",
-      email: "hoang.le@asnet.com.vn"
-    }
-
-    fetchMock.mockResponseOnce(JSON.stringify(currentUser));
-
+  it('should be button click event to update user', () => {
     const { getByRole } = render(<ModalUser {...modalProps} currentUser={currentUser} />);
-    fireEvent.click(getByRole("button", { name: /Update User/i }));
+    const button = getByRole("button", { name: /Update User/i });
+    const onClick = fireEvent.click(button);
+
+    expect(onClick).toBe(true);
+  });
+
+  it('should be button click event to create user', () => {
+    const { getByPlaceholderText, getByRole } = render(<ModalUser {...modalProps} />);
+    const userName = getByPlaceholderText(/user name/i);
+    const userEmail = getByPlaceholderText(/user email/i);
+    const button = getByRole("button", { name: /Add User/i });
+
+    userEvent.type(userName, "Hoang Le");
+    userEvent.type(userEmail, "hoang.le@gmail.com");
+
+    const onClick = fireEvent.click(button);
+
+    expect(onClick).toBe(true);
   });
 });

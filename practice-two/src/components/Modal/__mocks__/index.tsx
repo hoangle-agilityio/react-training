@@ -107,11 +107,11 @@ function ModalUser({ open, currentUser, isViewUser, onEdit, closeModal }: ModalU
 
       <div className="input-group">
         <label htmlFor="userName">User Name</label>
-        <input ref={userNameRef} type="text" readOnly={isViewUser} id="userName" defaultValue={currentUser?.name} />
+        <input ref={userNameRef} type="text" placeholder="user name" readOnly={isViewUser} id="userName" defaultValue={currentUser?.name} />
       </div>
       <div className="input-group">
         <label htmlFor="userEmail">User Email</label>
-        <input ref={userEmailRef} type="text" readOnly={isViewUser} id="userEmail" defaultValue={currentUser?.email} />
+        <input ref={userEmailRef} type="text" placeholder="user email" readOnly={isViewUser} id="userEmail" defaultValue={currentUser?.email} />
       </div>
       {isViewUser ?
         <Button

@@ -13,6 +13,7 @@ describe('Button Component', () => {
     const { getByRole } = render(<Button {...buttonProps} />);
 
     expect(getByRole('button').textContent).toBe('Add User');
+    expect(getByRole('button')).toMatchSnapshot();
   });
 
   it('should be click event', () => {
@@ -21,5 +22,6 @@ describe('Button Component', () => {
 
     fireEvent.click(getByText('Add User'));
     expect(onClick).toHaveBeenCalledTimes(1);
+    expect(getByText('Add User')).toMatchSnapshot();
   });
 });

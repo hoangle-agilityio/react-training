@@ -30,18 +30,21 @@ describe('Modal Component', () => {
     const { container } = render(<ModalUser {...modalProps} />);
 
     expect(container.querySelector(".modal-title")?.textContent).toBe("Add User");
+    expect(container.querySelector(".modal-title")).toMatchSnapshot();
   });
 
   it('should be render modal title as Update User', () => {
     const { container } = render(<ModalUser {...modalProps} currentUser={currentUser} />);
 
     expect(container.querySelector(".modal-title")?.textContent).toBe("Update User");
+    expect(container.querySelector(".modal-title")).toMatchSnapshot();
   });
 
   it('should be render modal title as View User', () => {
     const { container } = render(<ModalUser {...modalProps} isViewUser={true} currentUser={currentUser} />);
 
     expect(container.querySelector(".modal-title")?.textContent).toBe("View User");
+    expect(container.querySelector(".modal-title")).toMatchSnapshot();
   });
 
   it('should be button click event to move to edit modal', () => {
@@ -50,6 +53,7 @@ describe('Modal Component', () => {
     const onClick = fireEvent.click(button);
 
     expect(onClick).toBe(true);
+    expect(button).toMatchSnapshot();
   });
 
   it('should be button click event to update user', () => {
@@ -58,6 +62,7 @@ describe('Modal Component', () => {
     const onClick = fireEvent.click(button);
 
     expect(onClick).toBe(true);
+    expect(button).toMatchSnapshot();
   });
 
   it('should be button click event to create user', () => {
@@ -72,5 +77,6 @@ describe('Modal Component', () => {
     const onClick = fireEvent.click(button);
 
     expect(onClick).toBe(true);
+    expect(button).toMatchSnapshot();
   });
 });

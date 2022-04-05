@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component should take a snapshot 1`] = `
+<div
+  class="app"
+>
+  <h1
+    class="app__heading"
+  >
+    User Management
+  </h1>
+  <section
+    class="create-user"
+  >
+    <button
+      class="btn btn-success"
+    >
+      Add User
+    </button>
+  </section>
+  <section
+    class="search-user"
+  >
+    <label
+      for="search"
+    >
+      Search:
+    </label>
+    <input
+      id="search"
+      type="text"
+    />
+  </section>
+  <section>
+    <table
+      class="user-list"
+    >
+      <thead>
+        <tr>
+          <th
+            class="list-head"
+          >
+            User Id
+          </th>
+          <th
+            class="list-head"
+          >
+            Name
+          </th>
+          <th
+            class="list-head"
+          >
+            Email
+          </th>
+          <th
+            class="list-head"
+          >
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            class="list-item"
+          >
+            1
+          </td>
+          <td
+            class="list-item username"
+          >
+            Hoang
+          </td>
+          <td
+            class="list-item"
+          >
+            hoang.le@asnet.com.vn
+          </td>
+          <td
+            class="list-item"
+          >
+            <button
+              class="btn btn-info"
+            >
+              View
+            </button>
+            <button
+              class="btn btn-primary"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-danger"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="list-item"
+          >
+            2
+          </td>
+          <td
+            class="list-item username"
+          >
+            Roy Le
+          </td>
+          <td
+            class="list-item"
+          >
+            royle@gmail.com
+          </td>
+          <td
+            class="list-item"
+          >
+            <button
+              class="btn btn-info"
+            >
+              View
+            </button>
+            <button
+              class="btn btn-primary"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-danger"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h2
+      class="modal-title"
+    >
+      Add User
+    </h2>
+    <div
+      class="input-group"
+    >
+      <label
+        for="userName"
+      >
+        User Name
+      </label>
+      <input
+        id="userName"
+        placeholder="user name"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="input-group"
+    >
+      <label
+        for="userEmail"
+      >
+        User Email
+      </label>
+      <input
+        id="userEmail"
+        placeholder="user email"
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      class="btn btn-success"
+    >
+      Add User
+    </button>
+    <button
+      class="btn btn-secondary"
+    >
+      Cancel
+    </button>
+  </section>
+</div>
+`;

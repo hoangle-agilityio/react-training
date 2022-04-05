@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component should be click event 1`] = `
+<button
+  class="btn btn-success"
+>
+  Add User
+</button>
+`;
+
+exports[`Button Component should be render button correctly 1`] = `
+<button
+  class="btn btn-success"
+>
+  Add User
+</button>
+`;

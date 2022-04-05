@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Component should be button click event to create user 1`] = `
+<button
+  class="btn btn-success"
+>
+  Add User
+</button>
+`;
+
+exports[`Modal Component should be button click event to move to edit modal 1`] = `
+<button
+  class="btn btn-primary"
+>
+  Edit
+</button>
+`;
+
+exports[`Modal Component should be button click event to update user 1`] = `
+<button
+  class="btn btn-success"
+>
+  Update User
+</button>
+`;
+
+exports[`Modal Component should be render modal title as Add User 1`] = `
+<h2
+  class="modal-title"
+>
+  Add User
+</h2>
+`;
+
+exports[`Modal Component should be render modal title as Update User 1`] = `
+<h2
+  class="modal-title"
+>
+  Update User
+</h2>
+`;
+
+exports[`Modal Component should be render modal title as View User 1`] = `
+<h2
+  class="modal-title"
+>
+  View User
+</h2>
+`;

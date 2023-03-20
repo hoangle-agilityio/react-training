@@ -1,59 +1,80 @@
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
+# Practice React Latest Version
 
-## Available Scripts
+### Overview:
+- This document provides the requirements for Customer’s Data Table Web App.
+- UI refer [Data Table](https://www.figma.com/file/XQpNVIrl8l2DwiSEEWxOJO/UI-CRUD?node-id=0%3A1&t=U41qTlLWtzyd85Rk-1).
 
-In the project directory, you can run:
+## Team size
+- 1 dev.
 
-### `npm start`
+### Targets:
+- Build web app React latest version (v18+)
+- Apply new things from React 18
+  - New React DOM Client: createRoot
+  - New hooks: useId, useTransition, useDeferredValue
+  - Automatic Batching
+  - Suspense for Data Fetching
+- Apply TypeScript to type checking
+- Apply Unit Test with React Testing Library
+- Apply Storybook
 
-Runs the app in the development mode.<br /> Open
-[http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Information:
+- Timeline:
+  - Total time: 36h
+  - Estimate time: 4.5 days (8h/day).
+  - Actual time: 9 days (4h/day).
+  - [Estimate here](https://docs.google.com/document/d/1GOs26ZI3M7wDE4RpoNyG5smrzUyYr_4O4IdhiFAuOqU/edit?usp=sharing)
 
-The page will reload if you make edits.<br /> You will also see any lint errors
-in the console.
+- Technical:
+  - React latest version (v18+)
+  - Chakra UI
+  - mockAPI
+  - React Query
+  - Storybook
+  - React Testing Library
 
-### `npm test`
+- Devtool:
+  - Visual Studio Code.
+  - Eslint
+  - Prettier
+  - Husky
+  - Commitlint
 
-Launches the test runner in the interactive watch mode.<br /> See the section
-about
-[running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-for more information.
+### Requirements:
+- List out the data table
+  - Search Name or Description section
+  - Add Customer button
+  - Customer’s Data table section
+  - Name
+  - Sorting
+  - Description
+  - Status
+  - Rate
+  - Balance
+  - Deposit
+- Add Customer modal
+  - Input name
+  - Input description
+  - Select status
+  - Input rate
+  - Input balance
+  - Input deposit
+  - Create button
+  - Cancel button
+- User can CRUD
+- Load more if data > 20 records
 
-### `npm run build`
+### Getting started:
 
-Builds the app for production to the `build` folder.<br /> It correctly bundles
-React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br /> Your app is
-ready to be deployed!
-
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can
-`eject` at any time. This command will remove the single build dependency from
-your project.
-
-Instead, it will copy all the configuration files and the transitive
-dependencies (webpack, Babel, ESLint, etc) right into your project so you have
-full control over them. All of the commands except `eject` will still work, but
-they will point to the copied scripts so you can tweak them. At this point
-you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for
-small and middle deployments, and you shouldn’t feel obligated to use this
-feature. However we understand that this tool wouldn’t be useful if you couldn’t
-customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Step 1: Cloning the repo
+  - Main repo:
+    - HTTPS: `$ git clone https://gitlab.asoft-python.com/hoang.le/react-training.git`
+    - SSH: `$ git clone git@gitlab.asoft-python.com:hoang.le/react-training.git`
+- Step 2: Checkout branch `$ git checkout develop`
+- Step 3: Go to the folder practice `cd react-training/practice-react-latest-version`
+- Step 4: Install package `yarn install`
+- Step 5: Run project `yarn start`
+- Step 6: Open http://localhost:3000/ in your browser.
+- Step 7: Run storybook : `yarn storybook`
+- Step 8: View storybook on `http://localhost:6006/`
+- Step 9: Run unit test: `yarn test`

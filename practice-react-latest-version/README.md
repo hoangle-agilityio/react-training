@@ -75,6 +75,18 @@
 - Step 4: Install package `yarn install`
 - Step 5: Run project `yarn start`
 - Step 6: Open http://localhost:3000/ in your browser.
-- Step 7: Run storybook : `yarn storybook`
+- Step 7: Setup storybook
+  - Add the addon in `.storybook/main.js`
+      > module.exports = {
+      addons: ['@chakra-ui/storybook-addon'],
+    }
+  - Add the addon in `.storybook/preview.js`
+    > import themes from "../src/themes";
+    export const parameters = {
+      chakra: {
+        theme: themes,
+      },
+    };
+  - Run storybook : `yarn storybook`
 - Step 8: View storybook on `http://localhost:6006/`
 - Step 9: Run unit test: `yarn test`

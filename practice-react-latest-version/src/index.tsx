@@ -10,7 +10,7 @@ import "./styles/globals.css";
 import themes from "./themes";
 
 // Components
-import App from "./pages";
+import App from "pages/DataTable";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");

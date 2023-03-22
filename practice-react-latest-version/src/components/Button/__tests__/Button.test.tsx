@@ -28,7 +28,7 @@ describe("Button Component", () => {
 
   test("Should display button with type is text", () => {
     const dom = render(
-      <Button label="Text" type="text" styles={{ color: "blue.200" }} />
+      <Button label="Text" type="text" styles={{ color: "blue.300" }} />
     );
 
     expect(dom).toMatchSnapshot();

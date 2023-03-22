@@ -30,6 +30,6 @@ Text.args = {
   label: "Edit",
   type: "text",
   styles: {
-    color: "blue.200",
+    color: "blue.300",
   },
 };

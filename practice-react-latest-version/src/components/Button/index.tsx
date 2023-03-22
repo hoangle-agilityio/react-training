@@ -22,7 +22,7 @@ const Button = ({
   switch (type) {
     case "primary":
       props = {
-        bgColor: "blue.200",
+        bgColor: "blue.300",
         color: "white.100",
       };
       break;
@@ -47,7 +47,7 @@ const Button = ({
       fontWeight="500"
       _hover={{
         opacity: "70%",
-        bgColor: `${type === "secondary" ? "gray.100" : null}`,
+        bgColor: `${type === "secondary" ? "gray.200" : null}`,
       }}
       isDisabled={disabled}
       onClick={onClick}

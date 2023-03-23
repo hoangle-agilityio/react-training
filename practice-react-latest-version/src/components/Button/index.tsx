@@ -3,13 +3,13 @@ import * as React from "react";
 import { memo } from "react";
 import { Button as ReactButton, ButtonProps } from "@chakra-ui/react";
 
-interface Props {
+type Props = {
   label: React.ReactNode;
   disabled?: boolean;
   type?: "primary" | "secondary" | "text";
   styles?: ButtonProps;
   onClick?: () => void;
-}
+};
 
 const Button = ({
   label,

@@ -5,7 +5,6 @@ import { Text } from "@chakra-ui/react";
 
 // Components
 import Modal from "..";
-import { object } from "prop-types";
 
 const children: React.ReactNode = (
   <Text fontSize="base" margin="20px 0" data-testid="modal-content">

@@ -21,7 +21,7 @@ type StyleType = {
   input?: InputProps & TextareaProps;
 };
 
-interface Props {
+type Props = {
   label?: string;
   name: string;
   icon?: JSX.Element;
@@ -29,7 +29,8 @@ interface Props {
   styles?: StyleType;
   isTextArea?: boolean;
   error?: string;
-}
+} & InputProps &
+  TextareaProps;
 
 const Input = forwardRef(
   (
@@ -68,7 +69,7 @@ const Input = forwardRef(
 
     return (
       <>
-        <Box {...styles?.wrapper}>
+        <Box {...styles?.wrapper} color="gray.600">
           <FormLabel
             fontSize="base"
             fontFamily="heading"

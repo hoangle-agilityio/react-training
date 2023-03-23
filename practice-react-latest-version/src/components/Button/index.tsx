@@ -8,6 +8,8 @@ type Props = {
   disabled?: boolean;
   type?: "primary" | "secondary" | "text";
   styles?: ButtonProps;
+  leftIcon?: React.ReactElement<React.ReactNode>;
+  rightIcon?: React.ReactElement<React.ReactNode>;
   onClick?: () => void;
 };
 
@@ -16,6 +18,8 @@ const Button = ({
   disabled = false,
   type = "primary",
   styles,
+  leftIcon,
+  rightIcon,
   onClick,
 }: Props) => {
   let props = null;
@@ -40,17 +44,19 @@ const Button = ({
 
   return (
     <ReactButton
-      {...props}
-      {...styles}
       fontSize="base"
       fontFamily="medium"
       fontWeight="500"
       _hover={{
         opacity: "70%",
-        bgColor: `${type === "secondary" ? "gray.200" : null}`,
+        bgColor: `${type === "secondary" ? "gray.200" : "transparent"}`,
       }}
       isDisabled={disabled}
+      leftIcon={leftIcon}
+      rightIcon={rightIcon}
       onClick={onClick}
+      {...props}
+      {...styles}
     >
       {label}
     </ReactButton>

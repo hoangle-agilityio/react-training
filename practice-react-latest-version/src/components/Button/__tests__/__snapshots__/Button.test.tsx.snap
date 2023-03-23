@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="chakra-button css-9uqssv"
+        class="chakra-button css-y3z7ur"
         type="button"
       >
         Text
@@ -15,7 +15,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="chakra-button css-9uqssv"
+      class="chakra-button css-y3z7ur"
       type="button"
     >
       Text
@@ -81,7 +81,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="chakra-button css-a4tgal"
+        class="chakra-button css-12fn9zm"
         type="button"
       >
         Primary Button
@@ -90,7 +90,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="chakra-button css-a4tgal"
+      class="chakra-button css-12fn9zm"
       type="button"
     >
       Primary Button
@@ -156,7 +156,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="chakra-button css-oj79br"
+        class="chakra-button css-5dzhpe"
         type="button"
       >
         Secondary Button
@@ -165,7 +165,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="chakra-button css-oj79br"
+      class="chakra-button css-5dzhpe"
       type="button"
     >
       Secondary Button
@@ -231,7 +231,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="chakra-button css-a4tgal"
+        class="chakra-button css-12fn9zm"
         type="button"
       >
         Shared button
@@ -240,7 +240,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="chakra-button css-a4tgal"
+      class="chakra-button css-12fn9zm"
       type="button"
     >
       Shared button

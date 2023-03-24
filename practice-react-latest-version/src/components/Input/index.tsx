@@ -54,13 +54,13 @@ const Input = forwardRef(
       switch (iconPosition) {
         case "right":
           iconStyle = {
-            paddingRight: "10px",
+            paddingRight: "12px",
             flexDirection: "row-reverse",
           };
           break;
         default:
           iconStyle = {
-            paddingLeft: "10px",
+            paddingLeft: "12px",
             flexDirection: "row",
           };
           break;
@@ -70,13 +70,15 @@ const Input = forwardRef(
     return (
       <>
         <Box {...styles?.wrapper} color="gray.600">
-          <FormLabel
-            fontSize="base"
-            fontFamily="heading"
-            htmlFor={`${name}${id}`}
-          >
-            {label}
-          </FormLabel>
+          {label && (
+            <FormLabel
+              fontSize="base"
+              fontFamily="heading"
+              htmlFor={`${name}${id}`}
+            >
+              {label}
+            </FormLabel>
+          )}
           <Flex
             alignItems="center"
             border="1px"

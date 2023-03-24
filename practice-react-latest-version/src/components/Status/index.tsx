@@ -3,8 +3,11 @@ import { Badge, BadgeProps } from "@chakra-ui/react";
 import * as React from "react";
 import { memo } from "react";
 
+// Types
+import { StatusType } from "types/common";
+
 type Props = {
-  type: "Open" | "Paid" | "Due" | "Inactive" | "Others";
+  type: StatusType;
   label?: string;
   styles?: BadgeProps;
 };

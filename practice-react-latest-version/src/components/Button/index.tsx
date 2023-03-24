@@ -49,7 +49,7 @@ const Button = ({
       fontWeight="500"
       _hover={{
         opacity: "70%",
-        bgColor: `${type === "secondary" ? "gray.200" : "transparent"}`,
+        bgColor: `${type === "secondary" ? "gray.200" : null}`,
       }}
       isDisabled={disabled}
       leftIcon={leftIcon}

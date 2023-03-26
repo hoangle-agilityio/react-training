@@ -2,44 +2,70 @@
 import React, { useEffect, useState } from "react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { Box, CircularProgress, Flex, Image, Text } from "@chakra-ui/react";
-import { useInfiniteQuery, UseInfiniteQueryResult } from "react-query";
+import {
+  useInfiniteQuery,
+  UseInfiniteQueryResult,
+  useMutation,
+  UseMutationResult,
+  useQueryClient,
+} from "react-query";
 
 // Components
 import Button from "components/Button";
 import Input from "components/Input";
 import Status from "components/Status";
 import Dropdown from "components/Dropdown";
+import Notifications from "components/Notification";
 
 // Constants
 import { customerDataTableHeader, PAGE_LIMIT } from "constants/variables";
+import { CUSTOMER_ENDPOINT } from "constants/endpoint";
 
 // Types
 import { Customer } from "types/customer";
 import { StatusType } from "types/common";
 
 // Queries
-import { getCustomers } from "services/APIs";
-import Notifications from "components/Notification";
+import { deleteData, fetchData } from "services/apis/customers";
 
 const App = () => {
   const [isFetchNextPage, setIsFetchNextPage] = useState(false);
+  const [actionId, setActionId] = useState("");
+  const queryClient = useQueryClient();
 
+  // fetch customer's data with 20 records on 1 time
   const {
     data,
-    isLoading,
+    isLoading: isLoadMore,
     error,
     isError,
     hasNextPage,
     fetchNextPage,
   }: UseInfiniteQueryResult<Customer[], Error> = useInfiniteQuery(
-    "customers",
-    ({ pageParam = 1 }) => getCustomers(pageParam, PAGE_LIMIT),
+    CUSTOMER_ENDPOINT,
+    ({ pageParam = 1 }) => fetchData(pageParam, PAGE_LIMIT),
     {
       staleTime: 100000,
       getNextPageParam: (lastPage, pages) => {
         const nextPage = pages.length + 1;
 
         return lastPage.length > 0 ? nextPage : undefined;
+      },
+    }
+  );
+
+  // delete customer's data
+  const {
+    mutate,
+    isError: isErrorDelete,
+    error: errorDelete,
+    isLoading: isLoadingDelete,
+  }: UseMutationResult<Customer[], Error, string, unknown> = useMutation(
+    (id: string) => deleteData(id),
+    {
+      onSettled(_data, _error, id) {
+        queryClient.removeQueries([CUSTOMER_ENDPOINT, id]);
+        queryClient.refetchQueries(CUSTOMER_ENDPOINT);
       },
     }
   );
@@ -80,6 +106,11 @@ const App = () => {
     };
   }, [hasNextPage, fetchNextPage]);
 
+  const handleDeleteCustomer = (id: string) => {
+    mutate(id);
+    setActionId("");
+  };
+
   const renderHeader = () => (
     <Flex
       alignItems="center"
@@ -106,10 +137,14 @@ const App = () => {
     </Flex>
   );
 
-  const renderAction = () => (
+  const renderAction = (id: string) => (
     <Dropdown
       renderMenu={() => <Text fontSize="lg">&#x22EF;</Text>}
       stylesOption={{ width: "120px" }}
+      isActive={actionId === id}
+      isShowDropdown={!!actionId}
+      onOpen={() => setActionId(id)}
+      onClose={() => setActionId("")}
     >
       <Button
         label="View"
@@ -152,6 +187,7 @@ const App = () => {
           color: "red.200",
         }}
         rightIcon={<Image src="/icons/trash-filled.svg" />}
+        onClick={() => handleDeleteCustomer(id)}
       />
     </Dropdown>
   );
@@ -220,7 +256,7 @@ const App = () => {
               <Text color="gray.400">CAD</Text>
             </Flex>
             <Box width="20px" textAlign="right">
-              {renderAction()}
+              {renderAction(id)}
             </Box>
           </Flex>
         );
@@ -256,15 +292,35 @@ const App = () => {
             }}
           />
         </Flex>
-        {isError && <Notifications message={error.message} type="error" />}
+        {(isError || isErrorDelete) && (
+          <Notifications
+            message={error?.message || errorDelete?.message || ""}
+            type="error"
+          />
+        )}
         {renderHeader()}
         {!!data?.pages &&
           data.pages?.length > 0 &&
           data.pages?.map((customers) => renderBody(customers))}
-        {isLoading && (
+        {isLoadMore && (
           <Box textAlign="center" bgColor="white.100" paddingTop="10px">
             <CircularProgress isIndeterminate color="gray.300" size="30px" />
           </Box>
+        )}
+        {isLoadingDelete && (
+          <Flex
+            justifyContent="center"
+            alignItems="center"
+            bgColor="gray.200"
+            position="fixed"
+            opacity="0.5"
+            width="full"
+            height="full"
+            top="0"
+            left="0"
+          >
+            <CircularProgress isIndeterminate color="gray.300" size="60px" />
+          </Flex>
         )}
       </Box>
     </>

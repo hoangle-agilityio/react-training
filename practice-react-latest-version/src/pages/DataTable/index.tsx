@@ -18,7 +18,12 @@ import Dropdown from "components/Dropdown";
 import Notifications from "components/Notification";
 
 // Constants
-import { customerDataTableHeader, PAGE_LIMIT } from "constants/variables";
+import {
+  customerDataTableHeader,
+  PAGE_LIMIT,
+  sortOrders,
+  SORT_ORDER,
+} from "constants/variables";
 import { CUSTOMER_ENDPOINT } from "constants/endpoint";
 
 // Types
@@ -33,27 +38,30 @@ const App = () => {
   const [actionId, setActionId] = useState("");
   const [searchInput, setSearchInput] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [order, setOrder] = useState("");
   const [isPending, startTransition] = useTransition();
   const queryClient = useQueryClient();
 
   // fetch customer's data with 20 records on 1 time
   const {
     data,
-    isLoading: isLoadMore,
+    isFetching: isLoadMore,
     error,
     isError,
     hasNextPage,
     fetchNextPage,
   }: UseInfiniteQueryResult<Customer[], Error> = useInfiniteQuery(
-    [CUSTOMER_ENDPOINT, searchQuery],
-    ({ pageParam = 1 }) => fetchData(pageParam, PAGE_LIMIT, searchQuery),
+    [CUSTOMER_ENDPOINT, searchQuery, order],
+    ({ pageParam = 1 }) => fetchData(pageParam, PAGE_LIMIT, searchQuery, order),
     {
       suspense: true,
       refetchOnWindowFocus: false,
       getNextPageParam: (lastPage, pages) => {
         const nextPage = pages.length + 1;
 
-        return lastPage.length > 0 ? nextPage : undefined;
+        return lastPage.length > 0 && lastPage.length === PAGE_LIMIT
+          ? nextPage
+          : undefined;
       },
     }
   );
@@ -63,7 +71,7 @@ const App = () => {
     mutate,
     isError: isErrorDelete,
     error: errorDelete,
-    isLoading: isLoadingDelete,
+    isLoading,
   }: UseMutationResult<Customer[], Error, string, unknown> = useMutation(
     (id: string) => deleteData(id),
     {
@@ -128,31 +136,59 @@ const App = () => {
     });
   };
 
-  const renderHeader = () => (
-    <Flex
-      alignItems="center"
-      fontFamily="heading"
-      justifyContent="space-between"
-      padding="12px 20px"
-      fontSize="base"
-    >
-      <Flex alignItems="center" width="160px">
-        <Text>Name</Text>
-        <Image src="/icons/column-sorting-none.svg" />
-      </Flex>
-      {customerDataTableHeader.map(({ name, width, alignLeft }) => (
-        <Text
-          width={width}
-          textAlign={alignLeft ? "left" : "right"}
-          marginLeft="20px"
-          key={Math.random()}
+  // handle sort by name
+  const handleSortByName = () => {
+    // find current index in list of sort order
+    const findIndex = sortOrders.findIndex((data) => data === order);
+
+    // calculate next index based on find index
+    const nextIndex = findIndex === sortOrders.length - 1 ? 0 : findIndex + 1;
+
+    startTransition(() => {
+      setOrder(sortOrders[nextIndex]);
+    });
+  };
+
+  const renderHeader = () => {
+    const srcImage = `/icons/${
+      order === SORT_ORDER.NONE
+        ? "column-sorting-none.svg"
+        : order === SORT_ORDER.SORT_ASC
+        ? "column-sorting-asc.svg"
+        : "column-sorting-desc.svg"
+    }`;
+
+    return (
+      <Flex
+        alignItems="center"
+        fontFamily="heading"
+        justifyContent="space-between"
+        padding="12px 20px"
+        fontSize="base"
+      >
+        <Flex
+          alignItems="center"
+          width="160px"
+          onClick={handleSortByName}
+          cursor="pointer"
         >
-          {name}
-        </Text>
-      ))}
-      <Box width="20px" />
-    </Flex>
-  );
+          <Text>Name</Text>
+          <Image src={srcImage} />
+        </Flex>
+        {customerDataTableHeader.map(({ name, width, alignLeft }) => (
+          <Text
+            width={width}
+            textAlign={alignLeft ? "left" : "right"}
+            marginLeft="20px"
+            key={Math.random()}
+          >
+            {name}
+          </Text>
+        ))}
+        <Box width="20px" />
+      </Flex>
+    );
+  };
 
   const renderAction = (id: string) => (
     <Dropdown
@@ -332,7 +368,7 @@ const App = () => {
               data.pages?.map((customers) => renderBody(customers))}
         </Suspense>
         {isLoadMore && !isPending && renderIndicatorLoadMore()}
-        {isLoadingDelete && (
+        {isLoading && (
           <Flex
             justifyContent="center"
             alignItems="center"

@@ -1,10 +1,14 @@
 import { CUSTOMER_ENDPOINT } from "constants/endpoint";
 
-export const fetchData = async (page: number, limit: number) => {
+export const fetchData = async (
+  page: number,
+  limit: number,
+  filter: string
+) => {
   const url =
     process.env.REACT_APP_API_ENDPOINT +
     CUSTOMER_ENDPOINT +
-    `?page=${page}&limit=${limit}`;
+    `?page=${page}&limit=${limit}&filter=${filter}`;
 
   const res = await fetch(url, {
     method: "GET",

@@ -1,5 +1,5 @@
 // Libs
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useTransition, Suspense } from "react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { Box, CircularProgress, Flex, Image, Text } from "@chakra-ui/react";
 import {
@@ -31,6 +31,9 @@ import { deleteData, fetchData } from "services/apis/customers";
 const App = () => {
   const [isFetchNextPage, setIsFetchNextPage] = useState(false);
   const [actionId, setActionId] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isPending, startTransition] = useTransition();
   const queryClient = useQueryClient();
 
   // fetch customer's data with 20 records on 1 time
@@ -42,10 +45,11 @@ const App = () => {
     hasNextPage,
     fetchNextPage,
   }: UseInfiniteQueryResult<Customer[], Error> = useInfiniteQuery(
-    CUSTOMER_ENDPOINT,
-    ({ pageParam = 1 }) => fetchData(pageParam, PAGE_LIMIT),
+    [CUSTOMER_ENDPOINT, searchQuery],
+    ({ pageParam = 1 }) => fetchData(pageParam, PAGE_LIMIT, searchQuery),
     {
-      staleTime: 100000,
+      suspense: true,
+      refetchOnWindowFocus: false,
       getNextPageParam: (lastPage, pages) => {
         const nextPage = pages.length + 1;
 
@@ -106,9 +110,22 @@ const App = () => {
     };
   }, [hasNextPage, fetchNextPage]);
 
+  // handle delete customer
   const handleDeleteCustomer = (id: string) => {
     mutate(id);
     setActionId("");
+  };
+
+  // handle change search
+  const handleChangeSearch = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const value = e.target.value;
+    setSearchInput(value);
+
+    startTransition(() => {
+      setSearchQuery(value?.trim());
+    });
   };
 
   const renderHeader = () => (
@@ -263,6 +280,12 @@ const App = () => {
       }
     );
 
+  const renderIndicatorLoadMore = () => (
+    <Box textAlign="center" bgColor="white.100" paddingTop="10px">
+      <CircularProgress isIndeterminate color="gray.300" size="30px" />
+    </Box>
+  );
+
   return (
     <>
       <Box width="full" bgColor="gray.100">
@@ -283,6 +306,8 @@ const App = () => {
               },
             }}
             icon={<SearchIcon color="gray.400" />}
+            value={searchInput}
+            onChange={handleChangeSearch}
           />
           <Button
             label="+ Add customer"
@@ -299,14 +324,14 @@ const App = () => {
           />
         )}
         {renderHeader()}
-        {!!data?.pages &&
-          data.pages?.length > 0 &&
-          data.pages?.map((customers) => renderBody(customers))}
-        {isLoadMore && (
-          <Box textAlign="center" bgColor="white.100" paddingTop="10px">
-            <CircularProgress isIndeterminate color="gray.300" size="30px" />
-          </Box>
-        )}
+        <Suspense fallback={renderIndicatorLoadMore()}>
+          {isPending
+            ? renderIndicatorLoadMore()
+            : !!data?.pages &&
+              data.pages?.length > 0 &&
+              data.pages?.map((customers) => renderBody(customers))}
+        </Suspense>
+        {isLoadMore && !isPending && renderIndicatorLoadMore()}
         {isLoadingDelete && (
           <Flex
             justifyContent="center"

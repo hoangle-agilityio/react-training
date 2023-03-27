@@ -59,7 +59,7 @@ const App = () => {
       getNextPageParam: (lastPage, pages) => {
         const nextPage = pages.length + 1;
 
-        return lastPage.length > 0 && lastPage.length === PAGE_LIMIT
+        return lastPage?.length > 0 && lastPage?.length === PAGE_LIMIT
           ? nextPage
           : undefined;
       },

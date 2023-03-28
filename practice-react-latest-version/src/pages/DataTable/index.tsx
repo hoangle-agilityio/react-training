@@ -1,7 +1,20 @@
 // Libs
-import React, { useEffect, useState, useTransition, Suspense } from "react";
+import React, {
+  useEffect,
+  useState,
+  useTransition,
+  Suspense,
+  useMemo,
+} from "react";
 import { SearchIcon } from "@chakra-ui/icons";
-import { Box, CircularProgress, Flex, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  CircularProgress,
+  Flex,
+  Image,
+  Text,
+  Tooltip,
+} from "@chakra-ui/react";
 import {
   useInfiniteQuery,
   UseInfiniteQueryResult,
@@ -15,10 +28,12 @@ import Button from "components/Button";
 import Input from "components/Input";
 import Status from "components/Status";
 import Dropdown from "components/Dropdown";
-import Notifications from "components/Notification";
+import Notification from "components/Notification";
+import AddCustomerModal from "components/AddCustomerModal";
 
 // Constants
 import {
+  ACTION_TYPE,
   customerDataTableHeader,
   PAGE_LIMIT,
   sortOrders,
@@ -28,10 +43,11 @@ import { CUSTOMER_ENDPOINT } from "constants/endpoint";
 
 // Types
 import { Customer } from "types/customer";
-import { StatusType } from "types/common";
+import { StatusType, WithID } from "types/common";
 
 // Queries
-import { deleteData, fetchData } from "services/apis/customers";
+import { deleteData, fetchData } from "services/customers";
+import { debounce } from "utils/utilities";
 
 const App = () => {
   const [isFetchNextPage, setIsFetchNextPage] = useState(false);
@@ -39,6 +55,9 @@ const App = () => {
   const [searchInput, setSearchInput] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [order, setOrder] = useState("");
+  const [isShowAddCustomerModal, setShowAddCustomerModal] = useState(false);
+  const [actionType, setActionType] = useState("");
+  const [customerId, setCustomerId] = useState("");
   const [isPending, startTransition] = useTransition();
   const queryClient = useQueryClient();
 
@@ -50,7 +69,7 @@ const App = () => {
     isError,
     hasNextPage,
     fetchNextPage,
-  }: UseInfiniteQueryResult<Customer[], Error> = useInfiniteQuery(
+  }: UseInfiniteQueryResult<WithID<Customer>[], Error> = useInfiniteQuery(
     [CUSTOMER_ENDPOINT, searchQuery, order],
     ({ pageParam = 1 }) => fetchData(pageParam, PAGE_LIMIT, searchQuery, order),
     {
@@ -124,16 +143,26 @@ const App = () => {
     setActionId("");
   };
 
+  // handle delayed search query
+  const delayedQuery = useMemo(
+    () =>
+      debounce(
+        (value: string) =>
+          startTransition(() => {
+            setSearchQuery(value);
+          }),
+        1000
+      ),
+    [setSearchQuery]
+  );
+
   // handle change search
   const handleChangeSearch = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const value = e.target.value;
     setSearchInput(value);
-
-    startTransition(() => {
-      setSearchQuery(value?.trim());
-    });
+    delayedQuery(value?.trim());
   };
 
   // handle sort by name
@@ -147,6 +176,18 @@ const App = () => {
     startTransition(() => {
       setOrder(sortOrders[nextIndex]);
     });
+  };
+
+  // on toggle show/hide add customer modal
+  const onToggleAddCustomerModal = () => {
+    setShowAddCustomerModal((prevState) => !prevState);
+  };
+
+  // handle open add customer modal
+  const handleOpenAddCustomerModal = (type: string, id?: string) => {
+    setActionType(type);
+    id && setCustomerId(id);
+    onToggleAddCustomerModal();
   };
 
   const renderHeader = () => {
@@ -245,75 +286,104 @@ const App = () => {
     </Dropdown>
   );
 
-  const renderBody = (customers: Customer[]) =>
-    customers?.length > 0 &&
-    customers?.map(
-      (
-        { id, customerId, name, description, status, rate, balance, deposit },
-        index
-      ) => {
-        // if balance is less than 0, remove negative
-        const formatBalance =
-          balance < 0 ? balance.toString().split("-")[1] : balance;
+  const renderBody = (customers: WithID<Customer>[]) =>
+    customers?.length > 0 ? (
+      customers?.map(
+        (
+          { id, customerId, name, description, status, rate, balance, deposit },
+          index
+        ) => {
+          // if balance is less than 0, remove negative
+          const formatBalance =
+            balance < 0 ? balance.toString().split("-")[1] : balance;
 
-        return (
-          <Flex
-            alignItems="center"
-            fontFamily="body"
-            justifyContent="space-between"
-            padding="15px 20px 10px 20px"
-            fontSize="base"
-            bgColor={index % 2 === 0 ? "white.100" : undefined}
-            color="gray.600"
-            key={id}
-          >
-            <Flex alignItems="flex-start" width="160px" flexDirection="column">
-              <Text fontFamily="medium" color="gray.700">
-                {name}
-              </Text>
-              <Text color="gray.400">{customerId}</Text>
-            </Flex>
-            <Text width="320px" textAlign="left" marginLeft="20px">
-              {description}
-            </Text>
-            <Box width="70px" textAlign="center">
-              <Status type={status as StatusType} />
-            </Box>
+          return (
             <Flex
-              width="100px"
-              flexDirection="column"
-              textAlign="right"
-              marginLeft="20px"
+              alignItems="center"
+              fontFamily="body"
+              justifyContent="space-between"
+              padding="15px 20px 10px 20px"
+              fontSize="base"
+              bgColor={index % 2 === 0 ? "white.100" : undefined}
+              color="gray.600"
+              key={id}
             >
-              <Text>${rate.toFixed(2)}</Text>
-              <Text color="gray.400">CAD</Text>
+              <Flex
+                alignItems="flex-start"
+                width="160px"
+                flexDirection="column"
+              >
+                <Tooltip label={name}>
+                  <Text
+                    fontFamily="medium"
+                    color="gray.700"
+                    className="truncate-two-lines"
+                  >
+                    {name}
+                  </Text>
+                </Tooltip>
+                <Text color="gray.400">{customerId}</Text>
+              </Flex>
+              <Tooltip label={description}>
+                <Text
+                  width="320px"
+                  textAlign="left"
+                  marginLeft="20px"
+                  className="truncate-two-lines"
+                >
+                  {description}
+                </Text>
+              </Tooltip>
+              <Box width="70px" textAlign="center">
+                <Status type={status as StatusType} />
+              </Box>
+              <Flex
+                width="100px"
+                flexDirection="column"
+                textAlign="right"
+                marginLeft="20px"
+              >
+                <Text>${rate.toFixed(2)}</Text>
+                <Text color="gray.400">CAD</Text>
+              </Flex>
+              <Flex
+                width="100px"
+                flexDirection="column"
+                textAlign="right"
+                marginLeft="20px"
+              >
+                <Text color={balance < 0 ? "red.200" : "green.200"}>
+                  {balance < 0 && "-"}${Number(formatBalance).toFixed(2)}
+                </Text>
+                <Text color="gray.400">CAD</Text>
+              </Flex>
+              <Flex
+                width="100px"
+                flexDirection="column"
+                textAlign="right"
+                marginLeft="20px"
+              >
+                <Text>${deposit.toFixed(2)}</Text>
+                <Text color="gray.400">CAD</Text>
+              </Flex>
+              <Box width="20px" textAlign="right">
+                {!!id && renderAction(id)}
+              </Box>
             </Flex>
-            <Flex
-              width="100px"
-              flexDirection="column"
-              textAlign="right"
-              marginLeft="20px"
-            >
-              <Text color={balance < 0 ? "red.200" : "green.200"}>
-                {balance < 0 && "-"}${Number(formatBalance).toFixed(2)}
-              </Text>
-              <Text color="gray.400">CAD</Text>
-            </Flex>
-            <Flex
-              width="100px"
-              flexDirection="column"
-              textAlign="right"
-              marginLeft="20px"
-            >
-              <Text>${deposit.toFixed(2)}</Text>
-              <Text color="gray.400">CAD</Text>
-            </Flex>
-            <Box width="20px" textAlign="right">
-              {renderAction(id)}
-            </Box>
-          </Flex>
-        );
-      }
+          );
+        }
+      )
+    ) : (
+      <Text
+        color="gray.600"
+        fontSize="base"
+        fontFamily="body"
+        bgColor="white.100"
+        textAlign="center"
+        padding="20px"
+      >
+        Customer not found.
+      </Text>
     );
 
   const renderIndicatorLoadMore = () => (
@@ -351,10 +421,11 @@ const App = () => {
               width: "146px",
               height: "32px",
             }}
+            onClick={() => handleOpenAddCustomerModal(ACTION_TYPE.ADD)}
           />
         </Flex>
         {(isError || isErrorDelete) && (
-          <Notifications
+          <Notification
             message={error?.message || errorDelete?.message || ""}
             type="error"
           />
@@ -384,6 +455,14 @@ const App = () => {
           </Flex>
         )}
       </Box>
+      {isShowAddCustomerModal && (
+        <AddCustomerModal
+          type={actionType}
+          id={customerId}
+          isOpen={isShowAddCustomerModal}
+          onClose={onToggleAddCustomerModal}
+        />
+      )}
     </>
   );
 };

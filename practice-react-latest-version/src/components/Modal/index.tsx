@@ -11,8 +11,8 @@ import {
 import React, { memo } from "react";
 
 type StyleTypes = {
-  wrapper: ModalContentProps;
-  title: ModalHeaderProps;
+  wrapper?: ModalContentProps;
+  title?: ModalHeaderProps;
 };
 
 type Props = {

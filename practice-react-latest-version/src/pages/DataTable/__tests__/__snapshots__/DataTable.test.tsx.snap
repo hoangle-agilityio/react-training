@@ -87,6 +87,11 @@ Object {
             class="css-yikrym"
           />
         </div>
+        <p
+          class="chakra-text css-1eyzw2h"
+        >
+          Customer not found.
+        </p>
       </div>
     </div>
   </body>,
@@ -173,6 +178,11 @@ Object {
           class="css-yikrym"
         />
       </div>
+      <p
+        class="chakra-text css-1eyzw2h"
+      >
+        Customer not found.
+      </p>
     </div>
   </div>,
   "debug": [Function],
@@ -316,37 +326,11 @@ Object {
             class="css-yikrym"
           />
         </div>
-        <div
-          class="css-3ehqor"
+        <p
+          class="chakra-text css-1eyzw2h"
         >
-          <div
-            aria-valuemax="100"
-            aria-valuemin="0"
-            class="chakra-progress css-7d3cb9"
-            data-indeterminate=""
-            role="progressbar"
-          >
-            <svg
-              class="css-tn9112"
-              viewBox="0 0 100 100"
-            >
-              <circle
-                class="chakra-progress__track css-1bhxzgy"
-                cx="50"
-                cy="50"
-                r="42"
-                stroke-width="10px"
-              />
-              <circle
-                class="chakra-progress__indicator css-qa0lra"
-                cx="50"
-                cy="50"
-                r="42"
-                stroke-width="10px"
-              />
-            </svg>
-          </div>
-        </div>
+          Customer not found.
+        </p>
       </div>
     </div>
   </body>,
@@ -433,37 +417,11 @@ Object {
           class="css-yikrym"
         />
       </div>
-      <div
-        class="css-3ehqor"
+      <p
+        class="chakra-text css-1eyzw2h"
       >
-        <div
-          aria-valuemax="100"
-          aria-valuemin="0"
-          class="chakra-progress css-7d3cb9"
-          data-indeterminate=""
-          role="progressbar"
-        >
-          <svg
-            class="css-tn9112"
-            viewBox="0 0 100 100"
-          >
-            <circle
-              class="chakra-progress__track css-1bhxzgy"
-              cx="50"
-              cy="50"
-              r="42"
-              stroke-width="10px"
-            />
-            <circle
-              class="chakra-progress__indicator css-qa0lra"
-              cx="50"
-              cy="50"
-              r="42"
-              stroke-width="10px"
-            />
-          </svg>
-        </div>
-      </div>
+        Customer not found.
+      </p>
     </div>
   </div>,
   "debug": [Function],

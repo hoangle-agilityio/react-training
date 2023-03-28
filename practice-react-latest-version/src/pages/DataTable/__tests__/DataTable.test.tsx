@@ -37,7 +37,7 @@ const mockData = [
 ];
 
 // Create mock for api
-jest.mock("services/apis/customers", () => {
+jest.mock("services/customers", () => {
   return {
     fetchData: jest
       .fn()

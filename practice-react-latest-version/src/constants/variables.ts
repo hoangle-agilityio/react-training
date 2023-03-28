@@ -38,6 +38,12 @@ export enum SORT_ORDER {
   SORT_DESC = "desc",
 }
 
+export const SORT_IMAGE = {
+  NONE: "column-sorting-none.svg",
+  ASC: "column-sorting-asc.svg",
+  DESC: "column-sorting-desc.svg",
+};
+
 export const ACTION_TYPE = {
   ADD: "add",
   EDIT: "edit",

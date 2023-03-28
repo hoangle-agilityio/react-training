@@ -1,7 +1,13 @@
 // Libs
 import React, { memo, useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useMutation, UseMutationResult, useQueryClient } from "react-query";
+import {
+  useMutation,
+  UseMutationResult,
+  useQuery,
+  useQueryClient,
+  UseQueryResult,
+} from "react-query";
 import { CircularProgress, Flex } from "@chakra-ui/react";
 
 // Components
@@ -18,19 +24,27 @@ import { REGEX_PATTERNS } from "constants/regexPatterns";
 import { CUSTOMER_ENDPOINT } from "constants/endpoint";
 
 // Types
-import { OptionType } from "types/common";
+import { OptionType, WithID } from "types/common";
 import { MultiValue, SingleValue } from "react-select";
 import { Customer } from "types/customer";
 
 // Utils
-import { generateRandomCustomerId, regexValue } from "utils/utilities";
+import {
+  convertDataToObject,
+  generateRandomCustomerId,
+  regexValue,
+} from "utils/utilities";
 
 // Queries
-import { createData } from "services/customers";
+import {
+  createCustomer,
+  fetchCustomer,
+  updateCustomer,
+} from "services/customers";
 
 type Props = {
   type: string;
-  id: string;
+  id?: string;
   isOpen: boolean;
   onClose: () => void;
 };
@@ -56,13 +70,32 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
   } = useForm<FormValues>();
   const queryClient = useQueryClient();
 
+  // fetch customer data by id
+  const {
+    data: customer,
+    isFetching,
+    error: errorFetchData,
+    isError: isErrorFetchData,
+  }: UseQueryResult<Customer, Error> = useQuery(
+    "customer",
+    () => id && fetchCustomer(id),
+    {
+      refetchOnWindowFocus: false,
+    }
+  );
+
+  // if type is add, create customer
+  // otherwise, update customer
   const {
     mutate,
     isError,
     error,
     isLoading,
-  }: UseMutationResult<Customer[], Error, Customer, unknown> = useMutation(
-    (input: Customer) => createData(input),
+  }: UseMutationResult<Customer, Error, Customer, unknown> = useMutation(
+    (input: Customer) =>
+      type === ACTION_TYPE.ADD
+        ? createCustomer(input)
+        : updateCustomer(input as WithID<Customer>),
     {
       onSettled() {
         queryClient.refetchQueries(CUSTOMER_ENDPOINT);
@@ -72,13 +105,16 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
   );
 
   const setDefaultValues = useCallback(() => {
-    setValue("name", "");
-    setValue("description", "");
-    setValue("status", statusOptions[0]);
-    setValue("rate", "");
-    setValue("balance", "");
-    setValue("deposit", "");
-  }, [setValue]);
+    setValue("name", customer?.name || "");
+    setValue("description", customer?.description || "");
+    setValue(
+      "status",
+      convertDataToObject(customer?.status as string) || statusOptions[0]
+    );
+    setValue("rate", customer?.rate?.toString() || "");
+    setValue("balance", customer?.balance?.toString() || "");
+    setValue("deposit", customer?.deposit?.toString() || "");
+  }, [setValue, customer]);
 
   // set default value
   useEffect(() => {
@@ -153,9 +189,10 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
     clearErrors("deposit");
   };
 
-  // handle add customer
-  const handleAddCustomer = () => {
-    const inputCustomer: Customer = {
+  // handle submit customer data
+  const handleSubmitCustomerData = () => {
+    const inputCustomer = {
+      ...(type === ACTION_TYPE.EDIT && { id }),
       name: getValues("name"),
       customerId: generateRandomCustomerId(),
       description: getValues("description"),
@@ -212,6 +249,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
         })}
         error={errors?.name?.message ?? ""}
         onChange={(e) => handleChangeName(e)}
+        isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
         label="Description"
@@ -232,6 +270,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
         })}
         error={errors?.description?.message ?? ""}
         onChange={(e) => handleChangeDescription(e)}
+        isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Select
         label="Status"
@@ -240,6 +279,9 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           wrapper: {
             width: "401px",
             marginBottom: "30px",
+            ...(type === ACTION_TYPE.VIEW && {
+              cursor: "not-allowed",
+            }),
           },
           controlStyles: {
             height: "51px",
@@ -248,6 +290,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
         value={watch("status") || {}}
         {...register("status")}
         onChange={(e) => handleChangeStatus(e)}
+        isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
         label="Rate"
@@ -266,6 +309,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
         })}
         error={errors?.rate?.message ?? ""}
         onChange={(e) => handleChangeRate(e)}
+        isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
         label="Balance"
@@ -284,6 +328,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
         })}
         error={errors?.balance?.message ?? ""}
         onChange={(e) => handleChangeBalance(e)}
+        isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
         label="Deposit"
@@ -302,17 +347,25 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
         })}
         error={errors?.deposit?.message ?? ""}
         onChange={(e) => handleChangeDeposit(e)}
+        isDisabled={type === ACTION_TYPE.VIEW}
       />
-      {isError && <Notification message={error?.message || ""} type="error" />}
-      <Button
-        label="Create"
-        styles={{
-          width: "173px",
-          height: "51px",
-          marginBottom: "13px",
-        }}
-        onClick={handleSubmit(handleAddCustomer)}
-      />
+      {(isError || isErrorFetchData) && (
+        <Notification
+          message={error?.message || errorFetchData?.message || ""}
+          type="error"
+        />
+      )}
+      {type !== ACTION_TYPE.VIEW && (
+        <Button
+          label={type === ACTION_TYPE.ADD ? "Create" : "Save Changes"}
+          styles={{
+            width: "173px",
+            height: "51px",
+            marginBottom: "13px",
+          }}
+          onClick={handleSubmit(handleSubmitCustomerData)}
+        />
+      )}
       <Button
         label="Cancel"
         styles={{
@@ -322,7 +375,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
         type="secondary"
         onClick={onClose}
       />
-      {isLoading && (
+      {(isLoading || isFetching) && (
         <Flex
           justifyContent="center"
           alignItems="center"

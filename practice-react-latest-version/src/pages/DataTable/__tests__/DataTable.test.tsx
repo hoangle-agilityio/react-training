@@ -3,47 +3,8 @@ import App from "..";
 import { act, fireEvent, render } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 
-const mockData = [
-  {
-    customerId: 1234567890,
-    name: "name 1",
-    description: "description 11",
-    status: "status 1",
-    rate: 33,
-    balance: 11,
-    deposit: 37,
-    id: "1",
-  },
-  {
-    customerId: 2234567890,
-    name: "name 2",
-    description: "description 2",
-    status: "status 2",
-    rate: 40,
-    balance: 42,
-    deposit: 18,
-    id: "2",
-  },
-  {
-    customerId: 3234567890,
-    name: "name 3",
-    description: "description 3",
-    status: "status 3",
-    rate: 62,
-    balance: 21,
-    deposit: 12,
-    id: "3",
-  },
-];
-
 // Create mock for api
-jest.mock("services/customers", () => {
-  return {
-    fetchData: jest
-      .fn()
-      .mockImplementationOnce(() => Promise.resolve(mockData)),
-  };
-});
+jest.mock("services/customers");
 
 const queryClient = new QueryClient();
 

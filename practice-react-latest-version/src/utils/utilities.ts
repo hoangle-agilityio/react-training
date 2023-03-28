@@ -23,3 +23,13 @@ export const debounce = (func: (...args: string[]) => void, wait: number) => {
     timeout = setTimeout(latest, wait);
   };
 };
+
+// convert data to object
+export const convertDataToObject = (data: string) => {
+  return (
+    !!data && {
+      value: data,
+      label: data,
+    }
+  );
+};

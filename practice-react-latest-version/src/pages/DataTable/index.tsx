@@ -88,8 +88,6 @@ const App = () => {
     }
   );
 
-  console.log("data", data);
-
   // delete customer's data
   const {
     mutate,
@@ -222,7 +220,7 @@ const App = () => {
           cursor="pointer"
         >
           <Text>Name</Text>
-          <Image src={srcImage} />
+          <Image src={srcImage} width="16px" height="16px" alt={srcImage} />
         </Flex>
         {customerDataTableHeader.map(({ name, width, alignLeft }) => (
           <Text
@@ -260,7 +258,14 @@ const App = () => {
           borderRadius: "0",
           color: "blue.300",
         }}
-        rightIcon={<Image src="/icons/info.svg" />}
+        rightIcon={
+          <Image
+            src="/icons/info.svg"
+            width="16px"
+            height="16px"
+            alt="icon info"
+          />
+        }
         onClick={() => handleOpenAddCustomerModal(ACTION_TYPE.VIEW, id)}
       />
       <Button
@@ -275,7 +280,14 @@ const App = () => {
           borderRadius: "0",
           color: "blue.300",
         }}
-        rightIcon={<Image src="/icons/pencil-filed.svg" />}
+        rightIcon={
+          <Image
+            src="/icons/pencil-filed.svg"
+            width="16px"
+            height="16px"
+            alt="icon edit"
+          />
+        }
         onClick={() => handleOpenAddCustomerModal(ACTION_TYPE.EDIT, id)}
       />
       <Button
@@ -290,7 +302,14 @@ const App = () => {
           borderRadius: "0",
           color: "red.200",
         }}
-        rightIcon={<Image src="/icons/trash-filled.svg" />}
+        rightIcon={
+          <Image
+            src="/icons/trash-filled.svg"
+            width="16px"
+            height="16px"
+            alt="icon delete"
+          />
+        }
         onClick={() => handleDeleteCustomer(id)}
       />
     </Dropdown>

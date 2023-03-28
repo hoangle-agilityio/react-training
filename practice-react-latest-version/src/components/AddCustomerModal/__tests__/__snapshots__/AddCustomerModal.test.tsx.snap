@@ -1,0 +1,1241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Customer Information Modal Should create customer 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div
+      aria-hidden="true"
+      data-aria-hidden="true"
+    />
+    <div
+      class="chakra-portal"
+    >
+      <div
+        class="chakra-modal__overlay css-13d1tkw"
+        style="opacity: 0.7552628175377846;"
+      >
+        <div
+          aria-hidden="true"
+          data-aria-hidden="true"
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+        <div
+          data-focus-lock-disabled="false"
+        >
+          <div
+            class="chakra-modal__content-container css-1oxhx2p"
+            tabindex="-1"
+          >
+            <section
+              aria-labelledby="chakra-modal--header-:r1o:"
+              aria-modal="true"
+              class="chakra-modal__content css-jbhgrw"
+              id="chakra-modal-:r1o:"
+              role="dialog"
+              style="opacity: 0.7552628175377846; transform: scale(0.9877631408768892) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                aria-label="Close"
+                class="chakra-modal__close-btn css-6sdaxy"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="chakra-icon css-onkibi"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <header
+                class="chakra-modal__header css-1rghlao"
+                id="chakra-modal--header-:r1o:"
+              >
+                Add Customer
+              </header>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="name:r1p:"
+                >
+                  Name
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="name:r1p:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="description:r1q:"
+                >
+                  Description
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <textarea
+                    class="chakra-textarea css-oce1e7"
+                    id="description:r1q:"
+                  />
+                </div>
+              </div>
+              <div
+                class="css-1w2ee95"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="status:r1r:"
+                >
+                  Status
+                </label>
+                <div
+                  class=" css-b62m3t-container"
+                >
+                  <span
+                    class="css-1f43avz-a11yText-A11yText"
+                    id="react-select-10-live-region"
+                  />
+                  <span
+                    aria-atomic="false"
+                    aria-live="polite"
+                    aria-relevant="additions text"
+                    class="css-1f43avz-a11yText-A11yText"
+                  />
+                  <div
+                    class=" css-1yq6f5r-Control"
+                  >
+                    <div
+                      class=" css-1fdsijx-ValueContainer"
+                    >
+                      <div
+                        class=" css-1dimb5e-singleValue"
+                      >
+                        Open
+                      </div>
+                      <div
+                        class=" css-qbdosj-Input"
+                        data-value=""
+                      >
+                        <input
+                          aria-autocomplete="list"
+                          aria-expanded="false"
+                          aria-haspopup="true"
+                          autocapitalize="none"
+                          autocomplete="off"
+                          autocorrect="off"
+                          class=""
+                          id="status:r1r:"
+                          role="combobox"
+                          spellcheck="false"
+                          style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                          tabindex="0"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class=" css-1hb7zxy-IndicatorsContainer"
+                    >
+                      <svg
+                        class="chakra-icon css-1xmw5wu"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="rate:r1s:"
+                >
+                  Rate
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="rate:r1s:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="balance:r1t:"
+                >
+                  Balance
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="balance:r1t:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="deposit:r1u:"
+                >
+                  Deposit
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="deposit:r1u:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <button
+                class="chakra-button css-jj552q"
+                type="button"
+              >
+                Create
+              </button>
+              <button
+                class="chakra-button css-17hgb06"
+                type="button"
+              >
+                Cancel
+              </button>
+            </section>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          data-aria-hidden="true"
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Customer Information Modal Should match snapshot for Add Customer 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div
+      aria-hidden="true"
+      data-aria-hidden="true"
+    />
+    <div
+      class="chakra-portal"
+    >
+      <div
+        class="chakra-modal__overlay css-13d1tkw"
+        style="opacity: 0.6235379152471681;"
+      >
+        <div
+          aria-hidden="true"
+          data-aria-hidden="true"
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+        <div
+          data-focus-lock-disabled="false"
+        >
+          <div
+            class="chakra-modal__content-container css-1oxhx2p"
+            tabindex="-1"
+          >
+            <section
+              aria-labelledby="chakra-modal--header-:r0:"
+              aria-modal="true"
+              class="chakra-modal__content css-jbhgrw"
+              id="chakra-modal-:r0:"
+              role="dialog"
+              style="opacity: 0.6235379152471681; transform: scale(0.9811768957623583) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                aria-label="Close"
+                class="chakra-modal__close-btn css-6sdaxy"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="chakra-icon css-onkibi"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <header
+                class="chakra-modal__header css-1rghlao"
+                id="chakra-modal--header-:r0:"
+              >
+                Add Customer
+              </header>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="name:r1:"
+                >
+                  Name
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="name:r1:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="description:r2:"
+                >
+                  Description
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <textarea
+                    class="chakra-textarea css-oce1e7"
+                    id="description:r2:"
+                  />
+                </div>
+              </div>
+              <div
+                class="css-1w2ee95"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="status:r3:"
+                >
+                  Status
+                </label>
+                <div
+                  class=" css-b62m3t-container"
+                >
+                  <span
+                    class="css-1f43avz-a11yText-A11yText"
+                    id="react-select-2-live-region"
+                  />
+                  <span
+                    aria-atomic="false"
+                    aria-live="polite"
+                    aria-relevant="additions text"
+                    class="css-1f43avz-a11yText-A11yText"
+                  />
+                  <div
+                    class=" css-1yq6f5r-Control"
+                  >
+                    <div
+                      class=" css-1fdsijx-ValueContainer"
+                    >
+                      <div
+                        class=" css-1dimb5e-singleValue"
+                      >
+                        Open
+                      </div>
+                      <div
+                        class=" css-qbdosj-Input"
+                        data-value=""
+                      >
+                        <input
+                          aria-autocomplete="list"
+                          aria-expanded="false"
+                          aria-haspopup="true"
+                          autocapitalize="none"
+                          autocomplete="off"
+                          autocorrect="off"
+                          class=""
+                          id="status:r3:"
+                          role="combobox"
+                          spellcheck="false"
+                          style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                          tabindex="0"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class=" css-1hb7zxy-IndicatorsContainer"
+                    >
+                      <svg
+                        class="chakra-icon css-1xmw5wu"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="rate:r4:"
+                >
+                  Rate
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="rate:r4:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="balance:r5:"
+                >
+                  Balance
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="balance:r5:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="deposit:r6:"
+                >
+                  Deposit
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="deposit:r6:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <button
+                class="chakra-button css-jj552q"
+                type="button"
+              >
+                Create
+              </button>
+              <button
+                class="chakra-button css-17hgb06"
+                type="button"
+              >
+                Cancel
+              </button>
+            </section>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          data-aria-hidden="true"
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Customer Information Modal Should match snapshot for Edit Customer 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div
+      aria-hidden="true"
+      data-aria-hidden="true"
+    />
+    <div
+      class="chakra-portal"
+    >
+      <div
+        class="chakra-modal__overlay css-13d1tkw"
+        style="opacity: 0.9021108962296814;"
+      >
+        <div
+          aria-hidden="true"
+          data-aria-hidden="true"
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+        <div
+          data-focus-lock-disabled="false"
+        >
+          <div
+            class="chakra-modal__content-container css-1oxhx2p"
+            tabindex="-1"
+          >
+            <section
+              aria-labelledby="chakra-modal--header-:r7:"
+              aria-modal="true"
+              class="chakra-modal__content css-jbhgrw"
+              id="chakra-modal-:r7:"
+              role="dialog"
+              style="opacity: 0.9021108962296814; transform: scale(0.995105544811484) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                aria-label="Close"
+                class="chakra-modal__close-btn css-6sdaxy"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="chakra-icon css-onkibi"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <header
+                class="chakra-modal__header css-1rghlao"
+                id="chakra-modal--header-:r7:"
+              >
+                Edit Customer
+              </header>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="name:r8:"
+                >
+                  Name
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="name:r8:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="description:r9:"
+                >
+                  Description
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <textarea
+                    class="chakra-textarea css-oce1e7"
+                    id="description:r9:"
+                  />
+                </div>
+              </div>
+              <div
+                class="css-1w2ee95"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="status:ra:"
+                >
+                  Status
+                </label>
+                <div
+                  class=" css-b62m3t-container"
+                >
+                  <span
+                    class="css-1f43avz-a11yText-A11yText"
+                    id="react-select-3-live-region"
+                  />
+                  <span
+                    aria-atomic="false"
+                    aria-live="polite"
+                    aria-relevant="additions text"
+                    class="css-1f43avz-a11yText-A11yText"
+                  />
+                  <div
+                    class=" css-1yq6f5r-Control"
+                  >
+                    <div
+                      class=" css-1fdsijx-ValueContainer"
+                    >
+                      <div
+                        class=" css-1dimb5e-singleValue"
+                      >
+                        Open
+                      </div>
+                      <div
+                        class=" css-qbdosj-Input"
+                        data-value=""
+                      >
+                        <input
+                          aria-autocomplete="list"
+                          aria-expanded="false"
+                          aria-haspopup="true"
+                          autocapitalize="none"
+                          autocomplete="off"
+                          autocorrect="off"
+                          class=""
+                          id="status:ra:"
+                          role="combobox"
+                          spellcheck="false"
+                          style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                          tabindex="0"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class=" css-1hb7zxy-IndicatorsContainer"
+                    >
+                      <svg
+                        class="chakra-icon css-1xmw5wu"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="rate:rb:"
+                >
+                  Rate
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="rate:rb:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="balance:rc:"
+                >
+                  Balance
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="balance:rc:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="deposit:rd:"
+                >
+                  Deposit
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="deposit:rd:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <button
+                class="chakra-button css-jj552q"
+                type="button"
+              >
+                Save Changes
+              </button>
+              <button
+                class="chakra-button css-17hgb06"
+                type="button"
+              >
+                Cancel
+              </button>
+            </section>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          data-aria-hidden="true"
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Customer Information Modal Should match snapshot for View Customer 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div
+      aria-hidden="true"
+      data-aria-hidden="true"
+    />
+    <div
+      class="chakra-portal"
+    >
+      <div
+        class="chakra-modal__overlay css-13d1tkw"
+        style="opacity: 0.7552628175377846;"
+      >
+        <div
+          aria-hidden="true"
+          data-aria-hidden="true"
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+        <div
+          data-focus-lock-disabled="false"
+        >
+          <div
+            class="chakra-modal__content-container css-1oxhx2p"
+            tabindex="-1"
+          >
+            <section
+              aria-labelledby="chakra-modal--header-:re:"
+              aria-modal="true"
+              class="chakra-modal__content css-jbhgrw"
+              id="chakra-modal-:re:"
+              role="dialog"
+              style="opacity: 0.7552628175377846; transform: scale(0.9877631408768892) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                aria-label="Close"
+                class="chakra-modal__close-btn css-6sdaxy"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="chakra-icon css-onkibi"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <header
+                class="chakra-modal__header css-1rghlao"
+                id="chakra-modal--header-:re:"
+              >
+                View Customer
+              </header>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="name:rf:"
+                >
+                  Name
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    disabled=""
+                    id="name:rf:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="description:rg:"
+                >
+                  Description
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <textarea
+                    class="chakra-textarea css-oce1e7"
+                    disabled=""
+                    id="description:rg:"
+                  />
+                </div>
+              </div>
+              <div
+                class="css-uj0vbj"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="status:rh:"
+                >
+                  Status
+                </label>
+                <div
+                  class=" css-3iigni-container"
+                >
+                  <span
+                    class="css-1f43avz-a11yText-A11yText"
+                    id="react-select-4-live-region"
+                  />
+                  <span
+                    aria-atomic="false"
+                    aria-live="polite"
+                    aria-relevant="additions text"
+                    class="css-1f43avz-a11yText-A11yText"
+                  />
+                  <div
+                    class=" css-1yq6f5r-Control"
+                  >
+                    <div
+                      class=" css-1fdsijx-ValueContainer"
+                    >
+                      <div
+                        class=" css-olqui2-singleValue"
+                      >
+                        Open
+                      </div>
+                      <div
+                        class=" css-1h01tm3-Input"
+                        data-value=""
+                      >
+                        <input
+                          aria-autocomplete="list"
+                          aria-expanded="false"
+                          aria-haspopup="true"
+                          autocapitalize="none"
+                          autocomplete="off"
+                          autocorrect="off"
+                          class=""
+                          disabled=""
+                          id="status:rh:"
+                          role="combobox"
+                          spellcheck="false"
+                          style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                          tabindex="0"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class=" css-1hb7zxy-IndicatorsContainer"
+                    >
+                      <svg
+                        class="chakra-icon css-1xmw5wu"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="rate:ri:"
+                >
+                  Rate
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    disabled=""
+                    id="rate:ri:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="balance:rj:"
+                >
+                  Balance
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    disabled=""
+                    id="balance:rj:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-d9ko9t"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="deposit:rk:"
+                >
+                  Deposit
+                </label>
+                <div
+                  class="css-opt09h"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    disabled=""
+                    id="deposit:rk:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <button
+                class="chakra-button css-17hgb06"
+                type="button"
+              >
+                Cancel
+              </button>
+            </section>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          data-aria-hidden="true"
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

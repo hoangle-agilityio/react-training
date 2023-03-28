@@ -533,7 +533,7 @@ Object {
             </p>
             <img
               class="chakra-image css-0"
-              src="/icons/column-sorting-none.svg"
+              src="/icons/column-sorting-asc.svg"
             />
           </div>
           <p
@@ -650,7 +650,7 @@ Object {
           </p>
           <img
             class="chakra-image css-0"
-            src="/icons/column-sorting-none.svg"
+            src="/icons/column-sorting-asc.svg"
           />
         </div>
         <p

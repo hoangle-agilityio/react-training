@@ -37,6 +37,7 @@ import {
   customerDataTableHeader,
   PAGE_LIMIT,
   sortOrders,
+  SORT_IMAGE,
   SORT_ORDER,
 } from "constants/variables";
 import { CUSTOMER_ENDPOINT } from "constants/endpoint";
@@ -46,7 +47,7 @@ import { Customer } from "types/customer";
 import { StatusType, WithID } from "types/common";
 
 // Queries
-import { deleteData, fetchData } from "services/customers";
+import { deleteCustomer, fetchCustomers } from "services/customers";
 import { debounce } from "utils/utilities";
 
 const App = () => {
@@ -55,6 +56,7 @@ const App = () => {
   const [searchInput, setSearchInput] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [order, setOrder] = useState("");
+  const [sortImage, setSortImage] = useState(SORT_IMAGE.NONE);
   const [isShowAddCustomerModal, setShowAddCustomerModal] = useState(false);
   const [actionType, setActionType] = useState("");
   const [customerId, setCustomerId] = useState("");
@@ -71,7 +73,8 @@ const App = () => {
     fetchNextPage,
   }: UseInfiniteQueryResult<WithID<Customer>[], Error> = useInfiniteQuery(
     [CUSTOMER_ENDPOINT, searchQuery, order],
-    ({ pageParam = 1 }) => fetchData(pageParam, PAGE_LIMIT, searchQuery, order),
+    ({ pageParam = 1 }) =>
+      fetchCustomers(pageParam, PAGE_LIMIT, searchQuery, order),
     {
       suspense: true,
       refetchOnWindowFocus: false,
@@ -85,6 +88,8 @@ const App = () => {
     }
   );
 
+  console.log("data", data);
+
   // delete customer's data
   const {
     mutate,
@@ -92,7 +97,7 @@ const App = () => {
     error: errorDelete,
     isLoading,
   }: UseMutationResult<Customer[], Error, string, unknown> = useMutation(
-    (id: string) => deleteData(id),
+    (id: string) => deleteCustomer(id),
     {
       onSettled(_data, _error, id) {
         queryClient.removeQueries([CUSTOMER_ENDPOINT, id]);
@@ -173,6 +178,15 @@ const App = () => {
     // calculate next index based on find index
     const nextIndex = findIndex === sortOrders.length - 1 ? 0 : findIndex + 1;
 
+    // set sort image
+    setSortImage(
+      sortOrders[nextIndex] === SORT_ORDER.NONE
+        ? SORT_IMAGE.NONE
+        : sortOrders[nextIndex] === SORT_ORDER.SORT_ASC
+        ? SORT_IMAGE.ASC
+        : SORT_IMAGE.DESC
+    );
+
     startTransition(() => {
       setOrder(sortOrders[nextIndex]);
     });
@@ -191,13 +205,7 @@ const App = () => {
   };
 
   const renderHeader = () => {
-    const srcImage = `/icons/${
-      order === SORT_ORDER.NONE
-        ? "column-sorting-none.svg"
-        : order === SORT_ORDER.SORT_ASC
-        ? "column-sorting-asc.svg"
-        : "column-sorting-desc.svg"
-    }`;
+    const srcImage = `/icons/${sortImage}`;
 
     return (
       <Flex
@@ -253,6 +261,7 @@ const App = () => {
           color: "blue.300",
         }}
         rightIcon={<Image src="/icons/info.svg" />}
+        onClick={() => handleOpenAddCustomerModal(ACTION_TYPE.VIEW, id)}
       />
       <Button
         label="Edit"
@@ -267,6 +276,7 @@ const App = () => {
           color: "blue.300",
         }}
         rightIcon={<Image src="/icons/pencil-filed.svg" />}
+        onClick={() => handleOpenAddCustomerModal(ACTION_TYPE.EDIT, id)}
       />
       <Button
         label="Delete"

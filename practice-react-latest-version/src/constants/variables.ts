@@ -28,6 +28,8 @@ export const customerDataTableHeader = [
 
 export const PAGE_LIMIT = 20;
 
+export const MAX_LENGTH = 255;
+
 export const sortOrders = ["", "asc", "desc"];
 
 export enum SORT_ORDER {
@@ -35,3 +37,16 @@ export enum SORT_ORDER {
   SORT_ASC = "asc",
   SORT_DESC = "desc",
 }
+
+export const ACTION_TYPE = {
+  ADD: "add",
+  EDIT: "edit",
+  VIEW: "view",
+};
+
+export const statusOptions = [
+  { label: "Open", value: "Open" },
+  { label: "Paid", value: "Paid" },
+  { label: "Due", value: "Due" },
+  { label: "Inactive", value: "Inactive" },
+];

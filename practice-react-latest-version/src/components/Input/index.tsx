@@ -23,7 +23,7 @@ type StyleType = {
 
 type Props = {
   label?: string;
-  name: string;
+  name?: string;
   icon?: JSX.Element;
   iconPosition?: "left" | "right";
   styles?: StyleType;

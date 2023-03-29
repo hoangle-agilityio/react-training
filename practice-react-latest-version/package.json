@@ -19,6 +19,7 @@
     "eslint": "^8.36.0",
     "eslint-plugin-react": "^7.32.2",
     "framer-motion": "^6.5.1",
+    "lint-staged": "^13.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.8",
@@ -77,5 +78,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }

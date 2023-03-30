@@ -23,16 +23,11 @@ import { REGEX_PATTERNS } from "constants/regexPatterns";
 import { CUSTOMER_ENDPOINT } from "constants/endpoint";
 
 // Types
-import { OptionType, WithID } from "types/common";
-import { MultiValue, SingleValue } from "react-select";
+import { WithID } from "types/common";
 import { Customer } from "types/customer";
 
 // Utils
-import {
-  convertDataToObject,
-  generateRandomCustomerId,
-  regexValue,
-} from "utils/utilities";
+import { generateRandomCustomerId, regexValue } from "utils/utilities";
 
 // Queries
 import {
@@ -51,7 +46,7 @@ type Props = {
 type FormValues = {
   name: string;
   description: string;
-  status: OptionType;
+  status: string;
   rate: string;
   balance: string;
   deposit: string;
@@ -106,10 +101,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
   const setDefaultValues = useCallback(() => {
     setValue("name", customer?.name || "");
     setValue("description", customer?.description || "");
-    setValue(
-      "status",
-      convertDataToObject(customer?.status as string) || statusOptions[0]
-    );
+    setValue("status", customer?.status || statusOptions[0].value);
     setValue("rate", customer?.rate?.toString() || "");
     setValue("balance", customer?.balance?.toString() || "");
     setValue("deposit", customer?.deposit?.toString() || "");
@@ -149,10 +141,8 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
   };
 
   // handle change status
-  const handleChangeStatus = (
-    data: SingleValue<OptionType> | MultiValue<OptionType>
-  ) => {
-    setValue("status", data as OptionType);
+  const handleChangeStatus = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setValue("status", e.target.value);
   };
 
   // handle change rate
@@ -195,7 +185,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
       name: getValues("name"),
       customerId: generateRandomCustomerId(),
       description: getValues("description"),
-      status: getValues("status").value,
+      status: getValues("status"),
       rate: parseInt(getValues("rate")),
       balance: parseInt(getValues("balance")),
       deposit: parseInt(getValues("deposit")),
@@ -274,19 +264,15 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
       <Select
         label="Status"
         options={statusOptions}
-        styles={{
-          wrapper: {
-            width: "401px",
-            marginBottom: "30px",
-            ...(type === ACTION_TYPE.VIEW && {
-              cursor: "not-allowed",
-            }),
-          },
-          controlStyles: {
-            height: "51px",
-          },
+        styleWrapper={{
+          width: "401px",
+          marginBottom: "30px",
+          ...(type === ACTION_TYPE.VIEW && {
+            cursor: "not-allowed",
+          }),
         }}
-        value={watch("status") || {}}
+        height="51px"
+        value={watch("status") || ""}
         {...register("status")}
         onChange={(e) => handleChangeStatus(e)}
         isDisabled={type === ACTION_TYPE.VIEW}

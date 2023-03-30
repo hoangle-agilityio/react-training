@@ -24,16 +24,6 @@ export const debounce = (func: (...args: string[]) => void, wait: number) => {
   };
 };
 
-// convert data to object
-export const convertDataToObject = (data: string) => {
-  return (
-    !!data && {
-      value: data,
-      label: data,
-    }
-  );
-};
-
 // get api headers
 export const getAPIHeaders = (method: string) => ({
   method,

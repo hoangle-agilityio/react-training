@@ -1,11 +1,10 @@
 // Libs
 import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Text } from "@chakra-ui/react";
 
 // Components
 import Modal from "components/Modal";
-import Button from "components/Button";
+import { Button, Text } from "@chakra-ui/react";
 
 export default {
   title: "Components/Modal",
@@ -17,27 +16,22 @@ const Template: ComponentStory<typeof Modal> = (args) => {
 
   return (
     <>
-      <Button
-        label="Open Modal"
-        type="primary"
-        onClick={() => setShowModal(true)}
-        styles={{ width: "100px" }}
-      />
+      <Button onClick={() => setShowModal(true)} width="100px">
+        Open Modal
+      </Button>
       <Modal
         {...args}
         title="Modal Component"
         isOpen={isShowModal}
         onClose={() => setShowModal(false)}
       >
-        <Text fontSize="base" margin="20px 0">
+        <Text margin="20px 0">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </Text>
-        <Button
-          label="Close"
-          onClick={() => setShowModal(false)}
-          styles={{ width: "250px" }}
-        />
+        <Button onClick={() => setShowModal(false)} width="250px">
+          Close
+        </Button>
       </Modal>
     </>
   );

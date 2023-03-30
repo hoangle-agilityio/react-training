@@ -6,19 +6,19 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="css-f7fu58"
+        class="css-dtlp96"
       >
         <div
           class="css-8zasf"
         >
           <div
-            class="css-1wo2j8q"
+            class="css-nr5hgz"
           >
             <div
-              class="css-1anpw3e"
+              class="css-1aamh9w"
             >
               <svg
-                class="chakra-icon css-tud5pv"
+                class="chakra-icon css-gnpnw8"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -36,7 +36,7 @@ Object {
             </div>
           </div>
           <button
-            class="chakra-button css-11ko6ne"
+            class="chakra-button css-1g26so6"
             type="button"
           >
             + Add customer
@@ -54,7 +54,8 @@ Object {
               Name
             </p>
             <img
-              class="chakra-image css-0"
+              alt="/icons/column-sorting-none.svg"
+              class="chakra-image css-3o0h5k"
               src="/icons/column-sorting-none.svg"
             />
           </div>
@@ -88,7 +89,7 @@ Object {
           />
         </div>
         <p
-          class="chakra-text css-1eyzw2h"
+          class="chakra-text css-0"
         >
           Customer not found.
         </p>
@@ -97,19 +98,19 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-f7fu58"
+      class="css-dtlp96"
     >
       <div
         class="css-8zasf"
       >
         <div
-          class="css-1wo2j8q"
+          class="css-nr5hgz"
         >
           <div
-            class="css-1anpw3e"
+            class="css-1aamh9w"
           >
             <svg
-              class="chakra-icon css-tud5pv"
+              class="chakra-icon css-gnpnw8"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -127,7 +128,7 @@ Object {
           </div>
         </div>
         <button
-          class="chakra-button css-11ko6ne"
+          class="chakra-button css-1g26so6"
           type="button"
         >
           + Add customer
@@ -145,7 +146,8 @@ Object {
             Name
           </p>
           <img
-            class="chakra-image css-0"
+            alt="/icons/column-sorting-none.svg"
+            class="chakra-image css-3o0h5k"
             src="/icons/column-sorting-none.svg"
           />
         </div>
@@ -179,7 +181,7 @@ Object {
         />
       </div>
       <p
-        class="chakra-text css-1eyzw2h"
+        class="chakra-text css-0"
       >
         Customer not found.
       </p>
@@ -245,19 +247,19 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="css-f7fu58"
+        class="css-dtlp96"
       >
         <div
           class="css-8zasf"
         >
           <div
-            class="css-1wo2j8q"
+            class="css-nr5hgz"
           >
             <div
-              class="css-1anpw3e"
+              class="css-1aamh9w"
             >
               <svg
-                class="chakra-icon css-tud5pv"
+                class="chakra-icon css-gnpnw8"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -275,7 +277,7 @@ Object {
             </div>
           </div>
           <button
-            class="chakra-button css-11ko6ne"
+            class="chakra-button css-1g26so6"
             type="button"
           >
             + Add customer
@@ -293,7 +295,8 @@ Object {
               Name
             </p>
             <img
-              class="chakra-image css-0"
+              alt="/icons/column-sorting-none.svg"
+              class="chakra-image css-3o0h5k"
               src="/icons/column-sorting-none.svg"
             />
           </div>
@@ -327,7 +330,7 @@ Object {
           />
         </div>
         <p
-          class="chakra-text css-1eyzw2h"
+          class="chakra-text css-0"
         >
           Customer not found.
         </p>
@@ -336,19 +339,19 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-f7fu58"
+      class="css-dtlp96"
     >
       <div
         class="css-8zasf"
       >
         <div
-          class="css-1wo2j8q"
+          class="css-nr5hgz"
         >
           <div
-            class="css-1anpw3e"
+            class="css-1aamh9w"
           >
             <svg
-              class="chakra-icon css-tud5pv"
+              class="chakra-icon css-gnpnw8"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -366,7 +369,7 @@ Object {
           </div>
         </div>
         <button
-          class="chakra-button css-11ko6ne"
+          class="chakra-button css-1g26so6"
           type="button"
         >
           + Add customer
@@ -384,7 +387,8 @@ Object {
             Name
           </p>
           <img
-            class="chakra-image css-0"
+            alt="/icons/column-sorting-none.svg"
+            class="chakra-image css-3o0h5k"
             src="/icons/column-sorting-none.svg"
           />
         </div>
@@ -418,7 +422,7 @@ Object {
         />
       </div>
       <p
-        class="chakra-text css-1eyzw2h"
+        class="chakra-text css-0"
       >
         Customer not found.
       </p>
@@ -484,19 +488,19 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="css-f7fu58"
+        class="css-dtlp96"
       >
         <div
           class="css-8zasf"
         >
           <div
-            class="css-1wo2j8q"
+            class="css-nr5hgz"
           >
             <div
-              class="css-1anpw3e"
+              class="css-1aamh9w"
             >
               <svg
-                class="chakra-icon css-tud5pv"
+                class="chakra-icon css-gnpnw8"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -514,7 +518,7 @@ Object {
             </div>
           </div>
           <button
-            class="chakra-button css-11ko6ne"
+            class="chakra-button css-1g26so6"
             type="button"
           >
             + Add customer
@@ -532,7 +536,8 @@ Object {
               Name
             </p>
             <img
-              class="chakra-image css-0"
+              alt="/icons/column-sorting-asc.svg"
+              class="chakra-image css-3o0h5k"
               src="/icons/column-sorting-asc.svg"
             />
           </div>
@@ -566,7 +571,7 @@ Object {
           />
         </div>
         <div
-          class="css-3ehqor"
+          class="css-1idm01g"
         >
           <div
             aria-valuemax="100"
@@ -587,7 +592,7 @@ Object {
                 stroke-width="10px"
               />
               <circle
-                class="chakra-progress__indicator css-qa0lra"
+                class="chakra-progress__indicator css-1thufow"
                 cx="50"
                 cy="50"
                 r="42"
@@ -601,19 +606,19 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-f7fu58"
+      class="css-dtlp96"
     >
       <div
         class="css-8zasf"
       >
         <div
-          class="css-1wo2j8q"
+          class="css-nr5hgz"
         >
           <div
-            class="css-1anpw3e"
+            class="css-1aamh9w"
           >
             <svg
-              class="chakra-icon css-tud5pv"
+              class="chakra-icon css-gnpnw8"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -631,7 +636,7 @@ Object {
           </div>
         </div>
         <button
-          class="chakra-button css-11ko6ne"
+          class="chakra-button css-1g26so6"
           type="button"
         >
           + Add customer
@@ -649,7 +654,8 @@ Object {
             Name
           </p>
           <img
-            class="chakra-image css-0"
+            alt="/icons/column-sorting-asc.svg"
+            class="chakra-image css-3o0h5k"
             src="/icons/column-sorting-asc.svg"
           />
         </div>
@@ -683,7 +689,7 @@ Object {
         />
       </div>
       <div
-        class="css-3ehqor"
+        class="css-1idm01g"
       >
         <div
           aria-valuemax="100"
@@ -704,7 +710,7 @@ Object {
               stroke-width="10px"
             />
             <circle
-              class="chakra-progress__indicator css-qa0lra"
+              class="chakra-progress__indicator css-1thufow"
               cx="50"
               cy="50"
               r="42"

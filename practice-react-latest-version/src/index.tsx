@@ -4,9 +4,6 @@ import * as ReactDOM from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 
-// CSS
-import "./styles/globals.css";
-
 // Themes
 import themes from "./themes";
 
@@ -20,7 +17,7 @@ const queryClient = new QueryClient();
 
 root.render(
   <React.StrictMode>
-    <ChakraProvider resetCSS theme={themes}>
+    <ChakraProvider theme={themes}>
       <QueryClientProvider client={queryClient}>
         <App />
       </QueryClientProvider>

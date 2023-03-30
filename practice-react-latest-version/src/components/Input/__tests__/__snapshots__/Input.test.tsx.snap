@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="css-djevj3"
+        class="css-dh0v2a"
       >
         <label
           class="chakra-form__label css-2dkmm4"
@@ -15,7 +15,7 @@ Object {
           Name
         </label>
         <div
-          class="css-opt09h"
+          class="css-188q4y8"
         >
           <input
             aria-label="Name"
@@ -28,7 +28,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-djevj3"
+      class="css-dh0v2a"
     >
       <label
         class="chakra-form__label css-2dkmm4"
@@ -37,7 +37,7 @@ Object {
         Name
       </label>
       <div
-        class="css-opt09h"
+        class="css-188q4y8"
       >
         <input
           aria-label="Name"
@@ -107,7 +107,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="css-djevj3"
+        class="css-dh0v2a"
       >
         <label
           class="chakra-form__label css-2dkmm4"
@@ -116,7 +116,7 @@ Object {
           Name
         </label>
         <div
-          class="css-ojvc0k"
+          class="css-1ceu8sn"
         >
           <input
             aria-label="Name"
@@ -125,7 +125,7 @@ Object {
           />
         </div>
         <p
-          class="chakra-text css-1o8zp2s"
+          class="chakra-text css-0"
         >
           This is an error.
         </p>
@@ -134,7 +134,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-djevj3"
+      class="css-dh0v2a"
     >
       <label
         class="chakra-form__label css-2dkmm4"
@@ -143,7 +143,7 @@ Object {
         Name
       </label>
       <div
-        class="css-ojvc0k"
+        class="css-1ceu8sn"
       >
         <input
           aria-label="Name"
@@ -152,7 +152,7 @@ Object {
         />
       </div>
       <p
-        class="chakra-text css-1o8zp2s"
+        class="chakra-text css-0"
       >
         This is an error.
       </p>
@@ -218,7 +218,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="css-djevj3"
+        class="css-dh0v2a"
       >
         <label
           class="chakra-form__label css-2dkmm4"
@@ -227,7 +227,7 @@ Object {
           Name
         </label>
         <div
-          class="css-1e5nc7c"
+          class="css-19ep17b"
         >
           <svg
             class="chakra-icon css-onkibi"
@@ -250,7 +250,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-djevj3"
+      class="css-dh0v2a"
     >
       <label
         class="chakra-form__label css-2dkmm4"
@@ -259,7 +259,7 @@ Object {
         Name
       </label>
       <div
-        class="css-1e5nc7c"
+        class="css-19ep17b"
       >
         <svg
           class="chakra-icon css-onkibi"
@@ -339,7 +339,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="css-djevj3"
+        class="css-dh0v2a"
       >
         <label
           class="chakra-form__label css-2dkmm4"
@@ -348,7 +348,7 @@ Object {
           Name
         </label>
         <div
-          class="css-opt09h"
+          class="css-188q4y8"
         >
           <textarea
             aria-label="Name"
@@ -361,7 +361,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-djevj3"
+      class="css-dh0v2a"
     >
       <label
         class="chakra-form__label css-2dkmm4"
@@ -370,7 +370,7 @@ Object {
         Name
       </label>
       <div
-        class="css-opt09h"
+        class="css-188q4y8"
       >
         <textarea
           aria-label="Name"

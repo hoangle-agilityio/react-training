@@ -8,13 +8,12 @@ import {
   useQueryClient,
   UseQueryResult,
 } from "react-query";
-import { CircularProgress, Flex } from "@chakra-ui/react";
+import { Button, CircularProgress, Flex } from "@chakra-ui/react";
 
 // Components
 import Modal from "components/Modal";
 import Input from "components/Input";
 import Select from "components/Select";
-import Button from "components/Button";
 import Notification from "components/Notification";
 
 // Constants
@@ -357,29 +356,22 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
       )}
       {type !== ACTION_TYPE.VIEW && (
         <Button
-          label={type === ACTION_TYPE.ADD ? "Create" : "Save Changes"}
-          styles={{
-            width: "173px",
-            height: "51px",
-            marginBottom: "13px",
-          }}
+          width="173px"
+          height="51px"
+          marginBottom="13px"
           onClick={handleSubmit(handleSubmitCustomerData)}
-        />
+        >
+          {type === ACTION_TYPE.ADD ? "Create" : "Save Changes"}
+        </Button>
       )}
-      <Button
-        label="Cancel"
-        styles={{
-          width: "173px",
-          height: "51px",
-        }}
-        type="secondary"
-        onClick={onClose}
-      />
+      <Button width="173px" height="51px" variant="secondary" onClick={onClose}>
+        Cancel
+      </Button>
       {(isLoading || isFetching) && (
         <Flex
           justifyContent="center"
           alignItems="center"
-          bgColor="gray.200"
+          bgColor="background.default"
           position="fixed"
           opacity="0.5"
           width="full"
@@ -387,7 +379,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           top="0"
           left="0"
         >
-          <CircularProgress isIndeterminate color="gray.300" size="60px" />
+          <CircularProgress isIndeterminate color="brand.300" size="60px" />
         </Flex>
       )}
     </Modal>

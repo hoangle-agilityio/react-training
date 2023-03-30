@@ -36,7 +36,7 @@ Object {
           tabindex="-1"
         >
           <button
-            class="chakra-button css-1kwrwyg"
+            class="chakra-button css-1p57v4x"
             type="button"
           >
             Edit
@@ -77,7 +77,7 @@ Object {
         tabindex="-1"
       >
         <button
-          class="chakra-button css-1kwrwyg"
+          class="chakra-button css-1p57v4x"
           type="button"
         >
           Edit

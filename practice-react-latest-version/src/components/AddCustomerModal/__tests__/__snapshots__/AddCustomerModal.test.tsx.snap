@@ -32,7 +32,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r1o:"
               aria-modal="true"
-              class="chakra-modal__content css-jbhgrw"
+              class="chakra-modal__content css-m2trf1"
               id="chakra-modal-:r1o:"
               role="dialog"
               style="opacity: 0.7552628175377846; transform: scale(0.9877631408768892) translateZ(0);"
@@ -342,7 +342,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r0:"
               aria-modal="true"
-              class="chakra-modal__content css-jbhgrw"
+              class="chakra-modal__content css-m2trf1"
               id="chakra-modal-:r0:"
               role="dialog"
               style="opacity: 0.6235379152471681; transform: scale(0.9811768957623583) translateZ(0);"
@@ -652,7 +652,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r7:"
               aria-modal="true"
-              class="chakra-modal__content css-jbhgrw"
+              class="chakra-modal__content css-m2trf1"
               id="chakra-modal-:r7:"
               role="dialog"
               style="opacity: 0.9021108962296814; transform: scale(0.995105544811484) translateZ(0);"
@@ -962,7 +962,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:re:"
               aria-modal="true"
-              class="chakra-modal__content css-jbhgrw"
+              class="chakra-modal__content css-m2trf1"
               id="chakra-modal-:re:"
               role="dialog"
               style="opacity: 0.7552628175377846; transform: scale(0.9877631408768892) translateZ(0);"

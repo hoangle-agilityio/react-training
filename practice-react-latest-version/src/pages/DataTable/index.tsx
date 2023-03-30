@@ -76,7 +76,6 @@ const App = () => {
     ({ pageParam = 1 }) =>
       fetchCustomers(pageParam, PAGE_LIMIT, searchQuery, order),
     {
-      suspense: true,
       refetchOnWindowFocus: false,
       getNextPageParam: (lastPage, pages) => {
         const nextPage = pages.length + 1;

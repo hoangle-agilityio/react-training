@@ -7,7 +7,7 @@ import { Text } from "@chakra-ui/react";
 import Modal from "..";
 
 const children: React.ReactNode = (
-  <Text fontSize="base" margin="20px 0" data-testid="modal-content">
+  <Text margin="20px 0" data-testid="modal-content">
     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
   </Text>
 );

@@ -56,19 +56,19 @@ const SelectCustom = forwardRef(
     const customStyles = (controlStyles?: ControlStyleTypes) => ({
       control: () => ({
         "&:hover": {
-          borderColor: error ? colors.red[200] : colors.gray[400],
+          borderColor: error ? colors.text.reversal : colors.text.secondary,
         },
         display: "flex",
         height: controlStyles?.height || "40px",
         border: "1px solid",
-        borderColor: error ? colors.red[200] : colors.gray[400],
+        borderColor: error ? colors.text.reversal : colors.text.secondary,
         borderRadius: "6px",
         cursor: "pointer",
       }),
     });
 
     return (
-      <Box fontSize="base" color="gray.600" {...styles?.wrapper}>
+      <Box fontSize="base" color="text.default" {...styles?.wrapper}>
         <FormLabel
           fontSize="base"
           fontFamily="heading"
@@ -93,11 +93,7 @@ const SelectCustom = forwardRef(
           isLoading={isLoading}
           {...rest}
         />
-        {error && (
-          <Text fontSize="base" color="red.200">
-            {error}
-          </Text>
-        )}
+        {error && <Text variant="error">{error}</Text>}
       </Box>
     );
   }

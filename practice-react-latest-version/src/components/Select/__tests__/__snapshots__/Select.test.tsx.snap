@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="css-2mxtj7"
+        class="css-1f5q73a"
       >
         <label
           class="chakra-form__label css-2dkmm4"
@@ -83,7 +83,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-2mxtj7"
+      class="css-1f5q73a"
     >
       <label
         class="chakra-form__label css-2dkmm4"
@@ -217,7 +217,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="css-2mxtj7"
+        class="css-1f5q73a"
       >
         <label
           class="chakra-form__label css-2dkmm4"
@@ -290,7 +290,7 @@ Object {
           </div>
         </div>
         <p
-          class="chakra-text css-1o8zp2s"
+          class="chakra-text css-0"
         >
           This is an error.
         </p>
@@ -299,7 +299,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-2mxtj7"
+      class="css-1f5q73a"
     >
       <label
         class="chakra-form__label css-2dkmm4"
@@ -372,7 +372,7 @@ Object {
         </div>
       </div>
       <p
-        class="chakra-text css-1o8zp2s"
+        class="chakra-text css-0"
       >
         This is an error.
       </p>

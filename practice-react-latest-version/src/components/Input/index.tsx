@@ -69,7 +69,7 @@ const Input = forwardRef(
 
     return (
       <>
-        <Box {...styles?.wrapper} color="gray.600">
+        <Box {...styles?.wrapper} color="text.default">
           {label && (
             <FormLabel
               fontSize="base"
@@ -83,7 +83,7 @@ const Input = forwardRef(
             alignItems="center"
             border="1px"
             borderRadius="6"
-            borderColor={error ? "red.200" : "gray.400"}
+            borderColor={error ? "text.reversal" : "text.secondary"}
             {...iconStyle}
             {...styles?.inputWrap}
           >
@@ -112,11 +112,7 @@ const Input = forwardRef(
               />
             )}
           </Flex>
-          {error && (
-            <Text fontSize="base" color="red.200">
-              {error}
-            </Text>
-          )}
+          {error && <Text variant="error">{error}</Text>}
         </Box>
       </>
     );

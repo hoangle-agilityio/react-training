@@ -20,29 +20,29 @@ const Status = ({ type, label, styles }: Props) => {
     case "Open":
       labelStatus = "Open";
       statusStyles = {
-        bgColor: "blue.100",
-        color: "blue.200",
+        bgColor: "background.info",
+        color: "icon.info",
       };
       break;
     case "Paid":
       labelStatus = "Paid";
       statusStyles = {
-        bgColor: "green.100",
-        color: "green.200",
+        bgColor: "background.success",
+        color: "icon.success",
       };
       break;
     case "Due":
       labelStatus = "Due";
       statusStyles = {
-        bgColor: "red.100",
-        color: "red.200",
+        bgColor: "background.error",
+        color: "icon.error",
       };
       break;
     case "Inactive":
       labelStatus = "Inactive";
       statusStyles = {
-        bgColor: "gray.200",
-        color: "gray.500",
+        bgColor: "background.default",
+        color: "icon.default",
       };
       break;
     default:

@@ -18,8 +18,8 @@ StatusBase.args = {
   label: "Status",
   type: "Others",
   styles: {
-    bgColor: "blue.200",
-    color: "white.100",
+    bgColor: "icon.info",
+    color: "brand.100",
   },
 };
 

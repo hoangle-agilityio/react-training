@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="chakra-badge css-r7yqe2"
+        class="chakra-badge css-1m0t5su"
       >
         Due
       </span>
@@ -14,7 +14,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="chakra-badge css-r7yqe2"
+      class="chakra-badge css-1m0t5su"
     >
       Due
     </span>
@@ -79,7 +79,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="chakra-badge css-10nvh0g"
+        class="chakra-badge css-1vhssdl"
       >
         Inactive
       </span>
@@ -87,7 +87,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="chakra-badge css-10nvh0g"
+      class="chakra-badge css-1vhssdl"
     >
       Inactive
     </span>
@@ -152,7 +152,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="chakra-badge css-18jsln3"
+        class="chakra-badge css-1dtqi1t"
       >
         Open
       </span>
@@ -160,7 +160,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="chakra-badge css-18jsln3"
+      class="chakra-badge css-1dtqi1t"
     >
       Open
     </span>
@@ -225,7 +225,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="chakra-badge css-1dmlmz1"
+        class="chakra-badge css-wjjw3s"
       >
         Paid
       </span>
@@ -233,7 +233,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="chakra-badge css-1dmlmz1"
+      class="chakra-badge css-wjjw3s"
     >
       Paid
     </span>
@@ -298,7 +298,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="chakra-badge css-cl8l8e"
+        class="chakra-badge css-1ogr8ua"
       >
         Status
       </span>
@@ -306,7 +306,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="chakra-badge css-cl8l8e"
+      class="chakra-badge css-1ogr8ua"
     >
       Status
     </span>

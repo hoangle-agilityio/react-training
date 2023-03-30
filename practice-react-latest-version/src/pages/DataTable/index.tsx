@@ -6,15 +6,6 @@ import React, {
   Suspense,
   useMemo,
 } from "react";
-import { SearchIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  CircularProgress,
-  Flex,
-  Image,
-  Text,
-  Tooltip,
-} from "@chakra-ui/react";
 import {
   useInfiniteQuery,
   UseInfiniteQueryResult,
@@ -24,12 +15,21 @@ import {
 } from "react-query";
 
 // Components
-import Button from "components/Button";
 import Input from "components/Input";
 import Status from "components/Status";
 import Dropdown from "components/Dropdown";
 import Notification from "components/Notification";
 import AddCustomerModal from "components/AddCustomerModal";
+import { SearchIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Flex,
+  Image,
+  Text,
+  Tooltip,
+} from "@chakra-ui/react";
 
 // Constants
 import {
@@ -247,17 +247,11 @@ const App = () => {
       onClose={() => setActionId("")}
     >
       <Button
-        label="View"
-        type="text"
-        styles={{
-          _hover: {
-            bgColor: "gray.200",
-          },
-          width: "full",
-          justifyContent: "space-between",
-          borderRadius: "0",
-          color: "blue.300",
-        }}
+        variant="secondary"
+        color="icon.primary"
+        width="full"
+        justifyContent="space-between"
+        borderRadius="0"
         rightIcon={
           <Image
             src="/icons/info.svg"
@@ -267,19 +261,15 @@ const App = () => {
           />
         }
         onClick={() => handleOpenAddCustomerModal(ACTION_TYPE.VIEW, id)}
-      />
+      >
+        View
+      </Button>
       <Button
-        label="Edit"
-        type="text"
-        styles={{
-          _hover: {
-            bgColor: "gray.200",
-          },
-          width: "full",
-          justifyContent: "space-between",
-          borderRadius: "0",
-          color: "blue.300",
-        }}
+        variant="secondary"
+        color="icon.primary"
+        width="full"
+        justifyContent="space-between"
+        borderRadius="0"
         rightIcon={
           <Image
             src="/icons/pencil-filed.svg"
@@ -289,19 +279,14 @@ const App = () => {
           />
         }
         onClick={() => handleOpenAddCustomerModal(ACTION_TYPE.EDIT, id)}
-      />
+      >
+        Edit
+      </Button>
       <Button
-        label="Delete"
-        type="text"
-        styles={{
-          _hover: {
-            bgColor: "gray.200",
-          },
-          width: "full",
-          justifyContent: "space-between",
-          borderRadius: "0",
-          color: "red.200",
-        }}
+        variant="secondary"
+        width="full"
+        justifyContent="space-between"
+        borderRadius="0"
         rightIcon={
           <Image
             src="/icons/trash-filled.svg"
@@ -311,7 +296,9 @@ const App = () => {
           />
         }
         onClick={() => handleDeleteCustomer(id)}
-      />
+      >
+        Delete
+      </Button>
     </Dropdown>
   );
 
@@ -333,8 +320,8 @@ const App = () => {
               justifyContent="space-between"
               padding="15px 20px 10px 20px"
               fontSize="base"
-              bgColor={index % 2 === 0 ? "white.100" : undefined}
-              color="gray.600"
+              bgColor={index % 2 === 0 ? "brand.100" : undefined}
+              color="text.default"
               key={id}
             >
               <Flex
@@ -343,15 +330,11 @@ const App = () => {
                 flexDirection="column"
               >
                 <Tooltip label={name}>
-                  <Text
-                    fontFamily="medium"
-                    color="gray.700"
-                    className="truncate-two-lines"
-                  >
+                  <Text variant="heading" className="truncate-two-lines">
                     {name}
                   </Text>
                 </Tooltip>
-                <Text color="gray.400">{customerId}</Text>
+                <Text variant="unit">{customerId}</Text>
               </Flex>
               <Tooltip label={description}>
                 <Text
@@ -373,7 +356,7 @@ const App = () => {
                 marginLeft="20px"
               >
                 <Text>${rate.toFixed(2)}</Text>
-                <Text color="gray.400">CAD</Text>
+                <Text variant="unit">CAD</Text>
               </Flex>
               <Flex
                 width="100px"
@@ -381,10 +364,10 @@ const App = () => {
                 textAlign="right"
                 marginLeft="20px"
               >
-                <Text color={balance < 0 ? "red.200" : "green.200"}>
+                <Text color={balance < 0 ? "text.reversal" : "text.helper"}>
                   {balance < 0 && "-"}${Number(formatBalance).toFixed(2)}
                 </Text>
-                <Text color="gray.400">CAD</Text>
+                <Text variant="unit">CAD</Text>
               </Flex>
               <Flex
                 width="100px"
@@ -393,7 +376,7 @@ const App = () => {
                 marginLeft="20px"
               >
                 <Text>${deposit.toFixed(2)}</Text>
-                <Text color="gray.400">CAD</Text>
+                <Text variant="unit">CAD</Text>
               </Flex>
               <Box width="20px" textAlign="right">
                 {!!id && renderAction(id)}
@@ -403,27 +386,18 @@ const App = () => {
         }
       )
     ) : (
-      <Text
-        color="gray.600"
-        fontSize="base"
-        fontFamily="body"
-        bgColor="white.100"
-        textAlign="center"
-        padding="20px"
-      >
-        Customer not found.
-      </Text>
+      <Text variant="not-found">Customer not found.</Text>
     );
 
   const renderIndicatorLoadMore = () => (
-    <Box textAlign="center" bgColor="white.100" paddingTop="10px">
-      <CircularProgress isIndeterminate color="gray.300" size="30px" />
+    <Box textAlign="center" bgColor="brand.100" paddingTop="10px">
+      <CircularProgress isIndeterminate color="brand.300" size="30px" />
     </Box>
   );
 
   return (
     <>
-      <Box width="full" bgColor="gray.100">
+      <Box width="full" bgColor="brand.200">
         <Flex
           alignItems="center"
           justifyContent="space-between"
@@ -440,18 +414,18 @@ const App = () => {
                 height: "32px",
               },
             }}
-            icon={<SearchIcon color="gray.400" />}
+            icon={<SearchIcon color="text.secondary" />}
             value={searchInput}
             onChange={handleChangeSearch}
           />
           <Button
-            label="+ Add customer"
-            styles={{
-              width: "146px",
-              height: "32px",
-            }}
+            variant="primary"
+            width="146px"
+            height="32px"
             onClick={() => handleOpenAddCustomerModal(ACTION_TYPE.ADD)}
-          />
+          >
+            + Add customer
+          </Button>
         </Flex>
         {(isError || isErrorDelete) && (
           <Notification
@@ -472,7 +446,7 @@ const App = () => {
           <Flex
             justifyContent="center"
             alignItems="center"
-            bgColor="gray.200"
+            bgColor="background.default"
             position="fixed"
             opacity="0.5"
             width="full"
@@ -480,7 +454,7 @@ const App = () => {
             top="0"
             left="0"
           >
-            <CircularProgress isIndeterminate color="gray.300" size="60px" />
+            <CircularProgress isIndeterminate color="brand.300" size="60px" />
           </Flex>
         )}
       </Box>

@@ -16,7 +16,6 @@ import {
 
 // Components
 import Input from "components/Input";
-import Status from "components/Status";
 import Dropdown from "components/Dropdown";
 import Notification from "components/Notification";
 import AddCustomerModal from "components/AddCustomerModal";
@@ -29,6 +28,7 @@ import {
   Image,
   Text,
   Tooltip,
+  Badge as Status,
 } from "@chakra-ui/react";
 
 // Constants
@@ -44,7 +44,7 @@ import { CUSTOMER_ENDPOINT } from "constants/endpoint";
 
 // Types
 import { Customer } from "types/customer";
-import { StatusType, WithID } from "types/common";
+import { WithID } from "types/common";
 
 // Queries
 import { deleteCustomer, fetchCustomers } from "services/customers";
@@ -346,7 +346,7 @@ const App = () => {
                 </Text>
               </Tooltip>
               <Box width="70px" textAlign="center">
-                <Status type={status as StatusType} />
+                <Status variant={status?.toLowerCase()}>{status}</Status>
               </Box>
               <Flex
                 width="100px"

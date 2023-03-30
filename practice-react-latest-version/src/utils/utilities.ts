@@ -33,3 +33,9 @@ export const convertDataToObject = (data: string) => {
     }
   );
 };
+
+// get api headers
+export const getAPIHeaders = (method: string) => ({
+  method,
+  headers: { "content-type": "application/json" },
+});

@@ -16,31 +16,22 @@ import {
 
 // Components
 import Input from "components/Input";
-import Dropdown from "components/Dropdown";
-import Notification from "components/Notification";
 import AddCustomerModal from "components/AddCustomerModal";
+import ConfirmModal from "components/ConfirmModal";
+import CustomerTable from "components/CustomerTable";
 import { SearchIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
   CircularProgress,
   Flex,
-  Image,
-  Text,
-  Tooltip,
-  Badge as Status,
+  useToast,
 } from "@chakra-ui/react";
 
 // Constants
-import {
-  ACTION_TYPE,
-  customerDataTableHeader,
-  PAGE_LIMIT,
-  sortOrders,
-  SORT_IMAGE,
-  SORT_ORDER,
-} from "constants/variables";
+import { ACTION_TYPE, PAGE_LIMIT } from "constants/variables";
 import { CUSTOMER_ENDPOINT } from "constants/endpoint";
+import { SUCCESS_MESSAGE } from "constants/message";
 
 // Types
 import { Customer } from "types/customer";
@@ -48,6 +39,8 @@ import { WithID } from "types/common";
 
 // Queries
 import { deleteCustomer, fetchCustomers } from "services/customers";
+
+// Utils
 import { debounce } from "utils/utilities";
 
 const App = () => {
@@ -56,19 +49,18 @@ const App = () => {
   const [searchInput, setSearchInput] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [order, setOrder] = useState("");
-  const [sortImage, setSortImage] = useState(SORT_IMAGE.NONE);
   const [isShowAddCustomerModal, setShowAddCustomerModal] = useState(false);
+  const [isShowConfirmModal, setShowConfirmModal] = useState(false);
   const [actionType, setActionType] = useState("");
   const [customerId, setCustomerId] = useState("");
   const [isPending, startTransition] = useTransition();
   const queryClient = useQueryClient();
+  const toast = useToast();
 
   // fetch customer's data with 20 records on 1 time
   const {
     data,
     isFetching: isLoadMore,
-    error,
-    isError,
     hasNextPage,
     fetchNextPage,
   }: UseInfiniteQueryResult<WithID<Customer>[], Error> = useInfiniteQuery(
@@ -84,21 +76,41 @@ const App = () => {
           ? nextPage
           : undefined;
       },
+      onError(error) {
+        toast({
+          position: "top",
+          description: error.message,
+          status: "error",
+          isClosable: true,
+        });
+      },
     }
   );
 
   // delete customer's data
   const {
     mutate,
-    isError: isErrorDelete,
-    error: errorDelete,
     isLoading,
   }: UseMutationResult<Customer[], Error, string, unknown> = useMutation(
     (id: string) => deleteCustomer(id),
     {
-      onSettled(_data, _error, id) {
+      onSuccess(_data, _error, id) {
         queryClient.removeQueries([CUSTOMER_ENDPOINT, id]);
         queryClient.refetchQueries(CUSTOMER_ENDPOINT);
+        toast({
+          position: "top",
+          description: SUCCESS_MESSAGE.DELETE,
+          status: "success",
+          isClosable: true,
+        });
+      },
+      onError(error) {
+        toast({
+          position: "top",
+          description: error.message,
+          status: "error",
+          isClosable: true,
+        });
       },
     }
   );
@@ -143,6 +155,7 @@ const App = () => {
   const handleDeleteCustomer = (id: string) => {
     mutate(id);
     setActionId("");
+    onToggleConfirmModal();
   };
 
   // handle delayed search query
@@ -167,28 +180,6 @@ const App = () => {
     delayedQuery(value?.trim());
   };
 
-  // handle sort by name
-  const handleSortByName = () => {
-    // find current index in list of sort order
-    const findIndex = sortOrders.findIndex((data) => data === order);
-
-    // calculate next index based on find index
-    const nextIndex = findIndex === sortOrders.length - 1 ? 0 : findIndex + 1;
-
-    // set sort image
-    setSortImage(
-      sortOrders[nextIndex] === SORT_ORDER.NONE
-        ? SORT_IMAGE.NONE
-        : sortOrders[nextIndex] === SORT_ORDER.SORT_ASC
-        ? SORT_IMAGE.ASC
-        : SORT_IMAGE.DESC
-    );
-
-    startTransition(() => {
-      setOrder(sortOrders[nextIndex]);
-    });
-  };
-
   // on toggle show/hide add customer modal
   const onToggleAddCustomerModal = () => {
     setShowAddCustomerModal((prevState) => !prevState);
@@ -201,192 +192,16 @@ const App = () => {
     onToggleAddCustomerModal();
   };
 
-  const renderHeader = () => {
-    const srcImage = `/icons/${sortImage}`;
-
-    return (
-      <Flex
-        alignItems="center"
-        fontFamily="heading"
-        justifyContent="space-between"
-        padding="12px 20px"
-        fontSize="base"
-      >
-        <Flex
-          alignItems="center"
-          width="160px"
-          onClick={handleSortByName}
-          cursor="pointer"
-        >
-          <Text>Name</Text>
-          <Image src={srcImage} width="16px" height="16px" alt={srcImage} />
-        </Flex>
-        {customerDataTableHeader.map(({ name, width, alignLeft }) => (
-          <Text
-            width={width}
-            textAlign={alignLeft ? "left" : "right"}
-            marginLeft="20px"
-            key={Math.random()}
-          >
-            {name}
-          </Text>
-        ))}
-        <Box width="20px" />
-      </Flex>
-    );
+  // on toggle show/hide confirm modal
+  const onToggleConfirmModal = () => {
+    setShowConfirmModal((prevState) => !prevState);
   };
 
-  const renderAction = (id: string) => (
-    <Dropdown
-      renderMenu={() => <Text fontSize="lg">&#x22EF;</Text>}
-      stylesOption={{ width: "120px" }}
-      isActive={actionId === id}
-      isShowDropdown={!!actionId}
-      onOpen={() => setActionId(id)}
-      onClose={() => setActionId("")}
-    >
-      <Button
-        variant="secondary"
-        color="icon.primary"
-        width="full"
-        justifyContent="space-between"
-        borderRadius="0"
-        rightIcon={
-          <Image
-            src="/icons/info.svg"
-            width="16px"
-            height="16px"
-            alt="icon info"
-          />
-        }
-        onClick={() => handleOpenAddCustomerModal(ACTION_TYPE.VIEW, id)}
-      >
-        View
-      </Button>
-      <Button
-        variant="secondary"
-        color="icon.primary"
-        width="full"
-        justifyContent="space-between"
-        borderRadius="0"
-        rightIcon={
-          <Image
-            src="/icons/pencil-filed.svg"
-            width="16px"
-            height="16px"
-            alt="icon edit"
-          />
-        }
-        onClick={() => handleOpenAddCustomerModal(ACTION_TYPE.EDIT, id)}
-      >
-        Edit
-      </Button>
-      <Button
-        variant="secondary"
-        width="full"
-        justifyContent="space-between"
-        borderRadius="0"
-        rightIcon={
-          <Image
-            src="/icons/trash-filled.svg"
-            width="16px"
-            height="16px"
-            alt="icon delete"
-          />
-        }
-        onClick={() => handleDeleteCustomer(id)}
-      >
-        Delete
-      </Button>
-    </Dropdown>
-  );
-
-  const renderBody = (customers: WithID<Customer>[]) =>
-    customers?.length > 0 ? (
-      customers?.map(
-        (
-          { id, customerId, name, description, status, rate, balance, deposit },
-          index
-        ) => {
-          // if balance is less than 0, remove negative
-          const formatBalance =
-            balance < 0 ? balance.toString().split("-")[1] : balance;
-
-          return (
-            <Flex
-              alignItems="center"
-              fontFamily="body"
-              justifyContent="space-between"
-              padding="15px 20px 10px 20px"
-              fontSize="base"
-              bgColor={index % 2 === 0 ? "brand.100" : undefined}
-              color="text.default"
-              key={id}
-            >
-              <Flex
-                alignItems="flex-start"
-                width="160px"
-                flexDirection="column"
-              >
-                <Tooltip label={name}>
-                  <Text variant="heading" className="truncate-two-lines">
-                    {name}
-                  </Text>
-                </Tooltip>
-                <Text variant="unit">{customerId}</Text>
-              </Flex>
-              <Tooltip label={description}>
-                <Text
-                  width="320px"
-                  textAlign="left"
-                  marginLeft="20px"
-                  className="truncate-two-lines"
-                >
-                  {description}
-                </Text>
-              </Tooltip>
-              <Box width="70px" textAlign="center">
-                <Status variant={status?.toLowerCase()}>{status}</Status>
-              </Box>
-              <Flex
-                width="100px"
-                flexDirection="column"
-                textAlign="right"
-                marginLeft="20px"
-              >
-                <Text>${rate.toFixed(2)}</Text>
-                <Text variant="unit">CAD</Text>
-              </Flex>
-              <Flex
-                width="100px"
-                flexDirection="column"
-                textAlign="right"
-                marginLeft="20px"
-              >
-                <Text color={balance < 0 ? "text.reversal" : "text.helper"}>
-                  {balance < 0 && "-"}${Number(formatBalance).toFixed(2)}
-                </Text>
-                <Text variant="unit">CAD</Text>
-              </Flex>
-              <Flex
-                width="100px"
-                flexDirection="column"
-                textAlign="right"
-                marginLeft="20px"
-              >
-                <Text>${deposit.toFixed(2)}</Text>
-                <Text variant="unit">CAD</Text>
-              </Flex>
-              <Box width="20px" textAlign="right">
-                {!!id && renderAction(id)}
-              </Box>
-            </Flex>
-          );
-        }
-      )
-    ) : (
-      <Text variant="not-found">Customer not found.</Text>
-    );
+  // handle confirm delete customer
+  const handleConfirmDelete = (id: string) => {
+    onToggleConfirmModal();
+    setCustomerId(id);
+  };
 
   const renderIndicatorLoadMore = () => (
     <Box textAlign="center" bgColor="brand.100" paddingTop="10px">
@@ -426,20 +241,16 @@ const App = () => {
             + Add customer
           </Button>
         </Flex>
-        {(isError || isErrorDelete) && (
-          <Notification
-            message={error?.message || errorDelete?.message || ""}
-            type="error"
-          />
-        )}
-        {renderHeader()}
-        <Suspense fallback={renderIndicatorLoadMore()}>
-          {isPending
-            ? renderIndicatorLoadMore()
-            : !!data?.pages &&
-              data.pages?.length > 0 &&
-              data.pages?.map((customers) => renderBody(customers))}
-        </Suspense>
+        <CustomerTable
+          data={data}
+          actionId={actionId}
+          order={order}
+          setActionId={setActionId}
+          setOrder={setOrder}
+          renderIndicator={renderIndicatorLoadMore}
+          handleOpenModal={handleOpenAddCustomerModal}
+          handleConfirmDelete={handleConfirmDelete}
+        />
         {isLoadMore && !isPending && renderIndicatorLoadMore()}
         {isLoading && (
           <Flex
@@ -457,14 +268,24 @@ const App = () => {
           </Flex>
         )}
       </Box>
-      {isShowAddCustomerModal && (
-        <AddCustomerModal
-          type={actionType}
-          id={customerId}
-          isOpen={isShowAddCustomerModal}
-          onClose={onToggleAddCustomerModal}
-        />
-      )}
+      <Suspense fallback={renderIndicatorLoadMore()}>
+        {isShowAddCustomerModal && (
+          <AddCustomerModal
+            type={actionType}
+            id={customerId}
+            isOpen={isShowAddCustomerModal}
+            onClose={onToggleAddCustomerModal}
+          />
+        )}
+        {isShowConfirmModal && (
+          <ConfirmModal
+            isOpen={isShowConfirmModal}
+            onClose={onToggleConfirmModal}
+            onSubmit={() => handleDeleteCustomer(customerId)}
+            title="Are you sure you want to delete?"
+          />
+        )}
+      </Suspense>
     </>
   );
 };

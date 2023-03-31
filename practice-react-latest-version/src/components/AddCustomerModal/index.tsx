@@ -1,5 +1,5 @@
 // Libs
-import React, { memo, useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import {
   useMutation,
@@ -8,17 +8,16 @@ import {
   useQueryClient,
   UseQueryResult,
 } from "react-query";
-import { Button, CircularProgress, Flex } from "@chakra-ui/react";
+import { Button, CircularProgress, Flex, useToast } from "@chakra-ui/react";
 
 // Components
 import Modal from "components/Modal";
 import Input from "components/Input";
 import Select from "components/Select";
-import Notification from "components/Notification";
 
 // Constants
 import { ACTION_TYPE, MAX_LENGTH, statusOptions } from "constants/variables";
-import { ERROR_MESSAGE } from "constants/message";
+import { ERROR_MESSAGE, SUCCESS_MESSAGE } from "constants/message";
 import { REGEX_PATTERNS } from "constants/regexPatterns";
 import { CUSTOMER_ENDPOINT } from "constants/endpoint";
 
@@ -63,18 +62,30 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
     formState: { errors },
   } = useForm<FormValues>();
   const queryClient = useQueryClient();
+  const toast = useToast();
 
   // fetch customer data by id
-  const {
-    data: customer,
-    isFetching,
-    error: errorFetchData,
-    isError: isErrorFetchData,
-  }: UseQueryResult<Customer, Error> = useQuery(
+  const { isFetching }: UseQueryResult<Customer, Error> = useQuery(
     "customer",
     () => id && fetchCustomer(id),
     {
       refetchOnWindowFocus: false,
+      onSuccess(customer) {
+        setValue("name", customer?.name || "");
+        setValue("description", customer?.description || "");
+        setValue("status", customer?.status || statusOptions[0].value);
+        setValue("rate", customer?.rate?.toString() || "");
+        setValue("balance", customer?.balance?.toString() || "");
+        setValue("deposit", customer?.deposit?.toString() || "");
+      },
+      onError(error) {
+        toast({
+          position: "top",
+          description: error.message,
+          status: "error",
+          isClosable: true,
+        });
+      },
     }
   );
 
@@ -82,8 +93,6 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
   // otherwise, update customer
   const {
     mutate,
-    isError,
-    error,
     isLoading,
   }: UseMutationResult<Customer, Error, Customer, unknown> = useMutation(
     (input: Customer) =>
@@ -91,92 +100,98 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
         ? createCustomer(input)
         : updateCustomer(input as WithID<Customer>),
     {
-      onSettled() {
+      onSuccess() {
         queryClient.refetchQueries(CUSTOMER_ENDPOINT);
+        toast({
+          position: "top",
+          description:
+            type === ACTION_TYPE.ADD
+              ? SUCCESS_MESSAGE.CREATE
+              : SUCCESS_MESSAGE.UPDATE,
+          status: "success",
+          isClosable: true,
+        });
         onClose();
+      },
+      onError(error) {
+        toast({
+          position: "top",
+          description: error.message,
+          status: "error",
+          isClosable: true,
+        });
       },
     }
   );
 
-  const setDefaultValues = useCallback(() => {
-    setValue("name", customer?.name || "");
-    setValue("description", customer?.description || "");
-    setValue("status", customer?.status || statusOptions[0].value);
-    setValue("rate", customer?.rate?.toString() || "");
-    setValue("balance", customer?.balance?.toString() || "");
-    setValue("deposit", customer?.deposit?.toString() || "");
-  }, [setValue, customer]);
-
-  // set default value
-  useEffect(() => {
-    let didCancel = false;
-
-    if (!didCancel) {
-      setDefaultValues();
-    }
-
-    return () => {
-      didCancel = true;
-    };
-  }, [setDefaultValues]);
-
   // handle change name
-  const handleChangeName = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const value = e.target.value;
+  const handleChangeName = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const value = e.target.value;
 
-    setValue("name", value);
-    clearErrors("name");
-  };
+      setValue("name", value);
+      clearErrors("name");
+    },
+    [setValue, clearErrors]
+  );
 
   // handle change description
-  const handleChangeDescription = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const value = e.target.value;
+  const handleChangeDescription = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const value = e.target.value;
 
-    setValue("description", value);
-    clearErrors("description");
-  };
+      setValue("description", value);
+      clearErrors("description");
+    },
+    [setValue, clearErrors]
+  );
 
   // handle change status
-  const handleChangeStatus = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setValue("status", e.target.value);
-  };
+  const handleChangeStatus = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setValue("status", e.target.value);
+    },
+    [setValue]
+  );
 
   // handle change rate
-  const handleChangeRate = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const match = regexValue(e.target.value, REGEX_PATTERNS.INTEGER_4_DIGITS);
-    const value = (!!match && match[1]) || "";
+  const handleChangeRate = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const match = regexValue(e.target.value, REGEX_PATTERNS.INTEGER_4_DIGITS);
+      const value = (!!match && match[1]) || "";
 
-    setValue("rate", value);
-    clearErrors("rate");
-  };
+      setValue("rate", value);
+      clearErrors("rate");
+    },
+    [setValue, clearErrors]
+  );
 
   // handle change balance
-  const handleChangeBalance = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const match = regexValue(e.target.value, REGEX_PATTERNS.NEGATIVE_4_DIGITS);
-    const value = (!!match && match[1]) || "";
+  const handleChangeBalance = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const match = regexValue(
+        e.target.value,
+        REGEX_PATTERNS.NEGATIVE_4_DIGITS
+      );
+      const value = (!!match && match[1]) || "";
 
-    setValue("balance", value);
-    clearErrors("balance");
-  };
+      setValue("balance", value);
+      clearErrors("balance");
+    },
+    [setValue, clearErrors]
+  );
 
   // handle change deposit
-  const handleChangeDeposit = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const match = regexValue(e.target.value, REGEX_PATTERNS.INTEGER_4_DIGITS);
-    const value = (!!match && match[1]) || "";
+  const handleChangeDeposit = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const match = regexValue(e.target.value, REGEX_PATTERNS.INTEGER_4_DIGITS);
+      const value = (!!match && match[1]) || "";
 
-    setValue("deposit", value);
-    clearErrors("deposit");
-  };
+      setValue("deposit", value);
+      clearErrors("deposit");
+    },
+    [setValue, clearErrors]
+  );
 
   // handle submit customer data
   const handleSubmitCustomerData = () => {
@@ -237,7 +252,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           },
         })}
         error={errors?.name?.message ?? ""}
-        onChange={(e) => handleChangeName(e)}
+        onChange={handleChangeName}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
@@ -258,7 +273,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           },
         })}
         error={errors?.description?.message ?? ""}
-        onChange={(e) => handleChangeDescription(e)}
+        onChange={handleChangeDescription}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Select
@@ -274,7 +289,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
         height="51px"
         value={watch("status") || ""}
         {...register("status")}
-        onChange={(e) => handleChangeStatus(e)}
+        onChange={handleChangeStatus}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
@@ -293,7 +308,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           required: ERROR_MESSAGE.REQUIRED,
         })}
         error={errors?.rate?.message ?? ""}
-        onChange={(e) => handleChangeRate(e)}
+        onChange={handleChangeRate}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
@@ -312,7 +327,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           required: ERROR_MESSAGE.REQUIRED,
         })}
         error={errors?.balance?.message ?? ""}
-        onChange={(e) => handleChangeBalance(e)}
+        onChange={handleChangeBalance}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
@@ -331,15 +346,9 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           required: ERROR_MESSAGE.REQUIRED,
         })}
         error={errors?.deposit?.message ?? ""}
-        onChange={(e) => handleChangeDeposit(e)}
+        onChange={handleChangeDeposit}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
-      {(isError || isErrorFetchData) && (
-        <Notification
-          message={error?.message || errorFetchData?.message || ""}
-          type="error"
-        />
-      )}
       {type !== ACTION_TYPE.VIEW && (
         <Button
           width="173px"
@@ -372,4 +381,4 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
   );
 };
 
-export default memo(AddCustomerModal);
+export default AddCustomerModal;

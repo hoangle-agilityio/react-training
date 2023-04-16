@@ -58,7 +58,7 @@ const App = () => {
   const toast = useToast();
 
   // fetch customer's data with 20 records on 1 time
-  const {
+  let {
     data,
     isFetching: isLoadMore,
     hasNextPage,
@@ -86,6 +86,46 @@ const App = () => {
       },
     }
   );
+
+  // mock data for data table page
+  data = {
+    pages: [
+      [
+        {
+          customerId: 5351202197,
+          name: "Ahmad Rosser",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla",
+          status: "Inactive",
+          rate: 66,
+          balance: 2560,
+          deposit: 555,
+          id: "2",
+        },
+        {
+          customerId: 9095689304,
+          name: "Leo Stanton",
+          description: "description",
+          status: "Due",
+          rate: 0,
+          balance: 242,
+          deposit: 2411,
+          id: "3",
+        },
+        {
+          customerId: 2093666722,
+          name: "Ryan Westervelt",
+          description: "Ryan Westervelt",
+          status: "Open",
+          rate: 0,
+          balance: 0,
+          deposit: 0,
+          id: "5",
+        },
+      ],
+    ],
+    pageParams: [null],
+  };
 
   // delete customer's data
   const {

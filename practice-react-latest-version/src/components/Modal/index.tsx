@@ -35,7 +35,11 @@ const Modal = ({
   return (
     <ReactModal isOpen={isOpen} onClose={onClose} size={size}>
       <ModalOverlay>
-        <ModalContent {...styles?.wrapper} padding="20px 35px">
+        <ModalContent
+          {...styles?.wrapper}
+          padding="20px 35px"
+          bgColor="brand.100"
+        >
           <ModalCloseButton />
           <ModalHeader {...styles?.title} padding="0">
             {title}

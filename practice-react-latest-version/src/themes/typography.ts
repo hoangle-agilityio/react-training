@@ -1,7 +1,7 @@
 export const fonts = {
-  heading: "Inter SemiBold",
-  body: "Inter Regular",
-  medium: "Inter Medium",
+  heading: `"Inter SemiBold", sans-serif`,
+  body: `"Inter Regular", sans-serif`,
+  medium: `"Inter Medium", sans-serif`,
 };
 
 export const fontSizes = {

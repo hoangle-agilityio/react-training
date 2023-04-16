@@ -32,7 +32,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r0:"
               aria-modal="true"
-              class="chakra-modal__content css-1ipu5ej"
+              class="chakra-modal__content css-1bn8s9p"
               id="chakra-modal-:r0:"
               role="dialog"
               style="opacity: 0; transform: scale(0.95) translateZ(0);"
@@ -62,7 +62,7 @@ Object {
                 Add New Customer
               </header>
               <p
-                class="chakra-text css-1xt6692"
+                class="chakra-text css-bp306l"
                 data-testid="modal-content"
               >
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -170,7 +170,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r6:"
               aria-modal="true"
-              class="chakra-modal__content css-1ipu5ej"
+              class="chakra-modal__content css-1bn8s9p"
               id="chakra-modal-:r6:"
               role="dialog"
               style="opacity: 0; transform: scale(0.95) translateZ(0);"
@@ -200,7 +200,7 @@ Object {
                 Add New Customer
               </header>
               <p
-                class="chakra-text css-1xt6692"
+                class="chakra-text css-bp306l"
                 data-testid="modal-content"
               >
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -308,7 +308,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r4:"
               aria-modal="true"
-              class="chakra-modal__content css-1ipu5ej"
+              class="chakra-modal__content css-1bn8s9p"
               id="chakra-modal-:r4:"
               role="dialog"
               style="opacity: 0; transform: scale(0.95) translateZ(0);"
@@ -338,7 +338,7 @@ Object {
                 Add New Customer
               </header>
               <p
-                class="chakra-text css-1xt6692"
+                class="chakra-text css-bp306l"
                 data-testid="modal-content"
               >
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -446,7 +446,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r2:"
               aria-modal="true"
-              class="chakra-modal__content css-1ipu5ej"
+              class="chakra-modal__content css-1bn8s9p"
               id="chakra-modal-:r2:"
               role="dialog"
               style="opacity: 0; transform: scale(0.95) translateZ(0);"
@@ -476,7 +476,7 @@ Object {
                 Add New Customer
               </header>
               <p
-                class="chakra-text css-1xt6692"
+                class="chakra-text css-bp306l"
                 data-testid="modal-content"
               >
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -584,7 +584,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r3:"
               aria-modal="true"
-              class="chakra-modal__content css-1ipu5ej"
+              class="chakra-modal__content css-1bn8s9p"
               id="chakra-modal-:r3:"
               role="dialog"
               style="opacity: 0; transform: scale(0.95) translateZ(0);"
@@ -614,7 +614,7 @@ Object {
                 Add New Customer
               </header>
               <p
-                class="chakra-text css-1xt6692"
+                class="chakra-text css-bp306l"
                 data-testid="modal-content"
               >
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -722,7 +722,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r5:"
               aria-modal="true"
-              class="chakra-modal__content css-1ipu5ej"
+              class="chakra-modal__content css-1bn8s9p"
               id="chakra-modal-:r5:"
               role="dialog"
               style="opacity: 0; transform: scale(0.95) translateZ(0);"
@@ -752,7 +752,7 @@ Object {
                 Add New Customer
               </header>
               <p
-                class="chakra-text css-1xt6692"
+                class="chakra-text css-bp306l"
                 data-testid="modal-content"
               >
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -860,7 +860,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r1:"
               aria-modal="true"
-              class="chakra-modal__content css-1ipu5ej"
+              class="chakra-modal__content css-1bn8s9p"
               id="chakra-modal-:r1:"
               role="dialog"
               style="opacity: 0; transform: scale(0.95) translateZ(0);"
@@ -890,7 +890,7 @@ Object {
                 Add New Customer
               </header>
               <p
-                class="chakra-text css-1xt6692"
+                class="chakra-text css-bp306l"
                 data-testid="modal-content"
               >
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.

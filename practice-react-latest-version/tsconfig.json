@@ -21,7 +21,9 @@
       "@pages/*": ["/pages/*"],
       "@themes/*": ["/themes/*"],
       "@types/*": ["/types/*"],
-      "@constants/*": ["/constants/*"]
+      "@constants/*": ["/constants/*"],
+      "@services/*": ["/services/*"],
+      "@utils/*": ["/utils/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "src"],

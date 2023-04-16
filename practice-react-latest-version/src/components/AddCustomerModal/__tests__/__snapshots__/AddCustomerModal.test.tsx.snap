@@ -32,7 +32,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r1o:"
               aria-modal="true"
-              class="chakra-modal__content css-jbhgrw"
+              class="chakra-modal__content css-m2trf1"
               id="chakra-modal-:r1o:"
               role="dialog"
               style="opacity: 0.7552628175377846; transform: scale(0.9877631408768892) translateZ(0);"
@@ -62,7 +62,7 @@ Object {
                 Add Customer
               </header>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -71,7 +71,7 @@ Object {
                   Name
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -81,7 +81,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -90,7 +90,7 @@ Object {
                   Description
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <textarea
                     class="chakra-textarea css-oce1e7"
@@ -99,7 +99,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-1w2ee95"
+                class="css-367ir2"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -171,7 +171,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -180,7 +180,7 @@ Object {
                   Rate
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -190,7 +190,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -199,7 +199,7 @@ Object {
                   Balance
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -209,7 +209,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -218,7 +218,7 @@ Object {
                   Deposit
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -228,13 +228,13 @@ Object {
                 </div>
               </div>
               <button
-                class="chakra-button css-jj552q"
+                class="chakra-button css-tlfjt9"
                 type="button"
               >
                 Create
               </button>
               <button
-                class="chakra-button css-17hgb06"
+                class="chakra-button css-g7sfhe"
                 type="button"
               >
                 Cancel
@@ -342,7 +342,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r0:"
               aria-modal="true"
-              class="chakra-modal__content css-jbhgrw"
+              class="chakra-modal__content css-m2trf1"
               id="chakra-modal-:r0:"
               role="dialog"
               style="opacity: 0.6235379152471681; transform: scale(0.9811768957623583) translateZ(0);"
@@ -372,7 +372,7 @@ Object {
                 Add Customer
               </header>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -381,7 +381,7 @@ Object {
                   Name
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -391,7 +391,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -400,7 +400,7 @@ Object {
                   Description
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <textarea
                     class="chakra-textarea css-oce1e7"
@@ -409,7 +409,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-1w2ee95"
+                class="css-367ir2"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -481,7 +481,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -490,7 +490,7 @@ Object {
                   Rate
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -500,7 +500,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -509,7 +509,7 @@ Object {
                   Balance
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -519,7 +519,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -528,7 +528,7 @@ Object {
                   Deposit
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -538,13 +538,13 @@ Object {
                 </div>
               </div>
               <button
-                class="chakra-button css-jj552q"
+                class="chakra-button css-tlfjt9"
                 type="button"
               >
                 Create
               </button>
               <button
-                class="chakra-button css-17hgb06"
+                class="chakra-button css-g7sfhe"
                 type="button"
               >
                 Cancel
@@ -652,7 +652,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:r7:"
               aria-modal="true"
-              class="chakra-modal__content css-jbhgrw"
+              class="chakra-modal__content css-m2trf1"
               id="chakra-modal-:r7:"
               role="dialog"
               style="opacity: 0.9021108962296814; transform: scale(0.995105544811484) translateZ(0);"
@@ -682,7 +682,7 @@ Object {
                 Edit Customer
               </header>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -691,7 +691,7 @@ Object {
                   Name
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -701,7 +701,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -710,7 +710,7 @@ Object {
                   Description
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <textarea
                     class="chakra-textarea css-oce1e7"
@@ -719,7 +719,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-1w2ee95"
+                class="css-367ir2"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -791,7 +791,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -800,7 +800,7 @@ Object {
                   Rate
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -810,7 +810,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -819,7 +819,7 @@ Object {
                   Balance
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -829,7 +829,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -838,7 +838,7 @@ Object {
                   Deposit
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -848,13 +848,13 @@ Object {
                 </div>
               </div>
               <button
-                class="chakra-button css-jj552q"
+                class="chakra-button css-tlfjt9"
                 type="button"
               >
                 Save Changes
               </button>
               <button
-                class="chakra-button css-17hgb06"
+                class="chakra-button css-g7sfhe"
                 type="button"
               >
                 Cancel
@@ -962,7 +962,7 @@ Object {
             <section
               aria-labelledby="chakra-modal--header-:re:"
               aria-modal="true"
-              class="chakra-modal__content css-jbhgrw"
+              class="chakra-modal__content css-m2trf1"
               id="chakra-modal-:re:"
               role="dialog"
               style="opacity: 0.7552628175377846; transform: scale(0.9877631408768892) translateZ(0);"
@@ -992,7 +992,7 @@ Object {
                 View Customer
               </header>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -1001,7 +1001,7 @@ Object {
                   Name
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -1012,7 +1012,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -1021,7 +1021,7 @@ Object {
                   Description
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <textarea
                     class="chakra-textarea css-oce1e7"
@@ -1031,7 +1031,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-uj0vbj"
+                class="css-ljqji7"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -1104,7 +1104,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -1113,7 +1113,7 @@ Object {
                   Rate
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -1124,7 +1124,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -1133,7 +1133,7 @@ Object {
                   Balance
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -1144,7 +1144,7 @@ Object {
                 </div>
               </div>
               <div
-                class="css-d9ko9t"
+                class="css-131h2vh"
               >
                 <label
                   class="chakra-form__label css-2dkmm4"
@@ -1153,7 +1153,7 @@ Object {
                   Deposit
                 </label>
                 <div
-                  class="css-opt09h"
+                  class="css-188q4y8"
                 >
                   <input
                     class="chakra-input css-1fzofse"
@@ -1164,7 +1164,7 @@ Object {
                 </div>
               </div>
               <button
-                class="chakra-button css-17hgb06"
+                class="chakra-button css-g7sfhe"
                 type="button"
               >
                 Cancel

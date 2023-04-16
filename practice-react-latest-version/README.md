@@ -1,13 +1,16 @@
 # Practice React Latest Version
 
 ### Overview:
+
 - This document provides the requirements for Customer’s Data Table Web App.
 - UI refer [Data Table](https://www.figma.com/file/XQpNVIrl8l2DwiSEEWxOJO/UI-CRUD?node-id=0%3A1&t=U41qTlLWtzyd85Rk-1).
 
 ## Team size
+
 - 1 dev.
 
 ### Targets:
+
 - Build web app React latest version (v18+)
 - Apply new things from React 18
   - New React DOM Client: createRoot
@@ -19,13 +22,16 @@
 - Apply Storybook
 
 ### Information:
+
 - Timeline:
+
   - Total time: 36h
   - Estimate time: 4.5 days (8h/day).
   - Actual time: 9 days (4h/day).
   - [Estimate here](https://docs.google.com/document/d/1GOs26ZI3M7wDE4RpoNyG5smrzUyYr_4O4IdhiFAuOqU/edit?usp=sharing)
 
 - Technical:
+
   - React latest version (v18+)
   - Chakra UI
   - mockAPI
@@ -41,6 +47,7 @@
   - Commitlint
 
 ### Requirements:
+
 - List out the data table
   - Search Name or Description section
   - Add Customer button
@@ -64,29 +71,14 @@
 - User can CRUD
 - Load more if data > 20 records
 
-### Getting started:
+### Installation:
 
-- Step 1: Cloning the repo
-  - Main repo:
-    - HTTPS: `$ git clone https://gitlab.asoft-python.com/hoang.le/react-training.git`
-    - SSH: `$ git clone git@gitlab.asoft-python.com:hoang.le/react-training.git`
-- Step 2: Checkout branch `$ git checkout develop`
-- Step 3: Go to the folder practice `cd react-training/practice-react-latest-version`
-- Step 4: Install package `yarn install`
-- Step 5: Run project `yarn start`
-- Step 6: Open http://localhost:3000/ in your browser.
-- Step 7: Setup storybook
-  - Add the addon in `.storybook/main.js`
-      > module.exports = {
-      addons: ['@chakra-ui/storybook-addon'],
-    }
-  - Add the addon in `.storybook/preview.js`
-    > import themes from "../src/themes";
-    export const parameters = {
-      chakra: {
-        theme: themes,
-      },
-    };
-  - Run storybook : `yarn storybook`
-- Step 8: View storybook on `http://localhost:6006/`
-- Step 9: Run unit test: `yarn test`
+| Command                                                             | Action                                                           |
+| :------------------------------------------------------------------ | :--------------------------------------------------------------- |
+| `git clone git@gitlab.asoft-python.com:hoang.le/react-training.git` | Create a copy of the target repository                           |
+| `git checkout develop`                                              | Checkout branch                                                  |
+| `cd react-training/practice-react-latest-version`                   | Go to the folder practice                                        |
+| `yarn install`                                                      | Installs dependencies                                            |
+| `yarn start`                                                        | Start local server at localhost:3000                             |
+| `yarn storybook`                                                    | Run the storybook to review all the components at localhost:6006 |
+| `yarn test`                                                         | Run unit test                                                    |

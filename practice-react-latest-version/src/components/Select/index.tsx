@@ -1,74 +1,37 @@
 // Libs
 import { TriangleDownIcon } from "@chakra-ui/icons";
-import { Box, BoxProps, FormLabel, Text, forwardRef } from "@chakra-ui/react";
-import ReactSelect, {
-  GroupBase,
-  OptionsOrGroups,
-  Props as SelectProps,
-} from "react-select";
+import {
+  Box,
+  BoxProps,
+  FormLabel,
+  Text,
+  forwardRef,
+  Select as CharakSelect,
+  SelectProps,
+} from "@chakra-ui/react";
 import React, { memo, useId } from "react";
 
 // Types
 import { OptionType } from "types/common";
 
-// Themes
-import { colors } from "themes/colors";
-
-type ControlStyleTypes = {
-  width?: string;
-  height?: string;
-};
-
-type StyleTypes = {
-  wrapper?: BoxProps;
-  controlStyles?: ControlStyleTypes;
-};
-
 type Props = {
   label?: React.ReactNode;
   name: string;
-  className?: string;
-  styles?: StyleTypes;
-  isSearchable?: boolean;
+  styleWrapper?: BoxProps;
   isDisabled?: boolean;
-  isLoading?: boolean;
-  options: OptionsOrGroups<unknown, GroupBase<OptionType>>;
+  options: OptionType[];
   error?: string;
-} & SelectProps<OptionType>;
+} & SelectProps;
 
-const SelectCustom = forwardRef(
+const Select = forwardRef(
   (
-    {
-      label,
-      name,
-      className,
-      styles,
-      isSearchable = true,
-      isDisabled,
-      isLoading,
-      options,
-      error,
-      ...rest
-    }: Props,
+    { label, name, styleWrapper, isDisabled, options, error, ...rest }: Props,
     ref
   ) => {
     const id = useId();
-    const customStyles = (controlStyles?: ControlStyleTypes) => ({
-      control: () => ({
-        "&:hover": {
-          borderColor: error ? colors.red[200] : colors.gray[400],
-        },
-        display: "flex",
-        height: controlStyles?.height || "40px",
-        border: "1px solid",
-        borderColor: error ? colors.red[200] : colors.gray[400],
-        borderRadius: "6px",
-        cursor: "pointer",
-      }),
-    });
 
     return (
-      <Box fontSize="base" color="gray.600" {...styles?.wrapper}>
+      <Box fontSize="base" color="text.default" {...styleWrapper}>
         <FormLabel
           fontSize="base"
           fontFamily="heading"
@@ -76,31 +39,26 @@ const SelectCustom = forwardRef(
         >
           {label}
         </FormLabel>
-        <ReactSelect
-          inputId={`${name}${id}`}
-          options={options}
-          ref={ref}
-          components={{
-            DropdownIndicator: () => (
-              <TriangleDownIcon boxSize="12px" marginRight="20px" />
-            ),
-            IndicatorSeparator: () => null,
-          }}
-          styles={customStyles(styles?.controlStyles)}
-          className={className}
-          isSearchable={isSearchable}
+        <CharakSelect
+          id={`${name}${id}`}
+          icon={<TriangleDownIcon fontSize="12px" />}
+          borderColor={error ? "text.reversal" : "text.secondary"}
+          fontSize="base"
+          cursor="pointer"
           isDisabled={isDisabled}
-          isLoading={isLoading}
+          ref={ref}
           {...rest}
-        />
-        {error && (
-          <Text fontSize="base" color="red.200">
-            {error}
-          </Text>
-        )}
+        >
+          {options?.map(({ label, value }, index) => (
+            <option value={value} key={index + id}>
+              {label}
+            </option>
+          ))}
+        </CharakSelect>
+        {error && <Text variant="error">{error}</Text>}
       </Box>
     );
   }
 );
 
-export default memo(SelectCustom);
+export default memo(Select);

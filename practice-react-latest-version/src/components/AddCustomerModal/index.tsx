@@ -1,5 +1,5 @@
 // Libs
-import React, { memo, useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import {
   useMutation,
@@ -8,32 +8,25 @@ import {
   useQueryClient,
   UseQueryResult,
 } from "react-query";
-import { CircularProgress, Flex } from "@chakra-ui/react";
+import { Button, CircularProgress, Flex, useToast } from "@chakra-ui/react";
 
 // Components
 import Modal from "components/Modal";
 import Input from "components/Input";
 import Select from "components/Select";
-import Button from "components/Button";
-import Notification from "components/Notification";
 
 // Constants
 import { ACTION_TYPE, MAX_LENGTH, statusOptions } from "constants/variables";
-import { ERROR_MESSAGE } from "constants/message";
+import { ERROR_MESSAGE, SUCCESS_MESSAGE } from "constants/message";
 import { REGEX_PATTERNS } from "constants/regexPatterns";
 import { CUSTOMER_ENDPOINT } from "constants/endpoint";
 
 // Types
-import { OptionType, WithID } from "types/common";
-import { MultiValue, SingleValue } from "react-select";
+import { WithID } from "types/common";
 import { Customer } from "types/customer";
 
 // Utils
-import {
-  convertDataToObject,
-  generateRandomCustomerId,
-  regexValue,
-} from "utils/utilities";
+import { generateRandomCustomerId, regexValue } from "utils/utilities";
 
 // Queries
 import {
@@ -52,7 +45,7 @@ type Props = {
 type FormValues = {
   name: string;
   description: string;
-  status: OptionType;
+  status: string;
   rate: string;
   balance: string;
   deposit: string;
@@ -69,18 +62,30 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
     formState: { errors },
   } = useForm<FormValues>();
   const queryClient = useQueryClient();
+  const toast = useToast();
 
   // fetch customer data by id
-  const {
-    data: customer,
-    isFetching,
-    error: errorFetchData,
-    isError: isErrorFetchData,
-  }: UseQueryResult<Customer, Error> = useQuery(
+  const { isFetching }: UseQueryResult<Customer, Error> = useQuery(
     "customer",
     () => id && fetchCustomer(id),
     {
       refetchOnWindowFocus: false,
+      onSuccess(customer) {
+        setValue("name", customer?.name || "");
+        setValue("description", customer?.description || "");
+        setValue("status", customer?.status || statusOptions[0].value);
+        setValue("rate", customer?.rate?.toString() || "");
+        setValue("balance", customer?.balance?.toString() || "");
+        setValue("deposit", customer?.deposit?.toString() || "");
+      },
+      onError(error) {
+        toast({
+          position: "top",
+          description: error.message,
+          status: "error",
+          isClosable: true,
+        });
+      },
     }
   );
 
@@ -88,8 +93,6 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
   // otherwise, update customer
   const {
     mutate,
-    isError,
-    error,
     isLoading,
   }: UseMutationResult<Customer, Error, Customer, unknown> = useMutation(
     (input: Customer) =>
@@ -97,97 +100,98 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
         ? createCustomer(input)
         : updateCustomer(input as WithID<Customer>),
     {
-      onSettled() {
+      onSuccess() {
         queryClient.refetchQueries(CUSTOMER_ENDPOINT);
+        toast({
+          position: "top",
+          description:
+            type === ACTION_TYPE.ADD
+              ? SUCCESS_MESSAGE.CREATE
+              : SUCCESS_MESSAGE.UPDATE,
+          status: "success",
+          isClosable: true,
+        });
         onClose();
+      },
+      onError(error) {
+        toast({
+          position: "top",
+          description: error.message,
+          status: "error",
+          isClosable: true,
+        });
       },
     }
   );
 
-  const setDefaultValues = useCallback(() => {
-    setValue("name", customer?.name || "");
-    setValue("description", customer?.description || "");
-    setValue(
-      "status",
-      convertDataToObject(customer?.status as string) || statusOptions[0]
-    );
-    setValue("rate", customer?.rate?.toString() || "");
-    setValue("balance", customer?.balance?.toString() || "");
-    setValue("deposit", customer?.deposit?.toString() || "");
-  }, [setValue, customer]);
-
-  // set default value
-  useEffect(() => {
-    let didCancel = false;
-
-    if (!didCancel) {
-      setDefaultValues();
-    }
-
-    return () => {
-      didCancel = true;
-    };
-  }, [setDefaultValues]);
-
   // handle change name
-  const handleChangeName = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const value = e.target.value;
+  const handleChangeName = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const value = e.target.value;
 
-    setValue("name", value);
-    clearErrors("name");
-  };
+      setValue("name", value);
+      clearErrors("name");
+    },
+    [setValue, clearErrors]
+  );
 
   // handle change description
-  const handleChangeDescription = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const value = e.target.value;
+  const handleChangeDescription = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const value = e.target.value;
 
-    setValue("description", value);
-    clearErrors("description");
-  };
+      setValue("description", value);
+      clearErrors("description");
+    },
+    [setValue, clearErrors]
+  );
 
   // handle change status
-  const handleChangeStatus = (
-    data: SingleValue<OptionType> | MultiValue<OptionType>
-  ) => {
-    setValue("status", data as OptionType);
-  };
+  const handleChangeStatus = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setValue("status", e.target.value);
+    },
+    [setValue]
+  );
 
   // handle change rate
-  const handleChangeRate = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const match = regexValue(e.target.value, REGEX_PATTERNS.INTEGER_4_DIGITS);
-    const value = (!!match && match[1]) || "";
+  const handleChangeRate = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const match = regexValue(e.target.value, REGEX_PATTERNS.INTEGER_4_DIGITS);
+      const value = (!!match && match[1]) || "";
 
-    setValue("rate", value);
-    clearErrors("rate");
-  };
+      setValue("rate", value);
+      clearErrors("rate");
+    },
+    [setValue, clearErrors]
+  );
 
   // handle change balance
-  const handleChangeBalance = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const match = regexValue(e.target.value, REGEX_PATTERNS.NEGATIVE_4_DIGITS);
-    const value = (!!match && match[1]) || "";
+  const handleChangeBalance = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const match = regexValue(
+        e.target.value,
+        REGEX_PATTERNS.NEGATIVE_4_DIGITS
+      );
+      const value = (!!match && match[1]) || "";
 
-    setValue("balance", value);
-    clearErrors("balance");
-  };
+      setValue("balance", value);
+      clearErrors("balance");
+    },
+    [setValue, clearErrors]
+  );
 
   // handle change deposit
-  const handleChangeDeposit = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const match = regexValue(e.target.value, REGEX_PATTERNS.INTEGER_4_DIGITS);
-    const value = (!!match && match[1]) || "";
+  const handleChangeDeposit = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const match = regexValue(e.target.value, REGEX_PATTERNS.INTEGER_4_DIGITS);
+      const value = (!!match && match[1]) || "";
 
-    setValue("deposit", value);
-    clearErrors("deposit");
-  };
+      setValue("deposit", value);
+      clearErrors("deposit");
+    },
+    [setValue, clearErrors]
+  );
 
   // handle submit customer data
   const handleSubmitCustomerData = () => {
@@ -196,7 +200,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
       name: getValues("name"),
       customerId: generateRandomCustomerId(),
       description: getValues("description"),
-      status: getValues("status").value,
+      status: getValues("status"),
       rate: parseInt(getValues("rate")),
       balance: parseInt(getValues("balance")),
       deposit: parseInt(getValues("deposit")),
@@ -248,7 +252,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           },
         })}
         error={errors?.name?.message ?? ""}
-        onChange={(e) => handleChangeName(e)}
+        onChange={handleChangeName}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
@@ -269,27 +273,23 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           },
         })}
         error={errors?.description?.message ?? ""}
-        onChange={(e) => handleChangeDescription(e)}
+        onChange={handleChangeDescription}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Select
         label="Status"
         options={statusOptions}
-        styles={{
-          wrapper: {
-            width: "401px",
-            marginBottom: "30px",
-            ...(type === ACTION_TYPE.VIEW && {
-              cursor: "not-allowed",
-            }),
-          },
-          controlStyles: {
-            height: "51px",
-          },
+        styleWrapper={{
+          width: "401px",
+          marginBottom: "30px",
+          ...(type === ACTION_TYPE.VIEW && {
+            cursor: "not-allowed",
+          }),
         }}
-        value={watch("status") || {}}
+        height="51px"
+        value={watch("status") || ""}
         {...register("status")}
-        onChange={(e) => handleChangeStatus(e)}
+        onChange={handleChangeStatus}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
@@ -308,7 +308,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           required: ERROR_MESSAGE.REQUIRED,
         })}
         error={errors?.rate?.message ?? ""}
-        onChange={(e) => handleChangeRate(e)}
+        onChange={handleChangeRate}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
@@ -327,7 +327,7 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           required: ERROR_MESSAGE.REQUIRED,
         })}
         error={errors?.balance?.message ?? ""}
-        onChange={(e) => handleChangeBalance(e)}
+        onChange={handleChangeBalance}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
       <Input
@@ -346,40 +346,27 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           required: ERROR_MESSAGE.REQUIRED,
         })}
         error={errors?.deposit?.message ?? ""}
-        onChange={(e) => handleChangeDeposit(e)}
+        onChange={handleChangeDeposit}
         isDisabled={type === ACTION_TYPE.VIEW}
       />
-      {(isError || isErrorFetchData) && (
-        <Notification
-          message={error?.message || errorFetchData?.message || ""}
-          type="error"
-        />
-      )}
       {type !== ACTION_TYPE.VIEW && (
         <Button
-          label={type === ACTION_TYPE.ADD ? "Create" : "Save Changes"}
-          styles={{
-            width: "173px",
-            height: "51px",
-            marginBottom: "13px",
-          }}
+          width="173px"
+          height="51px"
+          marginBottom="13px"
           onClick={handleSubmit(handleSubmitCustomerData)}
-        />
+        >
+          {type === ACTION_TYPE.ADD ? "Create" : "Save Changes"}
+        </Button>
       )}
-      <Button
-        label="Cancel"
-        styles={{
-          width: "173px",
-          height: "51px",
-        }}
-        type="secondary"
-        onClick={onClose}
-      />
+      <Button width="173px" height="51px" variant="secondary" onClick={onClose}>
+        Cancel
+      </Button>
       {(isLoading || isFetching) && (
         <Flex
           justifyContent="center"
           alignItems="center"
-          bgColor="gray.200"
+          bgColor="background.default"
           position="fixed"
           opacity="0.5"
           width="full"
@@ -387,11 +374,11 @@ const AddCustomerModal = ({ type, id, isOpen, onClose }: Props) => {
           top="0"
           left="0"
         >
-          <CircularProgress isIndeterminate color="gray.300" size="60px" />
+          <CircularProgress isIndeterminate color="brand.300" size="60px" />
         </Flex>
       )}
     </Modal>
   );
 };
 
-export default memo(AddCustomerModal);
+export default AddCustomerModal;

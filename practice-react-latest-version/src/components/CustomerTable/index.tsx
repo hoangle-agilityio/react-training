@@ -1,5 +1,5 @@
 // Libs
-import React, { memo, Suspense, useState, useTransition } from "react";
+import React, { Suspense, useState, useTransition } from "react";
 import { InfiniteData } from "react-query";
 
 // Components
@@ -275,4 +275,4 @@ const CustomerTable = ({
   );
 };
 
-export default memo(CustomerTable);
+export default CustomerTable;

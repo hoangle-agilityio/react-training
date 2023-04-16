@@ -1,5 +1,2069 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Data Table Page Should click to Add Customer 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div
+      aria-hidden="true"
+      data-aria-hidden="true"
+    >
+      <div
+        class="css-dtlp96"
+      >
+        <div
+          class="css-8zasf"
+        >
+          <div
+            class="css-nr5hgz"
+          >
+            <div
+              class="css-1aamh9w"
+            >
+              <svg
+                class="chakra-icon css-gnpnw8"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23.384,21.619,16.855,15.09a9.284,9.284,0,1,0-1.768,1.768l6.529,6.529a1.266,1.266,0,0,0,1.768,0A1.251,1.251,0,0,0,23.384,21.619ZM2.75,9.5a6.75,6.75,0,1,1,6.75,6.75A6.758,6.758,0,0,1,2.75,9.5Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <input
+                class="chakra-input css-oce1e7"
+                id="search:r2b:"
+                placeholder="Search..."
+                value=""
+              />
+            </div>
+          </div>
+          <button
+            class="chakra-button css-1g26so6"
+            type="button"
+          >
+            + Add customer
+          </button>
+        </div>
+        <div
+          class="css-1milhtq"
+        >
+          <div
+            class="css-1dj3a23"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              Name
+            </p>
+            <img
+              alt="/icons/column-sorting-none.svg"
+              class="chakra-image css-3o0h5k"
+              src="/icons/column-sorting-none.svg"
+            />
+          </div>
+          <p
+            class="chakra-text css-1i8mt9"
+          >
+            Description
+          </p>
+          <p
+            class="chakra-text css-l7sbe5"
+          >
+            Status
+          </p>
+          <p
+            class="chakra-text css-mxka6n"
+          >
+            Rate
+          </p>
+          <p
+            class="chakra-text css-mxka6n"
+          >
+            Balance
+          </p>
+          <p
+            class="chakra-text css-mxka6n"
+          >
+            Deposit
+          </p>
+          <div
+            class="css-yikrym"
+          />
+        </div>
+        <div
+          class="css-ffi1j3"
+        >
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Ahmad Rosser
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              5351202197
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Inactive
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              66.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              2560.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              555.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:r2h:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:r2h:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:r2h:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-pelcff"
+        >
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Leo Stanton
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              9095689304
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            description
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Due
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              242.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              2411.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:r2n:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:r2n:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:r2n:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-ffi1j3"
+        >
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Ryan Westervelt
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              2093666722
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            Ryan Westervelt
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Open
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:r2t:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:r2t:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:r2t:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="chakra-portal"
+    >
+      <div
+        class="chakra-modal__overlay css-13d1tkw"
+        style="opacity: 0;"
+      >
+        <div
+          aria-hidden="true"
+          data-aria-hidden="true"
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+        <div
+          data-focus-lock-disabled="false"
+        >
+          <div
+            class="chakra-modal__content-container css-1oxhx2p"
+            tabindex="-1"
+          >
+            <section
+              aria-labelledby="chakra-modal--header-:r2u:"
+              aria-modal="true"
+              class="chakra-modal__content css-m2trf1"
+              id="chakra-modal-:r2u:"
+              role="dialog"
+              style="opacity: 0; transform: scale(0.95) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                aria-label="Close"
+                class="chakra-modal__close-btn css-6sdaxy"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="chakra-icon css-onkibi"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <header
+                class="chakra-modal__header css-1rghlao"
+                id="chakra-modal--header-:r2u:"
+              >
+                Add Customer
+              </header>
+              <div
+                class="css-131h2vh"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="name:r2v:"
+                >
+                  Name
+                </label>
+                <div
+                  class="css-188q4y8"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="name:r2v:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-131h2vh"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="description:r30:"
+                >
+                  Description
+                </label>
+                <div
+                  class="css-188q4y8"
+                >
+                  <textarea
+                    class="chakra-textarea css-oce1e7"
+                    id="description:r30:"
+                  />
+                </div>
+              </div>
+              <div
+                class="css-367ir2"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="status:r31:"
+                >
+                  Status
+                </label>
+                <div
+                  class="chakra-select__wrapper css-42b2qy"
+                >
+                  <select
+                    class="chakra-select css-v28fr4"
+                    id="status:r31:"
+                  >
+                    <option
+                      value="Open"
+                    >
+                      Open
+                    </option>
+                    <option
+                      value="Paid"
+                    >
+                      Paid
+                    </option>
+                    <option
+                      value="Due"
+                    >
+                      Due
+                    </option>
+                    <option
+                      value="Inactive"
+                    >
+                      Inactive
+                    </option>
+                  </select>
+                  <div
+                    class="chakra-select__icon-wrapper css-162mkon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="chakra-icon chakra-select__icon css-1hiix9"
+                      focusable="false"
+                      role="presentation"
+                      style="width: 1em; height: 1em; color: currentColor;"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="css-131h2vh"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="rate:r32:"
+                >
+                  Rate
+                </label>
+                <div
+                  class="css-188q4y8"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="rate:r32:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-131h2vh"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="balance:r33:"
+                >
+                  Balance
+                </label>
+                <div
+                  class="css-188q4y8"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="balance:r33:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-131h2vh"
+              >
+                <label
+                  class="chakra-form__label css-2dkmm4"
+                  for="deposit:r34:"
+                >
+                  Deposit
+                </label>
+                <div
+                  class="css-188q4y8"
+                >
+                  <input
+                    class="chakra-input css-1fzofse"
+                    id="deposit:r34:"
+                    value=""
+                  />
+                </div>
+              </div>
+              <button
+                class="chakra-button css-tlfjt9"
+                type="button"
+              >
+                Create
+              </button>
+              <button
+                class="chakra-button css-g7sfhe"
+                type="button"
+              >
+                Cancel
+              </button>
+              <div
+                class="css-unq3kl"
+              >
+                <div
+                  aria-valuemax="100"
+                  aria-valuemin="0"
+                  class="chakra-progress css-1y6yrgs"
+                  data-indeterminate=""
+                  role="progressbar"
+                >
+                  <svg
+                    class="css-10dqdsb"
+                    viewBox="0 0 100 100"
+                  >
+                    <circle
+                      class="chakra-progress__track css-1bhxzgy"
+                      cx="50"
+                      cy="50"
+                      r="42"
+                      stroke-width="10px"
+                    />
+                    <circle
+                      class="chakra-progress__indicator css-1thufow"
+                      cx="50"
+                      cy="50"
+                      r="42"
+                      stroke-width="10px"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          data-aria-hidden="true"
+          data-focus-guard="true"
+          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <div
+      class="css-dtlp96"
+    >
+      <div
+        class="css-8zasf"
+      >
+        <div
+          class="css-nr5hgz"
+        >
+          <div
+            class="css-1aamh9w"
+          >
+            <svg
+              class="chakra-icon css-gnpnw8"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M23.384,21.619,16.855,15.09a9.284,9.284,0,1,0-1.768,1.768l6.529,6.529a1.266,1.266,0,0,0,1.768,0A1.251,1.251,0,0,0,23.384,21.619ZM2.75,9.5a6.75,6.75,0,1,1,6.75,6.75A6.758,6.758,0,0,1,2.75,9.5Z"
+                fill="currentColor"
+              />
+            </svg>
+            <input
+              class="chakra-input css-oce1e7"
+              id="search:r2b:"
+              placeholder="Search..."
+              value=""
+            />
+          </div>
+        </div>
+        <button
+          class="chakra-button css-1g26so6"
+          type="button"
+        >
+          + Add customer
+        </button>
+      </div>
+      <div
+        class="css-1milhtq"
+      >
+        <div
+          class="css-1dj3a23"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            Name
+          </p>
+          <img
+            alt="/icons/column-sorting-none.svg"
+            class="chakra-image css-3o0h5k"
+            src="/icons/column-sorting-none.svg"
+          />
+        </div>
+        <p
+          class="chakra-text css-1i8mt9"
+        >
+          Description
+        </p>
+        <p
+          class="chakra-text css-l7sbe5"
+        >
+          Status
+        </p>
+        <p
+          class="chakra-text css-mxka6n"
+        >
+          Rate
+        </p>
+        <p
+          class="chakra-text css-mxka6n"
+        >
+          Balance
+        </p>
+        <p
+          class="chakra-text css-mxka6n"
+        >
+          Deposit
+        </p>
+        <div
+          class="css-yikrym"
+        />
+      </div>
+      <div
+        class="css-ffi1j3"
+      >
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Ahmad Rosser
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            5351202197
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Inactive
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            66.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            2560.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            555.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:r2h:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:r2h:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:r2h:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-pelcff"
+      >
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Leo Stanton
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            9095689304
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          description
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Due
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            242.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            2411.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:r2n:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:r2n:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:r2n:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-ffi1j3"
+      >
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Ryan Westervelt
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            2093666722
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          Ryan Westervelt
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Open
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:r2t:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:r2t:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:r2t:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Data Table Page Should click to show action 1`] = `
+<div>
+  <div
+    class="css-dtlp96"
+  >
+    <div
+      class="css-8zasf"
+    >
+      <div
+        class="css-nr5hgz"
+      >
+        <div
+          class="css-1aamh9w"
+        >
+          <svg
+            class="chakra-icon css-gnpnw8"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M23.384,21.619,16.855,15.09a9.284,9.284,0,1,0-1.768,1.768l6.529,6.529a1.266,1.266,0,0,0,1.768,0A1.251,1.251,0,0,0,23.384,21.619ZM2.75,9.5a6.75,6.75,0,1,1,6.75,6.75A6.758,6.758,0,0,1,2.75,9.5Z"
+              fill="currentColor"
+            />
+          </svg>
+          <input
+            class="chakra-input css-oce1e7"
+            id="search:r35:"
+            placeholder="Search..."
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        class="chakra-button css-1g26so6"
+        type="button"
+      >
+        + Add customer
+      </button>
+    </div>
+    <div
+      class="css-1milhtq"
+    >
+      <div
+        class="css-1dj3a23"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          Name
+        </p>
+        <img
+          alt="/icons/column-sorting-none.svg"
+          class="chakra-image css-3o0h5k"
+          src="/icons/column-sorting-none.svg"
+        />
+      </div>
+      <p
+        class="chakra-text css-1i8mt9"
+      >
+        Description
+      </p>
+      <p
+        class="chakra-text css-l7sbe5"
+      >
+        Status
+      </p>
+      <p
+        class="chakra-text css-mxka6n"
+      >
+        Rate
+      </p>
+      <p
+        class="chakra-text css-mxka6n"
+      >
+        Balance
+      </p>
+      <p
+        class="chakra-text css-mxka6n"
+      >
+        Deposit
+      </p>
+      <div
+        class="css-yikrym"
+      />
+    </div>
+    <div
+      class="css-ffi1j3"
+    >
+      <div
+        class="css-9r7a0b"
+      >
+        <p
+          class="chakra-text truncate-two-lines css-0"
+        >
+          Ahmad Rosser
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          5351202197
+        </p>
+      </div>
+      <p
+        class="chakra-text truncate-two-lines css-1i8mt9"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+      </p>
+      <div
+        class="css-hsfm5b"
+      >
+        <span
+          class="chakra-badge css-ifsvay"
+        >
+          Inactive
+        </span>
+      </div>
+      <div
+        class="css-1xumltm"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          $
+          66.00
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          CAD
+        </p>
+      </div>
+      <div
+        class="css-1xumltm"
+      >
+        <p
+          class="chakra-text css-6lcq84"
+        >
+          $
+          2560.00
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          CAD
+        </p>
+      </div>
+      <div
+        class="css-1xumltm"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          $
+          555.00
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          CAD
+        </p>
+      </div>
+      <div
+        class="css-r1yx0l"
+      >
+        <button
+          aria-controls="menu-list-:r3b:"
+          aria-expanded="true"
+          aria-haspopup="menu"
+          aria-label="toggle-button"
+          class="chakra-menu__menu-button css-1rfdk2h"
+          data-active=""
+          id="menu-button-:r3b:"
+        >
+          <span
+            class="css-xl71ch"
+          >
+            <p
+              class="chakra-text css-1ezsviu"
+            >
+              ⋯
+            </p>
+          </span>
+        </button>
+        <div
+          class="css-0"
+          data-popper-escaped=""
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden=""
+          style="visibility: visible; position: absolute; min-width: max-content; inset: 0 auto auto 0; left: 0px; top: 0px; margin: 0px; transform: translate(0px, 8px); --popper-transform-origin: top left;"
+        >
+          <div
+            aria-orientation="vertical"
+            class="chakra-menu__menu-list css-16tlef5"
+            id="menu-list-:r3b:"
+            role="menu"
+            style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+            tabindex="-1"
+          >
+            <button
+              class="chakra-button css-zopehd"
+              type="button"
+            >
+              View
+              <span
+                class="chakra-button__icon css-1hzyiq5"
+              >
+                <img
+                  alt="icon info"
+                  aria-hidden="true"
+                  class="chakra-image css-3o0h5k"
+                  focusable="false"
+                  src="/icons/info.svg"
+                />
+              </span>
+            </button>
+            <button
+              class="chakra-button css-zopehd"
+              type="button"
+            >
+              Edit
+              <span
+                class="chakra-button__icon css-1hzyiq5"
+              >
+                <img
+                  alt="icon edit"
+                  aria-hidden="true"
+                  class="chakra-image css-3o0h5k"
+                  focusable="false"
+                  src="/icons/pencil-filed.svg"
+                />
+              </span>
+            </button>
+            <button
+              class="chakra-button css-1vdve2c"
+              type="button"
+            >
+              Delete
+              <span
+                class="chakra-button__icon css-1hzyiq5"
+              >
+                <img
+                  alt="icon delete"
+                  aria-hidden="true"
+                  class="chakra-image css-3o0h5k"
+                  focusable="false"
+                  src="/icons/trash-filled.svg"
+                />
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-pelcff"
+    >
+      <div
+        class="css-9r7a0b"
+      >
+        <p
+          class="chakra-text truncate-two-lines css-0"
+        >
+          Leo Stanton
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          9095689304
+        </p>
+      </div>
+      <p
+        class="chakra-text truncate-two-lines css-1i8mt9"
+      >
+        description
+      </p>
+      <div
+        class="css-hsfm5b"
+      >
+        <span
+          class="chakra-badge css-ifsvay"
+        >
+          Due
+        </span>
+      </div>
+      <div
+        class="css-1xumltm"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          $
+          0.00
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          CAD
+        </p>
+      </div>
+      <div
+        class="css-1xumltm"
+      >
+        <p
+          class="chakra-text css-6lcq84"
+        >
+          $
+          242.00
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          CAD
+        </p>
+      </div>
+      <div
+        class="css-1xumltm"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          $
+          2411.00
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          CAD
+        </p>
+      </div>
+      <div
+        class="css-r1yx0l"
+      >
+        <button
+          aria-controls="menu-list-:r3h:"
+          aria-expanded="false"
+          aria-haspopup="menu"
+          aria-label="toggle-button"
+          class="chakra-menu__menu-button css-1rfdk2h"
+          id="menu-button-:r3h:"
+        >
+          <span
+            class="css-xl71ch"
+          >
+            <p
+              class="chakra-text css-1ezsviu"
+            >
+              ⋯
+            </p>
+          </span>
+        </button>
+        <div
+          class="css-0"
+          style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+        >
+          <div
+            aria-orientation="vertical"
+            class="chakra-menu__menu-list css-16tlef5"
+            id="menu-list-:r3h:"
+            role="menu"
+            style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+            tabindex="-1"
+          >
+            <button
+              class="chakra-button css-zopehd"
+              type="button"
+            >
+              View
+              <span
+                class="chakra-button__icon css-1hzyiq5"
+              >
+                <img
+                  alt="icon info"
+                  aria-hidden="true"
+                  class="chakra-image css-3o0h5k"
+                  focusable="false"
+                  src="/icons/info.svg"
+                />
+              </span>
+            </button>
+            <button
+              class="chakra-button css-zopehd"
+              type="button"
+            >
+              Edit
+              <span
+                class="chakra-button__icon css-1hzyiq5"
+              >
+                <img
+                  alt="icon edit"
+                  aria-hidden="true"
+                  class="chakra-image css-3o0h5k"
+                  focusable="false"
+                  src="/icons/pencil-filed.svg"
+                />
+              </span>
+            </button>
+            <button
+              class="chakra-button css-1vdve2c"
+              type="button"
+            >
+              Delete
+              <span
+                class="chakra-button__icon css-1hzyiq5"
+              >
+                <img
+                  alt="icon delete"
+                  aria-hidden="true"
+                  class="chakra-image css-3o0h5k"
+                  focusable="false"
+                  src="/icons/trash-filled.svg"
+                />
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-ffi1j3"
+    >
+      <div
+        class="css-9r7a0b"
+      >
+        <p
+          class="chakra-text truncate-two-lines css-0"
+        >
+          Ryan Westervelt
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          2093666722
+        </p>
+      </div>
+      <p
+        class="chakra-text truncate-two-lines css-1i8mt9"
+      >
+        Ryan Westervelt
+      </p>
+      <div
+        class="css-hsfm5b"
+      >
+        <span
+          class="chakra-badge css-ifsvay"
+        >
+          Open
+        </span>
+      </div>
+      <div
+        class="css-1xumltm"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          $
+          0.00
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          CAD
+        </p>
+      </div>
+      <div
+        class="css-1xumltm"
+      >
+        <p
+          class="chakra-text css-6lcq84"
+        >
+          $
+          0.00
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          CAD
+        </p>
+      </div>
+      <div
+        class="css-1xumltm"
+      >
+        <p
+          class="chakra-text css-0"
+        >
+          $
+          0.00
+        </p>
+        <p
+          class="chakra-text css-0"
+        >
+          CAD
+        </p>
+      </div>
+      <div
+        class="css-r1yx0l"
+      >
+        <button
+          aria-controls="menu-list-:r3n:"
+          aria-expanded="false"
+          aria-haspopup="menu"
+          aria-label="toggle-button"
+          class="chakra-menu__menu-button css-1rfdk2h"
+          id="menu-button-:r3n:"
+        >
+          <span
+            class="css-xl71ch"
+          >
+            <p
+              class="chakra-text css-1ezsviu"
+            >
+              ⋯
+            </p>
+          </span>
+        </button>
+        <div
+          class="css-0"
+          style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+        >
+          <div
+            aria-orientation="vertical"
+            class="chakra-menu__menu-list css-16tlef5"
+            id="menu-list-:r3n:"
+            role="menu"
+            style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+            tabindex="-1"
+          >
+            <button
+              class="chakra-button css-zopehd"
+              type="button"
+            >
+              View
+              <span
+                class="chakra-button__icon css-1hzyiq5"
+              >
+                <img
+                  alt="icon info"
+                  aria-hidden="true"
+                  class="chakra-image css-3o0h5k"
+                  focusable="false"
+                  src="/icons/info.svg"
+                />
+              </span>
+            </button>
+            <button
+              class="chakra-button css-zopehd"
+              type="button"
+            >
+              Edit
+              <span
+                class="chakra-button__icon css-1hzyiq5"
+              >
+                <img
+                  alt="icon edit"
+                  aria-hidden="true"
+                  class="chakra-image css-3o0h5k"
+                  focusable="false"
+                  src="/icons/pencil-filed.svg"
+                />
+              </span>
+            </button>
+            <button
+              class="chakra-button css-1vdve2c"
+              type="button"
+            >
+              Delete
+              <span
+                class="chakra-button__icon css-1hzyiq5"
+              >
+                <img
+                  alt="icon delete"
+                  aria-hidden="true"
+                  class="chakra-image css-3o0h5k"
+                  focusable="false"
+                  src="/icons/trash-filled.svg"
+                />
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Data Table Page Should match snapshot for Data Table 1`] = `
 Object {
   "asFragment": [Function],
@@ -88,11 +2152,498 @@ Object {
             class="css-yikrym"
           />
         </div>
-        <p
-          class="chakra-text css-0"
+        <div
+          class="css-ffi1j3"
         >
-          Customer not found.
-        </p>
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Ahmad Rosser
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              5351202197
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Inactive
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              66.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              2560.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              555.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:r6:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:r6:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:r6:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-pelcff"
+        >
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Leo Stanton
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              9095689304
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            description
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Due
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              242.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              2411.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:rc:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:rc:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:rc:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-ffi1j3"
+        >
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Ryan Westervelt
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              2093666722
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            Ryan Westervelt
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Open
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:ri:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:ri:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:ri:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>,
@@ -180,11 +2731,498 @@ Object {
           class="css-yikrym"
         />
       </div>
-      <p
-        class="chakra-text css-0"
+      <div
+        class="css-ffi1j3"
       >
-        Customer not found.
-      </p>
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Ahmad Rosser
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            5351202197
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Inactive
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            66.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            2560.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            555.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:r6:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:r6:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:r6:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-pelcff"
+      >
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Leo Stanton
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            9095689304
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          description
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Due
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            242.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            2411.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:rc:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:rc:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:rc:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-ffi1j3"
+      >
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Ryan Westervelt
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            2093666722
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          Ryan Westervelt
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Open
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:ri:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:ri:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:ri:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -270,7 +3308,7 @@ Object {
               </svg>
               <input
                 class="chakra-input css-oce1e7"
-                id="search:r1:"
+                id="search:rj:"
                 placeholder="Search..."
                 value="description 11"
               />
@@ -329,11 +3367,498 @@ Object {
             class="css-yikrym"
           />
         </div>
-        <p
-          class="chakra-text css-0"
+        <div
+          class="css-ffi1j3"
         >
-          Customer not found.
-        </p>
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Ahmad Rosser
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              5351202197
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Inactive
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              66.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              2560.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              555.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:rp:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:rp:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:rp:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-pelcff"
+        >
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Leo Stanton
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              9095689304
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            description
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Due
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              242.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              2411.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:rv:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:rv:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:rv:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-ffi1j3"
+        >
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Ryan Westervelt
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              2093666722
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            Ryan Westervelt
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Open
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:r15:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:r15:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:r15:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>,
@@ -362,7 +3887,7 @@ Object {
             </svg>
             <input
               class="chakra-input css-oce1e7"
-              id="search:r1:"
+              id="search:rj:"
               placeholder="Search..."
               value="description 11"
             />
@@ -421,11 +3946,498 @@ Object {
           class="css-yikrym"
         />
       </div>
-      <p
-        class="chakra-text css-0"
+      <div
+        class="css-ffi1j3"
       >
-        Customer not found.
-      </p>
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Ahmad Rosser
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            5351202197
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Inactive
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            66.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            2560.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            555.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:rp:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:rp:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:rp:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-pelcff"
+      >
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Leo Stanton
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            9095689304
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          description
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Due
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            242.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            2411.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:rv:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:rv:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:rv:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-ffi1j3"
+      >
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Ryan Westervelt
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            2093666722
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          Ryan Westervelt
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Open
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:r15:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:r15:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:r15:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -511,7 +4523,7 @@ Object {
               </svg>
               <input
                 class="chakra-input css-oce1e7"
-                id="search:r2:"
+                id="search:r16:"
                 placeholder="Search..."
                 value=""
               />
@@ -569,6 +4581,498 @@ Object {
           <div
             class="css-yikrym"
           />
+        </div>
+        <div
+          class="css-ffi1j3"
+        >
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Ahmad Rosser
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              5351202197
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Inactive
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              66.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              2560.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              555.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:r1u:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:r1u:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:r1u:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-pelcff"
+        >
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Leo Stanton
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              9095689304
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            description
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Due
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              242.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              2411.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:r24:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:r24:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:r24:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-ffi1j3"
+        >
+          <div
+            class="css-9r7a0b"
+          >
+            <p
+              class="chakra-text truncate-two-lines css-0"
+            >
+              Ryan Westervelt
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              2093666722
+            </p>
+          </div>
+          <p
+            class="chakra-text truncate-two-lines css-1i8mt9"
+          >
+            Ryan Westervelt
+          </p>
+          <div
+            class="css-hsfm5b"
+          >
+            <span
+              class="chakra-badge css-ifsvay"
+            >
+              Open
+            </span>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-6lcq84"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-1xumltm"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              $
+              0.00
+            </p>
+            <p
+              class="chakra-text css-0"
+            >
+              CAD
+            </p>
+          </div>
+          <div
+            class="css-r1yx0l"
+          >
+            <button
+              aria-controls="menu-list-:r2a:"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-label="toggle-button"
+              class="chakra-menu__menu-button css-1rfdk2h"
+              id="menu-button-:r2a:"
+            >
+              <span
+                class="css-xl71ch"
+              >
+                <p
+                  class="chakra-text css-1ezsviu"
+                >
+                  ⋯
+                </p>
+              </span>
+            </button>
+            <div
+              class="css-0"
+              style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+            >
+              <div
+                aria-orientation="vertical"
+                class="chakra-menu__menu-list css-16tlef5"
+                id="menu-list-:r2a:"
+                role="menu"
+                style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+                tabindex="-1"
+              >
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  View
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon info"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/info.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-zopehd"
+                  type="button"
+                >
+                  Edit
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon edit"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/pencil-filed.svg"
+                    />
+                  </span>
+                </button>
+                <button
+                  class="chakra-button css-1vdve2c"
+                  type="button"
+                >
+                  Delete
+                  <span
+                    class="chakra-button__icon css-1hzyiq5"
+                  >
+                    <img
+                      alt="icon delete"
+                      aria-hidden="true"
+                      class="chakra-image css-3o0h5k"
+                      focusable="false"
+                      src="/icons/trash-filled.svg"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
         <div
           class="css-1idm01g"
@@ -629,7 +5133,7 @@ Object {
             </svg>
             <input
               class="chakra-input css-oce1e7"
-              id="search:r2:"
+              id="search:r16:"
               placeholder="Search..."
               value=""
             />
@@ -687,6 +5191,498 @@ Object {
         <div
           class="css-yikrym"
         />
+      </div>
+      <div
+        class="css-ffi1j3"
+      >
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Ahmad Rosser
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            5351202197
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Inactive
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            66.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            2560.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            555.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:r1u:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:r1u:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:r1u:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-pelcff"
+      >
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Leo Stanton
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            9095689304
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          description
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Due
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            242.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            2411.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:r24:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:r24:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:r24:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-ffi1j3"
+      >
+        <div
+          class="css-9r7a0b"
+        >
+          <p
+            class="chakra-text truncate-two-lines css-0"
+          >
+            Ryan Westervelt
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            2093666722
+          </p>
+        </div>
+        <p
+          class="chakra-text truncate-two-lines css-1i8mt9"
+        >
+          Ryan Westervelt
+        </p>
+        <div
+          class="css-hsfm5b"
+        >
+          <span
+            class="chakra-badge css-ifsvay"
+          >
+            Open
+          </span>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-6lcq84"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-1xumltm"
+        >
+          <p
+            class="chakra-text css-0"
+          >
+            $
+            0.00
+          </p>
+          <p
+            class="chakra-text css-0"
+          >
+            CAD
+          </p>
+        </div>
+        <div
+          class="css-r1yx0l"
+        >
+          <button
+            aria-controls="menu-list-:r2a:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="toggle-button"
+            class="chakra-menu__menu-button css-1rfdk2h"
+            id="menu-button-:r2a:"
+          >
+            <span
+              class="css-xl71ch"
+            >
+              <p
+                class="chakra-text css-1ezsviu"
+              >
+                ⋯
+              </p>
+            </span>
+          </button>
+          <div
+            class="css-0"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-16tlef5"
+              id="menu-list-:r2a:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                View
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon info"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/info.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-zopehd"
+                type="button"
+              >
+                Edit
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon edit"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/pencil-filed.svg"
+                  />
+                </span>
+              </button>
+              <button
+                class="chakra-button css-1vdve2c"
+                type="button"
+              >
+                Delete
+                <span
+                  class="chakra-button__icon css-1hzyiq5"
+                >
+                  <img
+                    alt="icon delete"
+                    aria-hidden="true"
+                    class="chakra-image css-3o0h5k"
+                    focusable="false"
+                    src="/icons/trash-filled.svg"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       <div
         class="css-1idm01g"
